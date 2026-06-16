@@ -1,0 +1,203 @@
+[
+  {
+    "id": "dal-tadka",
+    "name": "Dal Tadka",
+    "cuisine": "Indian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["toor-dal-cooked"],
+    "servings": 2,
+    "ingredients": [{ "foodId": "toor-dal-cooked", "quantity": 300 }],
+    "steps": [
+      "Boil toor dal with turmeric and salt until soft.",
+      "Prepare a tadka of cumin, garlic and dry chillies in a little oil.",
+      "Pour the tadka over the dal and simmer for 2 minutes."
+    ],
+    "notes": "Classic everyday dal. For vegan, temper in oil instead of ghee.",
+    "source": "default"
+  },
+  {
+    "id": "palak-paneer",
+    "name": "Palak Paneer",
+    "cuisine": "Indian",
+    "dietTypes": ["veg"],
+    "baseFoodIds": ["paneer", "spinach-cooked"],
+    "servings": 2,
+    "ingredients": [
+      { "foodId": "spinach-cooked", "quantity": 250 },
+      { "foodId": "paneer", "quantity": 150 }
+    ],
+    "steps": [
+      "Blanch and purée the spinach.",
+      "Sauté onion, ginger-garlic and spices, add the spinach purée.",
+      "Fold in paneer cubes and simmer for 5 minutes."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "rajma-chawal",
+    "name": "Rajma Chawal",
+    "cuisine": "Indian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["rajma-cooked", "rice-white-cooked"],
+    "servings": 2,
+    "ingredients": [
+      { "foodId": "rajma-cooked", "quantity": 250 },
+      { "foodId": "rice-white-cooked", "quantity": 300 }
+    ],
+    "steps": [
+      "Cook the rajma in an onion-tomato masala until thick.",
+      "Serve hot over steamed rice."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "chana-masala",
+    "name": "Chana Masala",
+    "cuisine": "Indian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["chickpea-boiled"],
+    "servings": 2,
+    "ingredients": [
+      { "foodId": "chickpea-boiled", "quantity": 300 },
+      { "foodId": "potato-boiled", "quantity": 100 }
+    ],
+    "steps": [
+      "Simmer boiled chickpeas and potato in a spiced onion-tomato gravy.",
+      "Finish with garam masala and fresh coriander."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "soya-chunk-curry",
+    "name": "Soya Chunk Curry",
+    "cuisine": "Indian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["soya-chunks-cooked"],
+    "servings": 2,
+    "ingredients": [
+      { "foodId": "soya-chunks-cooked", "quantity": 250 },
+      { "foodId": "potato-boiled", "quantity": 100 }
+    ],
+    "steps": [
+      "Boil soya chunks, squeeze out water.",
+      "Cook in an onion-tomato masala with potato until the gravy thickens."
+    ],
+    "notes": "High-protein vegetarian/vegan main.",
+    "source": "default"
+  },
+  {
+    "id": "paneer-bhurji",
+    "name": "Paneer Bhurji",
+    "cuisine": "Indian",
+    "dietTypes": ["veg"],
+    "baseFoodIds": ["paneer"],
+    "servings": 1,
+    "ingredients": [{ "foodId": "paneer", "quantity": 120 }],
+    "steps": [
+      "Crumble paneer.",
+      "Sauté onion, tomato, green chilli and spices, then toss in the paneer."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "moong-dal-khichdi",
+    "name": "Moong Dal Khichdi",
+    "cuisine": "Indian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["moong-dal-cooked", "rice-white-cooked"],
+    "servings": 2,
+    "ingredients": [
+      { "foodId": "moong-dal-cooked", "quantity": 200 },
+      { "foodId": "rice-white-cooked", "quantity": 200 }
+    ],
+    "steps": [
+      "Pressure-cook rice and moong dal together with turmeric and salt.",
+      "Temper with cumin and serve soft and warm."
+    ],
+    "notes": "Light, easy-to-digest comfort food.",
+    "source": "default"
+  },
+  {
+    "id": "sprouts-salad",
+    "name": "Sprouts Chaat Salad",
+    "cuisine": "Indian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["moong-sprouts"],
+    "servings": 1,
+    "ingredients": [{ "foodId": "moong-sprouts", "quantity": 150 }],
+    "steps": [
+      "Toss sprouts with chopped onion, tomato and cucumber.",
+      "Season with lemon juice, chaat masala and salt."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "oats-banana-porridge",
+    "name": "Oats Banana Porridge",
+    "cuisine": "Continental",
+    "dietTypes": ["veg"],
+    "baseFoodIds": ["oats-cooked"],
+    "servings": 1,
+    "ingredients": [
+      { "foodId": "oats-cooked", "quantity": 200 },
+      { "foodId": "milk-whole", "quantity": 100 },
+      { "foodId": "banana", "quantity": 60 },
+      { "foodId": "almonds", "quantity": 15 }
+    ],
+    "steps": [
+      "Cook oats in milk until creamy.",
+      "Top with sliced banana and chopped almonds."
+    ],
+    "notes": "Swap milk for a plant milk to make it vegan.",
+    "source": "default"
+  },
+  {
+    "id": "tofu-stir-fry",
+    "name": "Tofu & Spinach Stir-fry",
+    "cuisine": "Asian",
+    "dietTypes": ["veg", "vegan"],
+    "baseFoodIds": ["tofu-firm"],
+    "servings": 1,
+    "ingredients": [
+      { "foodId": "tofu-firm", "quantity": 150 },
+      { "foodId": "spinach-cooked", "quantity": 100 }
+    ],
+    "steps": [
+      "Pan-sear cubed tofu until golden.",
+      "Add spinach and a splash of soy sauce; toss for a minute."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "egg-bhurji",
+    "name": "Egg Bhurji",
+    "cuisine": "Indian",
+    "dietTypes": ["nonveg"],
+    "baseFoodIds": ["egg-boiled"],
+    "servings": 1,
+    "ingredients": [{ "foodId": "egg-boiled", "quantity": 150 }],
+    "steps": [
+      "Scramble eggs with onion, tomato, green chilli and spices."
+    ],
+    "source": "default"
+  },
+  {
+    "id": "grilled-chicken-bowl",
+    "name": "Grilled Chicken Rice Bowl",
+    "cuisine": "Continental",
+    "dietTypes": ["nonveg"],
+    "baseFoodIds": ["chicken-breast-cooked"],
+    "servings": 1,
+    "ingredients": [
+      { "foodId": "chicken-breast-cooked", "quantity": 150 },
+      { "foodId": "brown-rice-cooked", "quantity": 150 },
+      { "foodId": "spinach-cooked", "quantity": 100 }
+    ],
+    "steps": [
+      "Grill the seasoned chicken breast and slice.",
+      "Serve over brown rice with sautéed spinach."
+    ],
+    "notes": "High-protein, balanced bowl.",
+    "source": "default"
+  }
+]

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "rice-white-cooked",
+    "name": "Rice, white (cooked)",
+    "aliases": ["Chawal", "Steamed rice", "Boiled rice"],
+    "category": "Grains",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 130,
+      "macros": { "protein_g": 2.7, "carbs_g": 28, "fiber_g": 0.4, "fat_g": 0.3, "sugar_g": 0.1 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.02, "riboflavin_b2_mg": 0.01, "niacin_b3_mg": 0.4, "folate_b9_ug": 3, "vit_b12_ug": 0, "vit_e_mg": 0.04, "vit_k_ug": 0 },
+      "minerals": { "calcium_mg": 10, "iron_mg": 0.2, "magnesium_mg": 12, "potassium_mg": 35, "sodium_mg": 1, "zinc_mg": 0.5, "phosphorus_mg": 43, "selenium_ug": 7.5 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 169756", "value_seen": "130 kcal, 2.69 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Cereal grains — rice raw milled, cooked basis", "value_seen": "~130 kcal /100g cooked", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Cooked white rice products", "value_seen": "128–132 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "chapati-whole-wheat",
+    "name": "Chapati / Roti (whole wheat)",
+    "aliases": ["Phulka", "Roti", "Atta roti"],
+    "category": "Grains",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": ["gluten", "wheat"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 264,
+      "macros": { "protein_g": 9, "carbs_g": 50, "fiber_g": 5, "fat_g": 4, "sugar_g": 1 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.3, "riboflavin_b2_mg": 0.1, "niacin_b3_mg": 3.5, "folate_b9_ug": 30, "vit_b12_ug": 0, "vit_e_mg": 0.8, "vit_k_ug": 1.9 },
+      "minerals": { "calcium_mg": 30, "iron_mg": 2.5, "magnesium_mg": 80, "potassium_mg": 200, "sodium_mg": 180, "zinc_mg": 1.8, "phosphorus_mg": 200, "selenium_ug": 30 }
+    },
+    "evidences": [
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Wheat flour, whole (atta)", "value_seen": "~320 kcal /100g flour; ~260 kcal cooked roti", "url": "https://www.nin.res.in/" },
+      { "source": "USDA FoodData Central", "ref": "FDC 172731 (chapati/roti)", "value_seen": "297 kcal /100g (drier)", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "Indian Nutrient Databank (INDB)", "ref": "Phulka / roti recipe", "value_seen": "~250–280 kcal /100g", "url": "https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "toor-dal-cooked",
+    "name": "Toor Dal (cooked)",
+    "aliases": ["Arhar dal", "Pigeon pea", "Tur dal"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 121,
+      "macros": { "protein_g": 7, "carbs_g": 22.5, "fiber_g": 5.4, "fat_g": 0.5, "sugar_g": 1.2 },
+      "vitamins": { "vit_a_ug": 1, "vit_c_mg": 0.8, "vit_d_ug": 0, "thiamin_b1_mg": 0.15, "riboflavin_b2_mg": 0.05, "niacin_b3_mg": 0.9, "folate_b9_ug": 120, "vit_b12_ug": 0, "vit_e_mg": 0.2, "vit_k_ug": 5 },
+      "minerals": { "calcium_mg": 18, "iron_mg": 1.5, "magnesium_mg": 45, "potassium_mg": 350, "sodium_mg": 5, "zinc_mg": 1.1, "phosphorus_mg": 130, "selenium_ug": 8 }
+    },
+    "evidences": [
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Pulse — red gram dal", "value_seen": "~343 kcal /100g raw; ~121 kcal cooked", "url": "https://www.nin.res.in/" },
+      { "source": "USDA FoodData Central", "ref": "FDC 173757 (pigeon peas, cooked)", "value_seen": "121 kcal, 6.76 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "Indian Nutrient Databank (INDB)", "ref": "Toor dal tadka (base dal)", "value_seen": "~118–124 kcal /100g", "url": "https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "chickpea-boiled",
+    "name": "Chickpeas (boiled)",
+    "aliases": ["Chana", "Kabuli chana", "Garbanzo"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 164,
+      "macros": { "protein_g": 8.9, "carbs_g": 27.4, "fiber_g": 7.6, "fat_g": 2.6, "sugar_g": 4.8 },
+      "vitamins": { "vit_a_ug": 1, "vit_c_mg": 1.3, "vit_d_ug": 0, "thiamin_b1_mg": 0.12, "riboflavin_b2_mg": 0.06, "niacin_b3_mg": 0.5, "folate_b9_ug": 172, "vit_b12_ug": 0, "vit_e_mg": 0.35, "vit_k_ug": 4 },
+      "minerals": { "calcium_mg": 49, "iron_mg": 2.9, "magnesium_mg": 48, "potassium_mg": 291, "sodium_mg": 7, "zinc_mg": 1.5, "phosphorus_mg": 168, "selenium_ug": 3.7 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 173756 (chickpeas, boiled)", "value_seen": "164 kcal, 8.86 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Bengal gram, whole", "value_seen": "matches on protein/fiber profile", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Cooked chickpeas (canned, drained)", "value_seen": "~160–170 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "rajma-cooked",
+    "name": "Kidney beans (cooked)",
+    "aliases": ["Rajma", "Red kidney beans"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 127,
+      "macros": { "protein_g": 8.7, "carbs_g": 22.8, "fiber_g": 6.4, "fat_g": 0.5, "sugar_g": 0.3 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 1.2, "vit_d_ug": 0, "thiamin_b1_mg": 0.16, "riboflavin_b2_mg": 0.06, "niacin_b3_mg": 0.58, "folate_b9_ug": 130, "vit_b12_ug": 0, "vit_e_mg": 0.03, "vit_k_ug": 8.4 },
+      "minerals": { "calcium_mg": 35, "iron_mg": 2.9, "magnesium_mg": 45, "potassium_mg": 405, "sodium_mg": 2, "zinc_mg": 1, "phosphorus_mg": 142, "selenium_ug": 1.2 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 175204 (kidney beans, boiled)", "value_seen": "127 kcal, 8.67 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Rajmah, red", "value_seen": "consistent macro profile", "url": "https://www.nin.res.in/" },
+      { "source": "Indian Nutrient Databank (INDB)", "ref": "Rajma curry (bean base)", "value_seen": "~125–130 kcal /100g", "url": "https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "paneer",
+    "name": "Paneer (Indian cottage cheese)",
+    "aliases": ["Cottage cheese", "Chhena"],
+    "category": "Dairy",
+    "dietTypes": ["veg"],
+    "allergens": ["milk", "lactose"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 265,
+      "macros": { "protein_g": 18, "carbs_g": 1.2, "fiber_g": 0, "fat_g": 20.8, "sugar_g": 1.2 },
+      "vitamins": { "vit_a_ug": 175, "vit_c_mg": 0, "vit_d_ug": 0.3, "thiamin_b1_mg": 0.02, "riboflavin_b2_mg": 0.2, "niacin_b3_mg": 0.1, "folate_b9_ug": 12, "vit_b12_ug": 0.8, "vit_e_mg": 0.4, "vit_k_ug": 2 },
+      "minerals": { "calcium_mg": 480, "iron_mg": 0.2, "magnesium_mg": 22, "potassium_mg": 120, "sodium_mg": 18, "zinc_mg": 1.9, "phosphorus_mg": 340, "selenium_ug": 13 }
+    },
+    "evidences": [
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Milk products — paneer", "value_seen": "~265 kcal, 18 g protein /100g", "url": "https://www.nin.res.in/" },
+      { "source": "USDA FoodData Central", "ref": "Cottage/curd cheese (whole milk)", "value_seen": "~260–270 kcal /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "Open Food Facts", "ref": "Paneer products", "value_seen": "~260–296 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "curd-dahi",
+    "name": "Curd / Yogurt (whole milk)",
+    "aliases": ["Dahi", "Yoghurt"],
+    "category": "Dairy",
+    "dietTypes": ["veg"],
+    "allergens": ["milk", "lactose"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 61,
+      "macros": { "protein_g": 3.5, "carbs_g": 4.7, "fiber_g": 0, "fat_g": 3.3, "sugar_g": 4.7 },
+      "vitamins": { "vit_a_ug": 27, "vit_c_mg": 0.5, "vit_d_ug": 0.1, "thiamin_b1_mg": 0.03, "riboflavin_b2_mg": 0.14, "niacin_b3_mg": 0.08, "folate_b9_ug": 7, "vit_b12_ug": 0.4, "vit_e_mg": 0.06, "vit_k_ug": 0.2 },
+      "minerals": { "calcium_mg": 121, "iron_mg": 0.1, "magnesium_mg": 12, "potassium_mg": 155, "sodium_mg": 46, "zinc_mg": 0.6, "phosphorus_mg": 95, "selenium_ug": 2.2 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 171284 (yogurt, whole milk)", "value_seen": "61 kcal, 3.47 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Curd (dahi), cow milk", "value_seen": "~60 kcal /100g", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Plain whole-milk yogurt", "value_seen": "~60–65 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "milk-whole",
+    "name": "Milk, whole (cow)",
+    "aliases": ["Doodh", "Full-fat milk"],
+    "category": "Dairy",
+    "dietTypes": ["veg"],
+    "allergens": ["milk", "lactose"],
+    "servingUnit": "ml",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 62,
+      "macros": { "protein_g": 3.2, "carbs_g": 4.8, "fiber_g": 0, "fat_g": 3.3, "sugar_g": 5 },
+      "vitamins": { "vit_a_ug": 46, "vit_c_mg": 0, "vit_d_ug": 0.1, "thiamin_b1_mg": 0.04, "riboflavin_b2_mg": 0.18, "niacin_b3_mg": 0.1, "folate_b9_ug": 5, "vit_b12_ug": 0.5, "vit_e_mg": 0.07, "vit_k_ug": 0.3 },
+      "minerals": { "calcium_mg": 113, "iron_mg": 0.03, "magnesium_mg": 10, "potassium_mg": 132, "sodium_mg": 43, "zinc_mg": 0.4, "phosphorus_mg": 84, "selenium_ug": 3.7 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 171265 (milk, whole, 3.25%)", "value_seen": "61 kcal, 3.15 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Cow milk, whole", "value_seen": "~63 kcal /100ml", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Whole milk products", "value_seen": "~60–65 kcal /100ml", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "egg-boiled",
+    "name": "Egg, whole (boiled)",
+    "aliases": ["Anda", "Hard-boiled egg"],
+    "category": "Eggs",
+    "dietTypes": ["nonveg"],
+    "allergens": ["egg"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 155,
+      "macros": { "protein_g": 13, "carbs_g": 1.1, "fiber_g": 0, "fat_g": 11, "sugar_g": 1.1 },
+      "vitamins": { "vit_a_ug": 149, "vit_c_mg": 0, "vit_d_ug": 2.2, "thiamin_b1_mg": 0.07, "riboflavin_b2_mg": 0.5, "niacin_b3_mg": 0.06, "folate_b9_ug": 44, "vit_b12_ug": 1.1, "vit_e_mg": 1, "vit_k_ug": 0.3 },
+      "minerals": { "calcium_mg": 50, "iron_mg": 1.2, "magnesium_mg": 10, "potassium_mg": 126, "sodium_mg": 124, "zinc_mg": 1.1, "phosphorus_mg": 172, "selenium_ug": 30.8 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 173424 (egg, hard-boiled)", "value_seen": "155 kcal, 12.6 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Hen egg, whole", "value_seen": "~150 kcal /100g", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Boiled egg", "value_seen": "~150–160 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "chicken-breast-cooked",
+    "name": "Chicken breast (cooked, skinless)",
+    "aliases": ["Murgh", "Grilled chicken"],
+    "category": "Meat",
+    "dietTypes": ["nonveg"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 165,
+      "macros": { "protein_g": 31, "carbs_g": 0, "fiber_g": 0, "fat_g": 3.6, "sugar_g": 0 },
+      "vitamins": { "vit_a_ug": 9, "vit_c_mg": 0, "vit_d_ug": 0.1, "thiamin_b1_mg": 0.07, "riboflavin_b2_mg": 0.11, "niacin_b3_mg": 13.7, "folate_b9_ug": 4, "vit_b12_ug": 0.3, "vit_e_mg": 0.3, "vit_k_ug": 0.3 },
+      "minerals": { "calcium_mg": 15, "iron_mg": 1, "magnesium_mg": 29, "potassium_mg": 256, "sodium_mg": 74, "zinc_mg": 1, "phosphorus_mg": 228, "selenium_ug": 27.6 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 171477 (chicken breast, roasted)", "value_seen": "165 kcal, 31 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Chicken, flesh", "value_seen": "lean profile consistent", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Cooked chicken breast", "value_seen": "~160–170 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "fish-rohu-cooked",
+    "name": "Fish, Rohu (cooked)",
+    "aliases": ["Rohu", "Carp", "Machhli"],
+    "category": "Meat",
+    "dietTypes": ["nonveg"],
+    "allergens": ["fish"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 97,
+      "macros": { "protein_g": 16.6, "carbs_g": 0, "fiber_g": 0, "fat_g": 1.4, "sugar_g": 0 },
+      "vitamins": { "vit_a_ug": 30, "vit_c_mg": 0, "vit_d_ug": 4, "thiamin_b1_mg": 0.05, "riboflavin_b2_mg": 0.07, "niacin_b3_mg": 2, "folate_b9_ug": 10, "vit_b12_ug": 2.4, "vit_e_mg": 0.4, "vit_k_ug": 0.1 },
+      "minerals": { "calcium_mg": 317, "iron_mg": 1, "magnesium_mg": 28, "potassium_mg": 250, "sodium_mg": 55, "zinc_mg": 1, "phosphorus_mg": 200, "selenium_ug": 28 }
+    },
+    "evidences": [
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Fish — rohu", "value_seen": "~97 kcal, 16.6 g protein /100g", "url": "https://www.nin.res.in/" },
+      { "source": "USDA FoodData Central", "ref": "Carp, cooked (proxy)", "value_seen": "~127 kcal /100g (fattier carp)", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "Indian Nutrient Databank (INDB)", "ref": "Rohu fish curry (fish base)", "value_seen": "~95–105 kcal /100g", "url": "https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-" }
+    ],
+    "verification": { "status": "needsReview", "confidence": "medium", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "spinach-cooked",
+    "name": "Spinach (cooked)",
+    "aliases": ["Palak", "Saag"],
+    "category": "Vegetables",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 23,
+      "macros": { "protein_g": 2.9, "carbs_g": 3.6, "fiber_g": 2.2, "fat_g": 0.4, "sugar_g": 0.4 },
+      "vitamins": { "vit_a_ug": 469, "vit_c_mg": 9.8, "vit_d_ug": 0, "thiamin_b1_mg": 0.08, "riboflavin_b2_mg": 0.24, "niacin_b3_mg": 0.49, "folate_b9_ug": 146, "vit_b12_ug": 0, "vit_e_mg": 2.1, "vit_k_ug": 494 },
+      "minerals": { "calcium_mg": 136, "iron_mg": 3.6, "magnesium_mg": 87, "potassium_mg": 466, "sodium_mg": 70, "zinc_mg": 0.8, "phosphorus_mg": 56, "selenium_ug": 1.5 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 168463 (spinach, boiled)", "value_seen": "23 kcal, 2.97 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Palak (spinach)", "value_seen": "iron/folate-rich profile", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Cooked spinach", "value_seen": "~20–25 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "potato-boiled",
+    "name": "Potato (boiled)",
+    "aliases": ["Aloo"],
+    "category": "Vegetables",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 87,
+      "macros": { "protein_g": 1.9, "carbs_g": 20.1, "fiber_g": 1.8, "fat_g": 0.1, "sugar_g": 0.9 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 13, "vit_d_ug": 0, "thiamin_b1_mg": 0.11, "riboflavin_b2_mg": 0.02, "niacin_b3_mg": 1.4, "folate_b9_ug": 10, "vit_b12_ug": 0, "vit_e_mg": 0.01, "vit_k_ug": 2.1 },
+      "minerals": { "calcium_mg": 5, "iron_mg": 0.3, "magnesium_mg": 22, "potassium_mg": 379, "sodium_mg": 4, "zinc_mg": 0.3, "phosphorus_mg": 44, "selenium_ug": 0.3 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 170441 (potato, boiled)", "value_seen": "87 kcal, 1.87 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Potato", "value_seen": "consistent carb profile", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Boiled potato", "value_seen": "~85–90 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "banana",
+    "name": "Banana (ripe)",
+    "aliases": ["Kela"],
+    "category": "Fruits",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 89,
+      "macros": { "protein_g": 1.1, "carbs_g": 22.8, "fiber_g": 2.6, "fat_g": 0.3, "sugar_g": 12.2 },
+      "vitamins": { "vit_a_ug": 3, "vit_c_mg": 8.7, "vit_d_ug": 0, "thiamin_b1_mg": 0.03, "riboflavin_b2_mg": 0.07, "niacin_b3_mg": 0.67, "folate_b9_ug": 20, "vit_b12_ug": 0, "vit_e_mg": 0.1, "vit_k_ug": 0.5 },
+      "minerals": { "calcium_mg": 5, "iron_mg": 0.26, "magnesium_mg": 27, "potassium_mg": 358, "sodium_mg": 1, "zinc_mg": 0.15, "phosphorus_mg": 22, "selenium_ug": 1 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 173944 (banana, raw)", "value_seen": "89 kcal, 1.09 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Banana, ripe", "value_seen": "~95 kcal /100g", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Banana", "value_seen": "~88–92 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "apple",
+    "name": "Apple (with skin)",
+    "aliases": ["Seb"],
+    "category": "Fruits",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 52,
+      "macros": { "protein_g": 0.3, "carbs_g": 13.8, "fiber_g": 2.4, "fat_g": 0.2, "sugar_g": 10.4 },
+      "vitamins": { "vit_a_ug": 3, "vit_c_mg": 4.6, "vit_d_ug": 0, "thiamin_b1_mg": 0.02, "riboflavin_b2_mg": 0.03, "niacin_b3_mg": 0.09, "folate_b9_ug": 3, "vit_b12_ug": 0, "vit_e_mg": 0.18, "vit_k_ug": 2.2 },
+      "minerals": { "calcium_mg": 6, "iron_mg": 0.12, "magnesium_mg": 5, "potassium_mg": 107, "sodium_mg": 1, "zinc_mg": 0.04, "phosphorus_mg": 11, "selenium_ug": 0 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 171688 (apple, raw, with skin)", "value_seen": "52 kcal /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Apple", "value_seen": "~59 kcal /100g", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Apple", "value_seen": "~50–55 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "almonds",
+    "name": "Almonds (raw)",
+    "aliases": ["Badam"],
+    "category": "Nuts & Seeds",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": ["tree nut", "almond"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 579,
+      "macros": { "protein_g": 21.2, "carbs_g": 21.6, "fiber_g": 12.5, "fat_g": 49.9, "sugar_g": 4.4 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.2, "riboflavin_b2_mg": 1.14, "niacin_b3_mg": 3.6, "folate_b9_ug": 44, "vit_b12_ug": 0, "vit_e_mg": 25.6, "vit_k_ug": 0 },
+      "minerals": { "calcium_mg": 269, "iron_mg": 3.7, "magnesium_mg": 270, "potassium_mg": 733, "sodium_mg": 1, "zinc_mg": 3.1, "phosphorus_mg": 481, "selenium_ug": 4.1 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 170567 (almonds, raw)", "value_seen": "579 kcal, 21.15 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Almond", "value_seen": "~600 kcal /100g", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Raw almonds", "value_seen": "~575–610 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "tofu-firm",
+    "name": "Tofu (firm)",
+    "aliases": ["Soy paneer", "Bean curd"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": ["soy"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 144,
+      "macros": { "protein_g": 17.3, "carbs_g": 2.8, "fiber_g": 2.3, "fat_g": 8.7, "sugar_g": 0.6 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0.2, "vit_d_ug": 0, "thiamin_b1_mg": 0.16, "riboflavin_b2_mg": 0.1, "niacin_b3_mg": 0.4, "folate_b9_ug": 19, "vit_b12_ug": 0, "vit_e_mg": 0.01, "vit_k_ug": 2.4 },
+      "minerals": { "calcium_mg": 372, "iron_mg": 2.7, "magnesium_mg": 58, "potassium_mg": 237, "sodium_mg": 14, "zinc_mg": 1.6, "phosphorus_mg": 190, "selenium_ug": 17.4 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 174291 (tofu, firm)", "value_seen": "144 kcal, 17.3 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "Open Food Facts", "ref": "Firm tofu products", "value_seen": "~140–150 kcal /100g", "url": "https://world.openfoodfacts.org/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Soybean products (proxy)", "value_seen": "high-protein soy profile", "url": "https://www.nin.res.in/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "peanuts-roasted",
+    "name": "Peanuts (roasted)",
+    "aliases": ["Groundnut", "Moongphali"],
+    "category": "Nuts & Seeds",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": ["peanut"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 567,
+      "macros": { "protein_g": 25.8, "carbs_g": 16.1, "fiber_g": 8.5, "fat_g": 49.2, "sugar_g": 4 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.64, "riboflavin_b2_mg": 0.14, "niacin_b3_mg": 12.1, "folate_b9_ug": 240, "vit_b12_ug": 0, "vit_e_mg": 8.3, "vit_k_ug": 0 },
+      "minerals": { "calcium_mg": 92, "iron_mg": 4.6, "magnesium_mg": 168, "potassium_mg": 705, "sodium_mg": 18, "zinc_mg": 3.3, "phosphorus_mg": 376, "selenium_ug": 7.2 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 172430 (peanuts, all types, raw)", "value_seen": "567 kcal, 25.8 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Groundnut", "value_seen": "~567 kcal /100g", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Roasted peanuts", "value_seen": "~570–600 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "soya-chunks-cooked",
+    "name": "Soya chunks (cooked)",
+    "aliases": ["Soya nuggets", "Meal maker", "TVP", "Nutrela"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": ["soy"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 110,
+      "macros": { "protein_g": 17, "carbs_g": 8, "fiber_g": 4, "fat_g": 0.7, "sugar_g": 2 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.3, "riboflavin_b2_mg": 0.2, "niacin_b3_mg": 1, "folate_b9_ug": 35, "vit_b12_ug": 0, "vit_e_mg": 0.2, "vit_k_ug": 3 },
+      "minerals": { "calcium_mg": 120, "iron_mg": 5, "magnesium_mg": 60, "potassium_mg": 250, "sodium_mg": 12, "zinc_mg": 1.5, "phosphorus_mg": 180, "selenium_ug": 6 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "Textured vegetable protein (hydrated)", "value_seen": "~105–115 kcal, ~16–18 g protein /100g cooked", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Soybean / soy products", "value_seen": "high-protein soy profile", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Soya chunks / nuggets products", "value_seen": "~345 kcal /100g dry; ~110 kcal hydrated", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "medium", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "moong-dal-cooked",
+    "name": "Moong Dal (cooked)",
+    "aliases": ["Green gram dal", "Yellow moong dal"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 105,
+      "macros": { "protein_g": 7, "carbs_g": 19, "fiber_g": 2, "fat_g": 0.4, "sugar_g": 2 },
+      "vitamins": { "vit_a_ug": 1, "vit_c_mg": 1, "vit_d_ug": 0, "thiamin_b1_mg": 0.16, "riboflavin_b2_mg": 0.06, "niacin_b3_mg": 0.6, "folate_b9_ug": 80, "vit_b12_ug": 0, "vit_e_mg": 0.15, "vit_k_ug": 3 },
+      "minerals": { "calcium_mg": 27, "iron_mg": 1.4, "magnesium_mg": 48, "potassium_mg": 270, "sodium_mg": 4, "zinc_mg": 1, "phosphorus_mg": 100, "selenium_ug": 2.5 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 174257 (mung beans, boiled)", "value_seen": "105 kcal, 7.02 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Green gram dal", "value_seen": "consistent pulse profile", "url": "https://www.nin.res.in/" },
+      { "source": "Indian Nutrient Databank (INDB)", "ref": "Moong dal (base)", "value_seen": "~100–110 kcal /100g", "url": "https://github.com/lindsayjaacks/Indian-Nutrient-Databank-INDB-" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "moong-sprouts",
+    "name": "Sprouted moong beans",
+    "aliases": ["Mung bean sprouts", "Sprouts"],
+    "category": "Legumes",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 30,
+      "macros": { "protein_g": 3, "carbs_g": 5.9, "fiber_g": 1.8, "fat_g": 0.2, "sugar_g": 4.1 },
+      "vitamins": { "vit_a_ug": 1, "vit_c_mg": 13.2, "vit_d_ug": 0, "thiamin_b1_mg": 0.08, "riboflavin_b2_mg": 0.12, "niacin_b3_mg": 0.75, "folate_b9_ug": 61, "vit_b12_ug": 0, "vit_e_mg": 0.1, "vit_k_ug": 33 },
+      "minerals": { "calcium_mg": 13, "iron_mg": 0.9, "magnesium_mg": 21, "potassium_mg": 149, "sodium_mg": 6, "zinc_mg": 0.4, "phosphorus_mg": 54, "selenium_ug": 0.6 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 169260 (mung bean sprouts, raw)", "value_seen": "30 kcal, 3.04 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Green gram, sprouted", "value_seen": "vitamin-C rich after sprouting", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Mung bean sprouts", "value_seen": "~30 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "oats-cooked",
+    "name": "Oats / porridge (cooked)",
+    "aliases": ["Oatmeal", "Dalia (oats)"],
+    "category": "Grains",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": ["gluten"],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 71,
+      "macros": { "protein_g": 2.5, "carbs_g": 12, "fiber_g": 1.7, "fat_g": 1.5, "sugar_g": 0.3 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.08, "riboflavin_b2_mg": 0.02, "niacin_b3_mg": 0.2, "folate_b9_ug": 6, "vit_b12_ug": 0, "vit_e_mg": 0.06, "vit_k_ug": 0.4 },
+      "minerals": { "calcium_mg": 9, "iron_mg": 0.9, "magnesium_mg": 26, "potassium_mg": 70, "sodium_mg": 4, "zinc_mg": 0.9, "phosphorus_mg": 77, "selenium_ug": 5.5 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 173904 (oatmeal, cooked)", "value_seen": "71 kcal, 2.54 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Oats", "value_seen": "~389 kcal /100g dry", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Cooked oat porridge", "value_seen": "~65–75 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "sweet-potato-boiled",
+    "name": "Sweet potato (boiled)",
+    "aliases": ["Shakarkandi"],
+    "category": "Vegetables",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 76,
+      "macros": { "protein_g": 1.4, "carbs_g": 17.7, "fiber_g": 2.5, "fat_g": 0.1, "sugar_g": 5.7 },
+      "vitamins": { "vit_a_ug": 709, "vit_c_mg": 12.8, "vit_d_ug": 0, "thiamin_b1_mg": 0.08, "riboflavin_b2_mg": 0.05, "niacin_b3_mg": 0.5, "folate_b9_ug": 6, "vit_b12_ug": 0, "vit_e_mg": 0.7, "vit_k_ug": 2.3 },
+      "minerals": { "calcium_mg": 27, "iron_mg": 0.7, "magnesium_mg": 18, "potassium_mg": 230, "sodium_mg": 27, "zinc_mg": 0.3, "phosphorus_mg": 32, "selenium_ug": 0.2 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 168483 (sweet potato, boiled)", "value_seen": "76 kcal, 1.37 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Sweet potato", "value_seen": "vitamin-A rich tuber", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Boiled sweet potato", "value_seen": "~75–80 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  },
+  {
+    "id": "brown-rice-cooked",
+    "name": "Brown rice (cooked)",
+    "aliases": ["Whole grain rice"],
+    "category": "Grains",
+    "dietTypes": ["veg", "vegan"],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 123,
+      "macros": { "protein_g": 2.7, "carbs_g": 25.6, "fiber_g": 1.6, "fat_g": 1, "sugar_g": 0.2 },
+      "vitamins": { "vit_a_ug": 0, "vit_c_mg": 0, "vit_d_ug": 0, "thiamin_b1_mg": 0.1, "riboflavin_b2_mg": 0.02, "niacin_b3_mg": 1.5, "folate_b9_ug": 4, "vit_b12_ug": 0, "vit_e_mg": 0.17, "vit_k_ug": 0.2 },
+      "minerals": { "calcium_mg": 3, "iron_mg": 0.5, "magnesium_mg": 39, "potassium_mg": 86, "sodium_mg": 4, "zinc_mg": 0.6, "phosphorus_mg": 103, "selenium_ug": 5.8 }
+    },
+    "evidences": [
+      { "source": "USDA FoodData Central", "ref": "FDC 169704 (brown rice, cooked)", "value_seen": "123 kcal, 2.74 g protein /100g", "url": "https://fdc.nal.usda.gov/" },
+      { "source": "IFCT 2017 (ICMR-NIN)", "ref": "Rice, brown / parboiled", "value_seen": "higher fiber than milled rice", "url": "https://www.nin.res.in/" },
+      { "source": "Open Food Facts", "ref": "Cooked brown rice", "value_seen": "~120–125 kcal /100g", "url": "https://world.openfoodfacts.org/" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-15" },
+    "source": "default",
+    "editable": true
+  }
+]

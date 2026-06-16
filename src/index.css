@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 140 30% 99%;
+  --foreground: 150 25% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 150 25% 12%;
+  --primary: 142 71% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 140 25% 94%;
+  --secondary-foreground: 150 25% 18%;
+  --muted: 140 20% 95%;
+  --muted-foreground: 150 10% 40%;
+  --accent: 32 95% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 140 15% 88%;
+  --input: 140 15% 88%;
+  --ring: 142 71% 38%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 150 25% 7%;
+  --foreground: 140 15% 92%;
+  --card: 150 22% 10%;
+  --card-foreground: 140 15% 92%;
+  --primary: 142 65% 45%;
+  --primary-foreground: 150 25% 7%;
+  --secondary: 150 15% 16%;
+  --secondary-foreground: 140 15% 92%;
+  --muted: 150 15% 15%;
+  --muted-foreground: 140 10% 60%;
+  --accent: 32 90% 55%;
+  --accent-foreground: 150 25% 7%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 150 12% 20%;
+  --input: 150 12% 22%;
+  --ring: 142 65% 45%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* number input spinners off for cleaner forms */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
