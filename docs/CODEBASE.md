@@ -11,6 +11,8 @@ public/data/                 Seed JSON (validated on load)
   foods.default.json         24 curated foods, full nutrient panel + ≥3 evidences
   recipes.default.json       12 recipes referencing food ids
   rda.icmr-nin-2020.json     Micronutrient RDA by sex + age bracket
+  exercises.default.json     Curated exercises (all regions/muscles) + ≥3 evidences
+  asanas.default.json        Curated asanas (all families) + ≥3 evidences
 
 src/core/                    PURE logic (no React/DOM) — every file has a test
   schema.ts                  Zod schemas + inferred types; NUTRIENT_KEYS/META; MICRO_FALLBACK
@@ -19,8 +21,24 @@ src/core/                    PURE logic (no React/DOM) — every file has a test
   filters.ts                 dietAllows / matchesDiet / isExcluded / applyFilters
   totals.ts                  toVector, vectorToNutrients, nutrientsForQuantity, sums, progress
   recipes.ts                 recipeNutritionPerServing, filterRecipes, recipesForFood
+  fitness.ts                 FitnessProfileSchema + defaultFitnessProfile (movement prefs)
+  backup.ts                  BackupSchema — aggregates ALL persisted slices (export/import)
   test-fixtures.ts           makeFood / makeNutrients helpers for tests
-  *.test.ts                  Vitest specs (incl. data.test.ts integrity checks)
+  activity/                  SHARED movement primitive (used by exercise + yoga)
+    schema.ts                Difficulty, DIFFICULTY_RANK, ActivityLogEntry, BurnsCalories
+    calories.ts              metCalories() — single source of truth for kcal burned
+    summary.ts               entriesForDate, summarizeActivity
+  exercise/                  PURE exercise domain
+    schema.ts                Exercise, MuscleGroup, BodyRegion, Equipment, WorkoutRoutine…
+    filters.ts               difficulty/equipment/limitation filters + applyExerciseFilters
+    routine-engine.ts        generateRoutine(fitness, exercises) — deterministic split
+    volume.ts                dayVolume + dayEstimatedKcal
+  yoga/                      PURE yoga domain
+    schema.ts                Asana, AsanaFamily, YogaFocus, Sequence, SequencePose
+    filters.ts               level/contraindication filters + applyAsanaFilters
+    sequence-engine.ts       generateSequence(fitness, asanas) — safe-ordered flow
+    duration.ts              sequenceTotals + sequenceEstimatedKcal
+  *.test.ts                  Vitest specs (incl. data.test.ts integrity checks per domain)
 
 src/store/
   useAppStore.ts             Zustand store + persistence + export/import;
@@ -46,11 +64,21 @@ src/features/
   recipes/Recipes.tsx        Recipe grid + ?food= filter
   recipes/RecipeDetail.tsx   Ingredients, method, per-serving nutrition, add-to-plan
   recipes/RecipeEditor.tsx   Create/edit custom recipes
+  exercise/ExerciseLibrary.tsx Searchable/filterable exercise grid
+  exercise/ExerciseEditor.tsx  View / edit / add an exercise (override or custom)
+  exercise/WorkoutPlan.tsx     Generate + view routine, log a session
+  yoga/AsanaLibrary.tsx      Searchable/filterable asana grid
+  yoga/AsanaEditor.tsx       View / edit / add an asana (override or custom)
+  yoga/SequenceBuilder.tsx   Generate + view a flow, log a practice
   data/DataPage.tsx          Export / import / reset
   shared/useTargets.ts       Memoised computeTargets() hook
+  shared/useActivity.ts      Memoised today's-activity summary/entries hooks
   shared/Ring.tsx            SVG circular progress
   shared/NutrientTable.tsx   Grouped value/target/% table with bars
   shared/NutrientCoverage.tsx Recharts micronutrient bar chart
+  shared/ActivitySummary.tsx Burned-vs-intake card (dashboard + logs)
+  shared/ActivityHistory.tsx Today's logged sessions (per kind) with delete
+  shared/FitnessForm.tsx     Reusable FitnessProfile editor (onboarding + plans)
 
 src/App.tsx                  Routes + data init + theme application
 src/main.tsx                 React root + BrowserRouter
@@ -62,12 +90,18 @@ src/main.tsx                 React root + BrowserRouter
 |---|---|
 | Add/edit a default food | `public/data/foods.default.json` (≥3 evidences; `data.test.ts` enforces) |
 | Add a default recipe | `public/data/recipes.default.json` (ingredient `foodId`s must exist) |
+| Add/edit a default exercise | `public/data/exercises.default.json` (≥3 evidences; `exercise/data.test.ts`) |
+| Add/edit a default asana | `public/data/asanas.default.json` (≥3 evidences; `yoga/data.test.ts`) |
 | Change a nutrient formula (BMR/TDEE/macros) | `src/core/nutrition-engine.ts` (+ its test) |
 | Change RDA values | `public/data/rda.icmr-nin-2020.json` |
 | Add a new nutrient | `src/core/schema.ts` (`*_KEYS`, `NUTRIENT_META`, `MICRO_FALLBACK`) — flows everywhere |
+| Add a muscle group / asana family | `src/core/exercise/schema.ts` `MUSCLE_GROUPS` / `src/core/yoga/schema.ts` `ASANA_FAMILIES` (+ labels in `lib/activity.ts`) |
 | Change diet/exclusion rules | `src/core/filters.ts` (single source of truth) |
 | Change auto-generate logic | `src/core/planner.ts` `autoGeneratePlan` |
-| Add a persisted field | `src/store/useAppStore.ts` (state, partialize, backup) + `schema.ts` `BackupSchema` |
+| Change routine generation | `src/core/exercise/routine-engine.ts` `generateRoutine` |
+| Change yoga sequencing | `src/core/yoga/sequence-engine.ts` `generateSequence` |
+| Change calories-burned math | `src/core/activity/calories.ts` `metCalories` (single source) |
+| Add a persisted field | `src/store/useAppStore.ts` (state, partialize, export/import, resetUserData) + `src/core/backup.ts` `BackupSchema` |
 | Add a page/route | `src/App.tsx` + `src/components/Layout.tsx` (nav) + `src/features/<name>/` |
 | Tweak a UI primitive | `src/components/ui.tsx` |
 | Adjust theme colors | `src/index.css` (CSS variables) + `tailwind.config.js` |

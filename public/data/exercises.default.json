@@ -1,0 +1,600 @@
+[
+  {
+    "id": "pushup",
+    "name": "Push-up",
+    "aliases": ["press-up"],
+    "primaryMuscles": ["chest"],
+    "secondaryMuscles": ["triceps", "shoulders", "core"],
+    "region": "upper",
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "metValue": 3.8,
+    "instructions": [
+      "Start in a high plank with hands slightly wider than shoulders.",
+      "Lower your chest toward the floor, keeping elbows ~45° from the torso.",
+      "Press back up to full elbow extension without letting the hips sag."
+    ],
+    "cues": ["Brace the core", "Keep a straight line head-to-heels"],
+    "defaultSets": 3,
+    "defaultReps": 12,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 calisthenics, light-moderate", "value_seen": "MET 3.8" },
+      { "source": "ExRx.net", "ref": "Push-up exercise directory", "url": "https://exrx.net/WeightExercises/PectoralSternal/BWPushup" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., bodyweight pressing" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "aliases": ["bench press"],
+    "primaryMuscles": ["chest"],
+    "secondaryMuscles": ["triceps", "shoulders"],
+    "region": "upper",
+    "equipment": ["barbell"],
+    "difficulty": "intermediate",
+    "metValue": 5.0,
+    "instructions": [
+      "Lie on a flat bench, grip the bar slightly wider than shoulder width.",
+      "Lower the bar to mid-chest with control.",
+      "Press back up until the arms are extended."
+    ],
+    "cues": ["Retract the shoulder blades", "Keep wrists stacked over elbows"],
+    "defaultSets": 4,
+    "defaultReps": 8,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous", "value_seen": "MET 5.0" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., resistance training" },
+      { "source": "ExRx.net", "ref": "Barbell Bench Press", "url": "https://exrx.net/WeightExercises/PectoralSternal/BBBenchPress" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "dumbbell-bench-press",
+    "name": "Dumbbell Bench Press",
+    "aliases": [],
+    "primaryMuscles": ["chest"],
+    "secondaryMuscles": ["triceps", "shoulders"],
+    "region": "upper",
+    "equipment": ["dumbbell"],
+    "difficulty": "intermediate",
+    "metValue": 5.0,
+    "instructions": [
+      "Lie on a flat bench holding a dumbbell in each hand at chest level.",
+      "Press the dumbbells up until the arms are extended.",
+      "Lower under control to the starting position."
+    ],
+    "cues": ["Keep the dumbbells over the elbows"],
+    "defaultSets": 3,
+    "defaultReps": 10,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous", "value_seen": "MET 5.0" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., free-weight pressing" },
+      { "source": "ExRx.net", "ref": "Dumbbell Bench Press", "url": "https://exrx.net/WeightExercises/PectoralSternal/DBBenchPress" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "pull-up",
+    "name": "Pull-up",
+    "aliases": ["chin-up"],
+    "primaryMuscles": ["back"],
+    "secondaryMuscles": ["biceps", "forearms"],
+    "region": "upper",
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "metValue": 8.0,
+    "instructions": [
+      "Hang from a bar with an overhand grip, arms fully extended.",
+      "Pull your chest toward the bar by driving the elbows down.",
+      "Lower under control to a full hang."
+    ],
+    "cues": ["Initiate from the lats", "Avoid swinging"],
+    "defaultSets": 3,
+    "defaultReps": 8,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02052 calisthenics, vigorous (pull-ups)", "value_seen": "MET 8.0" },
+      { "source": "ExRx.net", "ref": "Pull-up directory", "url": "https://exrx.net/WeightExercises/LatissimusDorsi/BWPullup" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., calisthenics" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "bent-over-row",
+    "name": "Barbell Bent-over Row",
+    "aliases": ["barbell row"],
+    "primaryMuscles": ["back"],
+    "secondaryMuscles": ["biceps", "forearms"],
+    "region": "upper",
+    "equipment": ["barbell"],
+    "difficulty": "intermediate",
+    "metValue": 5.0,
+    "instructions": [
+      "Hinge at the hips with a flat back, holding the bar with an overhand grip.",
+      "Row the bar toward your lower ribs.",
+      "Lower under control to arm's length."
+    ],
+    "cues": ["Keep the back neutral", "Squeeze the shoulder blades"],
+    "defaultSets": 4,
+    "defaultReps": 8,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous", "value_seen": "MET 5.0" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., pulling movements" },
+      { "source": "ExRx.net", "ref": "Bent-over Row", "url": "https://exrx.net/WeightExercises/BackGeneral/BBBentOverRow" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Lat Pulldown",
+    "aliases": [],
+    "primaryMuscles": ["back"],
+    "secondaryMuscles": ["biceps"],
+    "region": "upper",
+    "equipment": ["machine"],
+    "difficulty": "beginner",
+    "metValue": 5.0,
+    "instructions": [
+      "Sit at the machine and grip the bar wider than shoulder width.",
+      "Pull the bar to your upper chest, driving the elbows down.",
+      "Return under control to full stretch."
+    ],
+    "cues": ["Lead with the elbows", "Avoid leaning back excessively"],
+    "defaultSets": 3,
+    "defaultReps": 12,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training", "value_seen": "MET 5.0" },
+      { "source": "ExRx.net", "ref": "Cable Lat Pulldown", "url": "https://exrx.net/WeightExercises/LatissimusDorsi/CBLatPulldown" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., machine resistance training" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "overhead-press",
+    "name": "Barbell Overhead Press",
+    "aliases": ["shoulder press", "military press"],
+    "primaryMuscles": ["shoulders"],
+    "secondaryMuscles": ["triceps", "core"],
+    "region": "upper",
+    "equipment": ["barbell"],
+    "difficulty": "intermediate",
+    "metValue": 5.0,
+    "instructions": [
+      "Hold the bar at shoulder height with hands just outside the shoulders.",
+      "Press the bar overhead until the arms lock out.",
+      "Lower under control to the shoulders."
+    ],
+    "cues": ["Brace the core", "Keep the bar path vertical"],
+    "defaultSets": 4,
+    "defaultReps": 8,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous", "value_seen": "MET 5.0" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., overhead pressing" },
+      { "source": "ExRx.net", "ref": "Barbell Shoulder Press", "url": "https://exrx.net/WeightExercises/DeltoidAnterior/BBMilitaryPress" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Dumbbell Lateral Raise",
+    "aliases": ["side raise"],
+    "primaryMuscles": ["shoulders"],
+    "secondaryMuscles": [],
+    "region": "upper",
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "metValue": 3.5,
+    "instructions": [
+      "Stand holding a dumbbell in each hand at your sides.",
+      "Raise the arms out to the sides to shoulder height.",
+      "Lower under control."
+    ],
+    "cues": ["Lead with the elbows", "Avoid shrugging"],
+    "defaultSets": 3,
+    "defaultReps": 15,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 resistance training, light-moderate", "value_seen": "MET 3.5" },
+      { "source": "ExRx.net", "ref": "Dumbbell Lateral Raise", "url": "https://exrx.net/WeightExercises/DeltoidLateral/DBLateralRaise" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., isolation movements" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "dumbbell-curl",
+    "name": "Dumbbell Biceps Curl",
+    "aliases": ["biceps curl"],
+    "primaryMuscles": ["biceps"],
+    "secondaryMuscles": ["forearms"],
+    "region": "upper",
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "metValue": 3.5,
+    "instructions": [
+      "Stand holding a dumbbell in each hand, palms forward.",
+      "Curl the weights toward the shoulders.",
+      "Lower under control to full extension."
+    ],
+    "cues": ["Keep the elbows pinned", "Avoid swinging"],
+    "defaultSets": 3,
+    "defaultReps": 12,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 resistance training, light-moderate", "value_seen": "MET 3.5" },
+      { "source": "ExRx.net", "ref": "Dumbbell Biceps Curl", "url": "https://exrx.net/WeightExercises/Biceps/DBCurl" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., arm isolation" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "triceps-dip",
+    "name": "Triceps Dip",
+    "aliases": ["bench dip", "parallel bar dip"],
+    "primaryMuscles": ["triceps"],
+    "secondaryMuscles": ["chest", "shoulders"],
+    "region": "upper",
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "metValue": 5.0,
+    "instructions": [
+      "Support yourself on parallel bars or a bench with arms extended.",
+      "Lower the body by bending the elbows to about 90°.",
+      "Press back up to lockout."
+    ],
+    "cues": ["Keep the elbows tracking back", "Control the descent"],
+    "defaultSets": 3,
+    "defaultReps": 10,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02052 calisthenics, vigorous", "value_seen": "MET 5.0" },
+      { "source": "ExRx.net", "ref": "Triceps Dip", "url": "https://exrx.net/WeightExercises/Triceps/BWTricepsDip" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., calisthenics" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "triceps-pushdown",
+    "name": "Triceps Pushdown",
+    "aliases": ["cable pushdown"],
+    "primaryMuscles": ["triceps"],
+    "secondaryMuscles": [],
+    "region": "upper",
+    "equipment": ["bands", "machine"],
+    "difficulty": "beginner",
+    "metValue": 3.5,
+    "instructions": [
+      "Stand facing a cable/band attachment, elbows tucked.",
+      "Extend the elbows to push the handle down.",
+      "Return under control."
+    ],
+    "cues": ["Keep the elbows still", "Full extension at the bottom"],
+    "defaultSets": 3,
+    "defaultReps": 15,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 resistance training, light-moderate", "value_seen": "MET 3.5" },
+      { "source": "ExRx.net", "ref": "Cable Pushdown", "url": "https://exrx.net/WeightExercises/Triceps/CBPushdown" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., cable isolation" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "wrist-curl",
+    "name": "Dumbbell Wrist Curl",
+    "aliases": ["forearm curl"],
+    "primaryMuscles": ["forearms"],
+    "secondaryMuscles": [],
+    "region": "upper",
+    "equipment": ["dumbbell"],
+    "difficulty": "beginner",
+    "metValue": 3.0,
+    "instructions": [
+      "Rest your forearms on your thighs, palms up, holding dumbbells.",
+      "Curl the weights up by flexing the wrists.",
+      "Lower under control."
+    ],
+    "cues": ["Move only at the wrist"],
+    "defaultSets": 3,
+    "defaultReps": 15,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 resistance training, light-moderate", "value_seen": "MET 3.0" },
+      { "source": "ExRx.net", "ref": "Dumbbell Wrist Curl", "url": "https://exrx.net/WeightExercises/WristFlexors/DBWristCurl" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., forearm training" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "aliases": ["front hold"],
+    "primaryMuscles": ["core"],
+    "secondaryMuscles": ["shoulders"],
+    "region": "core",
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "metValue": 3.8,
+    "instructions": [
+      "Rest on your forearms and toes with a straight body line.",
+      "Brace the abdominals and glutes.",
+      "Hold the position without letting the hips sag or pike."
+    ],
+    "cues": ["Squeeze the glutes", "Breathe steadily"],
+    "defaultSets": 3,
+    "defaultReps": 1,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 calisthenics, light-moderate", "value_seen": "MET 3.8" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., core training" },
+      { "source": "ExRx.net", "ref": "Plank", "url": "https://exrx.net/WeightExercises/RectusAbdominis/BWFrontPlank" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "hanging-leg-raise",
+    "name": "Hanging Leg Raise",
+    "aliases": [],
+    "primaryMuscles": ["core"],
+    "secondaryMuscles": ["forearms"],
+    "region": "core",
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "metValue": 4.0,
+    "instructions": [
+      "Hang from a bar with arms extended.",
+      "Raise the legs toward horizontal by flexing the hips and abs.",
+      "Lower under control without swinging."
+    ],
+    "cues": ["Avoid momentum", "Curl the pelvis up"],
+    "defaultSets": 3,
+    "defaultReps": 12,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02052 calisthenics, vigorous", "value_seen": "MET 4.0" },
+      { "source": "ExRx.net", "ref": "Hanging Leg-Hip Raise", "url": "https://exrx.net/WeightExercises/HipFlexors/BWHangingLegRaise" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., core training" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "back-squat",
+    "name": "Barbell Back Squat",
+    "aliases": ["squat"],
+    "primaryMuscles": ["quads"],
+    "secondaryMuscles": ["glutes", "hamstrings", "core"],
+    "region": "lower",
+    "equipment": ["barbell"],
+    "difficulty": "intermediate",
+    "metValue": 5.0,
+    "instructions": [
+      "Rest the bar on your upper back, feet shoulder-width apart.",
+      "Squat down by bending the hips and knees until thighs are at least parallel.",
+      "Drive through the floor to stand back up."
+    ],
+    "cues": ["Keep the chest up", "Knees track over the toes"],
+    "defaultSets": 4,
+    "defaultReps": 8,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous (squats)", "value_seen": "MET 5.0" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., squat technique" },
+      { "source": "ExRx.net", "ref": "Barbell Squat", "url": "https://exrx.net/WeightExercises/Quadriceps/BBSquat" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "bodyweight-squat",
+    "name": "Bodyweight Squat",
+    "aliases": ["air squat"],
+    "primaryMuscles": ["quads"],
+    "secondaryMuscles": ["glutes"],
+    "region": "lower",
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "metValue": 5.0,
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Squat down until the thighs are at least parallel to the floor.",
+      "Stand back up, squeezing the glutes at the top."
+    ],
+    "cues": ["Sit the hips back", "Keep the heels down"],
+    "defaultSets": 3,
+    "defaultReps": 20,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02052 calisthenics, vigorous", "value_seen": "MET 5.0" },
+      { "source": "ExRx.net", "ref": "Bodyweight Squat", "url": "https://exrx.net/WeightExercises/Quadriceps/BWSquat" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., calisthenics" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Romanian Deadlift",
+    "aliases": ["RDL"],
+    "primaryMuscles": ["hamstrings"],
+    "secondaryMuscles": ["glutes", "back"],
+    "region": "lower",
+    "equipment": ["barbell"],
+    "difficulty": "intermediate",
+    "metValue": 6.0,
+    "instructions": [
+      "Hold the bar at hip height with a flat back.",
+      "Hinge at the hips, sliding the bar down the thighs until a hamstring stretch.",
+      "Drive the hips forward to stand tall."
+    ],
+    "cues": ["Soft knees", "Keep the bar close to the legs"],
+    "defaultSets": 4,
+    "defaultReps": 8,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous (deadlift)", "value_seen": "MET 6.0" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., hip-hinge movements" },
+      { "source": "ExRx.net", "ref": "Romanian Deadlift", "url": "https://exrx.net/WeightExercises/Hamstrings/BBStiffLegDeadlift" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Barbell Hip Thrust",
+    "aliases": [],
+    "primaryMuscles": ["glutes"],
+    "secondaryMuscles": ["hamstrings"],
+    "region": "lower",
+    "equipment": ["barbell"],
+    "difficulty": "beginner",
+    "metValue": 5.0,
+    "instructions": [
+      "Sit with your upper back against a bench, bar across the hips.",
+      "Drive through the heels to lift the hips to full extension.",
+      "Lower under control."
+    ],
+    "cues": ["Squeeze the glutes at the top", "Keep the chin tucked"],
+    "defaultSets": 3,
+    "defaultReps": 12,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02050 resistance training, vigorous", "value_seen": "MET 5.0" },
+      { "source": "Contreras et al., Strength & Conditioning Journal (2011)", "ref": "Barbell Hip Thrust EMG" },
+      { "source": "ExRx.net", "ref": "Barbell Hip Thrust", "url": "https://exrx.net/WeightExercises/GluteusMaximus/BBHipThrust" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "standing-calf-raise",
+    "name": "Standing Calf Raise",
+    "aliases": [],
+    "primaryMuscles": ["calves"],
+    "secondaryMuscles": [],
+    "region": "lower",
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "metValue": 3.5,
+    "instructions": [
+      "Stand tall, optionally with the balls of the feet on a step.",
+      "Rise onto the toes as high as possible.",
+      "Lower the heels under control below the step."
+    ],
+    "cues": ["Pause at the top", "Full range of motion"],
+    "defaultSets": 3,
+    "defaultReps": 20,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02054 resistance training, light-moderate", "value_seen": "MET 3.5" },
+      { "source": "ExRx.net", "ref": "Standing Calf Raise", "url": "https://exrx.net/WeightExercises/Gastrocnemius/BWStandingCalfRaise" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., lower-leg training" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "burpee",
+    "name": "Burpee",
+    "aliases": [],
+    "primaryMuscles": ["fullBody"],
+    "secondaryMuscles": ["chest", "quads", "core"],
+    "region": "fullBody",
+    "equipment": ["bodyweight"],
+    "difficulty": "intermediate",
+    "metValue": 8.0,
+    "instructions": [
+      "From standing, drop into a squat and place your hands on the floor.",
+      "Kick the feet back to a plank and perform a push-up (optional).",
+      "Jump the feet back in and explode up into a jump."
+    ],
+    "cues": ["Land softly", "Keep a steady rhythm"],
+    "defaultSets": 4,
+    "defaultReps": 12,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02020 vigorous calisthenics (burpees)", "value_seen": "MET 8.0" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., HIIT" },
+      { "source": "ACE (American Council on Exercise)", "ref": "Burpee exercise library" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "kettlebell-swing",
+    "name": "Kettlebell Swing",
+    "aliases": ["two-hand swing"],
+    "primaryMuscles": ["fullBody"],
+    "secondaryMuscles": ["glutes", "hamstrings", "back"],
+    "region": "fullBody",
+    "equipment": ["kettlebell"],
+    "difficulty": "intermediate",
+    "metValue": 9.8,
+    "instructions": [
+      "Stand with a kettlebell on the floor in front of you.",
+      "Hinge at the hips and hike the bell back between the legs.",
+      "Snap the hips forward to swing the bell to chest height, then let it fall back."
+    ],
+    "cues": ["Power from the hips", "Keep the back flat"],
+    "defaultSets": 4,
+    "defaultReps": 15,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02063 vigorous effort", "value_seen": "MET 9.8" },
+      { "source": "ACSM Health & Fitness Journal", "ref": "Kettlebell training physiology" },
+      { "source": "NSCA Essentials of Strength Training and Conditioning", "ref": "3rd ed., ballistic training" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "jumping-jacks",
+    "name": "Jumping Jacks",
+    "aliases": ["star jumps"],
+    "primaryMuscles": ["cardio"],
+    "secondaryMuscles": ["fullBody"],
+    "region": "cardio",
+    "equipment": ["bodyweight"],
+    "difficulty": "beginner",
+    "metValue": 8.0,
+    "instructions": [
+      "Stand with feet together and arms at your sides.",
+      "Jump the feet out while raising the arms overhead.",
+      "Jump back to the start and repeat at a steady pace."
+    ],
+    "cues": ["Stay light on the feet"],
+    "defaultSets": 3,
+    "defaultReps": 30,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02020 calisthenics, vigorous (jumping jacks)", "value_seen": "MET 8.0" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., aerobic calisthenics" },
+      { "source": "ACE (American Council on Exercise)", "ref": "Jumping Jack exercise library" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "treadmill-run",
+    "name": "Treadmill Run",
+    "aliases": ["running"],
+    "primaryMuscles": ["cardio"],
+    "secondaryMuscles": ["quads", "hamstrings", "calves"],
+    "region": "cardio",
+    "equipment": ["cardioMachine"],
+    "difficulty": "beginner",
+    "metValue": 9.8,
+    "instructions": [
+      "Set a comfortable running pace on the treadmill.",
+      "Maintain an upright posture with a relaxed arm swing.",
+      "Run for the prescribed duration, then cool down by walking."
+    ],
+    "cues": ["Land midfoot", "Breathe rhythmically"],
+    "defaultSets": 1,
+    "defaultReps": 1,
+    "evidences": [
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 12050 running 6 mph (10 min/mile)", "value_seen": "MET 9.8" },
+      { "source": "ACSM Guidelines for Exercise Testing and Prescription", "ref": "10th ed., aerobic exercise prescription" },
+      { "source": "ACSM Metabolic Equations", "ref": "running VO2 estimation" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  }
+]

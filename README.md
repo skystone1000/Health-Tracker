@@ -19,6 +19,17 @@ your browser, with no backend.
   your own foods.
 - **Recipes** — cooking options for each food, nutrition computed per serving,
   one-click "add to today's plan", plus your own custom recipes.
+- **Exercise** — a library of exercises across every region (upper, lower, core,
+  cardio, full-body) and muscle group, a **routine generated from your profile**
+  (equipment, experience, goal, split), session logging, and MET-based calorie
+  estimates. Fully editable; add your own.
+- **Yoga** — a separate library of asanas spanning every family (standing,
+  seated, forward bends, backbends, twists, balance, inversions, arm balances,
+  restorative, pranayama, meditation), a **sequence generated for your goal &
+  level** (safely ordered from breath to rest, respecting contraindications),
+  and practice logging.
+- **Activity vs intake** — calories burned are estimated and shown **beside**
+  your food intake on the dashboard (targets are left unchanged in v1).
 - **Diet filters** — Veg / Non-veg / Vegan + exclusions, applied consistently
   across foods, recipes and the auto-planner.
 - **Local JSON storage** with full **export / import** backup. Light/dark mode,
@@ -79,12 +90,13 @@ docs + tests in sync with code).
 ## Project layout
 
 ```
-public/data/    foods.default.json · recipes.default.json · rda.icmr-nin-2020.json
+public/data/    foods · recipes · rda · exercises · asanas (default JSON)
 src/core/       pure, tested engine: schema · nutrition-engine · planner · filters · totals · recipes
+                · fitness · backup · activity/ · exercise/ · yoga/
 src/store/      Zustand store + localStorage persistence + export/import
-src/features/   onboarding · dashboard · planner · foods · recipes · data
+src/features/   onboarding · dashboard · planner · foods · recipes · exercise · yoga · data
 src/components/ ui primitives + layout
-docs/           ARCHITECTURE · CODEBASE · FEATURES (+ the original plan)
+docs/           ARCHITECTURE · CODEBASE · FEATURES (+ the plans)
 ```
 
 ## Data & sources

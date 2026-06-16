@@ -7,6 +7,10 @@ import { Onboarding } from "@/features/onboarding/Onboarding";
 import { FoodDatabase } from "@/features/foods/FoodDatabase";
 import { Recipes } from "@/features/recipes/Recipes";
 import { Planner } from "@/features/planner/Planner";
+import { ExerciseLibrary } from "@/features/exercise/ExerciseLibrary";
+import { WorkoutPlan } from "@/features/exercise/WorkoutPlan";
+import { AsanaLibrary } from "@/features/yoga/AsanaLibrary";
+import { SequenceBuilder } from "@/features/yoga/SequenceBuilder";
 import { DataPage } from "@/features/data/DataPage";
 
 function LoadingScreen({ message }: { message: string }) {
@@ -46,6 +50,10 @@ export default function App() {
         <Route path="/planner" element={<Planner />} />
         <Route path="/foods" element={<FoodDatabase />} />
         <Route path="/recipes" element={<Recipes />} />
+        <Route path="/exercise" element={<ExerciseLibrary />} />
+        <Route path="/exercise/plan" element={<WorkoutPlan />} />
+        <Route path="/yoga" element={<AsanaLibrary />} />
+        <Route path="/yoga/sequence" element={<SequenceBuilder />} />
         <Route path="/data" element={<DataPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

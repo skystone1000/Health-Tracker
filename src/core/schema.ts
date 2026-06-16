@@ -257,14 +257,5 @@ export const RdaTableSchema = z.object({
 });
 export type RdaTable = z.infer<typeof RdaTableSchema>;
 
-/** Full backup payload for JSON export/import. */
-export const BackupSchema = z.object({
-  version: z.literal(1),
-  exportedAt: z.string(),
-  profile: UserProfileSchema.nullable(),
-  customFoods: z.array(FoodItemSchema).default([]),
-  foodOverrides: z.record(z.string(), FoodItemSchema).default({}),
-  customRecipes: z.array(RecipeSchema).default([]),
-  plans: z.array(PlanSchema).default([]),
-});
-export type Backup = z.infer<typeof BackupSchema>;
+// The full backup payload (export/import) lives in `core/backup.ts`, which
+// aggregates persisted slices from every domain (nutrition + movement).

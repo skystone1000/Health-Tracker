@@ -435,3 +435,26 @@ Each phase ends with `npm run typecheck && npm test && npm run build` green
 - The dashboard depends on **one narrow selector** (`selectTodayActivity`), not
   on exercise/yoga modules — so the calorie integration can deepen later with a
   one-line change, no rewrites.
+
+---
+
+## 13. Implementation notes (as built)
+
+Two intentional deviations from the design above, both for cleaner decoupling:
+
+1. **`FitnessProfile` is a separate persisted field, not embedded in
+   `UserProfile`.** Embedding it would force `core/schema.ts` to import
+   exercise-domain enums (Equipment, Split), creating an import cycle and coupling
+   the diet engine to movement concepts. It now lives in `core/fitness.ts` and is
+   persisted as its own store slice. Onboarding's optional step 4 sets it.
+2. **`BackupSchema` moved from `core/schema.ts` to `core/backup.ts`.** The backup
+   must validate exercise/yoga/activity types, whose schemas already import
+   `Evidence` from `core/schema.ts`; a single aggregator module breaks the cycle
+   and keeps "backup aggregation" as its own responsibility. The store imports it
+   from `@/core/backup`.
+3. **MET values live on each item** (`exercise.metValue`, `asana.metValue`) rather
+   than a separate `met.reference.json`, so there is no unused lookup file to keep
+   in sync — the calorie engine reads the value directly off the activity.
+
+Today's logging uses a single flat `activityLog` (exercise + yoga); a richer
+multi-day history UI remains roadmap, as planned.

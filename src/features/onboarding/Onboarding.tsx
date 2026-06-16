@@ -24,17 +24,29 @@ import {
   WORK_TO_ACTIVITY,
   defaultProfile,
 } from "@/lib/profile";
+import { defaultFitnessProfile, type FitnessProfile } from "@/core/fitness";
+import { FitnessForm } from "@/features/shared/FitnessForm";
 import { useAppStore } from "@/store/useAppStore";
 
-const STEPS = ["About you", "Activity & goal", "Diet preferences"];
+const STEPS = [
+  "About you",
+  "Activity & goal",
+  "Diet preferences",
+  "Fitness (optional)",
+];
 
 export function Onboarding() {
   const existing = useAppStore((s) => s.profile);
   const setProfile = useAppStore((s) => s.setProfile);
+  const existingFitness = useAppStore((s) => s.fitness);
+  const setFitness = useAppStore((s) => s.setFitness);
   const navigate = useNavigate();
 
   const [step, setStep] = useState(0);
   const [draft, setDraft] = useState<UserProfile>(existing ?? defaultProfile());
+  const [fitnessDraft, setFitnessDraft] = useState<FitnessProfile>(
+    existingFitness ?? defaultFitnessProfile(),
+  );
   const [exclusionInput, setExclusionInput] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -55,6 +67,7 @@ export function Onboarding() {
       return;
     }
     setProfile(parsed.data);
+    setFitness(fitnessDraft);
     navigate("/");
   };
 
@@ -249,6 +262,17 @@ export function Onboarding() {
                   </div>
                 )}
               </Field>
+            </>
+          )}
+
+          {step === 3 && (
+            <>
+              <p className="text-sm text-muted-foreground">
+                Optional — set this up to get a personalised workout plan and yoga
+                sequence. You can change it any time. Skip to finish with
+                sensible defaults.
+              </p>
+              <FitnessForm value={fitnessDraft} onChange={setFitnessDraft} />
             </>
           )}
 

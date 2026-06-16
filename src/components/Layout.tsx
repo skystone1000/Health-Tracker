@@ -8,6 +8,8 @@ const NAV = [
   { to: "/planner", label: "Planner", icon: "☰" },
   { to: "/foods", label: "Food Database", icon: "🍃" },
   { to: "/recipes", label: "Recipes", icon: "🍲" },
+  { to: "/exercise", label: "Exercise", icon: "🏋" },
+  { to: "/yoga", label: "Yoga", icon: "🧘" },
   { to: "/data", label: "Data & Backup", icon: "⤓" },
 ];
 

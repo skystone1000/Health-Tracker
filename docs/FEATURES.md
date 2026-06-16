@@ -5,9 +5,12 @@ What the app does for the user, and where each feature lives in code. Pair with
 
 ## 1. Onboarding & personalized targets
 
-A 3-step wizard collects age, sex, height, weight, work type, activity level,
-goal, diet type and exclusions → `UserProfile`.
-Code: `features/onboarding/Onboarding.tsx`, `core/nutrition-engine.ts`.
+A 4-step wizard collects age, sex, height, weight, work type, activity level,
+goal, diet type and exclusions → `UserProfile`. An **optional 4th step**
+("Fitness") captures a `FitnessProfile` (experience, days/week, equipment, goal,
+split, yoga goal/level, injuries) used by the Exercise and Yoga features.
+Code: `features/onboarding/Onboarding.tsx`, `features/shared/FitnessForm.tsx`,
+`core/nutrition-engine.ts`, `core/fitness.ts`.
 
 **Formulas (`nutrition-engine.ts`):**
 - **BMR** — Mifflin-St Jeor: male `10·kg + 6.25·cm − 5·age + 5`; female `… − 161`.
@@ -21,11 +24,13 @@ Code: `features/onboarding/Onboarding.tsx`, `core/nutrition-engine.ts`.
 
 ## 2. Dashboard
 
-Shows BMR/TDEE/calorie/protein stats, macro **rings** (today vs target) and a
-**micronutrient coverage** bar chart. If today has a saved plan, rings/chart
-reflect it; otherwise they show zero against targets.
+Shows BMR/TDEE/calorie/protein stats, macro **rings** (today vs target), an
+**Activity today** card (calories burned, active time and net vs intake — see
+§10) and a **micronutrient coverage** bar chart. If today has a saved plan,
+rings/chart reflect it; otherwise they show zero against targets.
 Code: `features/dashboard/Dashboard.tsx`, `shared/Ring.tsx`,
-`shared/NutrientCoverage.tsx`, `shared/useTargets.ts`.
+`shared/NutrientCoverage.tsx`, `shared/useTargets.ts`,
+`shared/ActivitySummary.tsx`, `shared/useActivity.ts`.
 
 ## 3. Layered planner (3 modes)
 
@@ -97,8 +102,58 @@ Light/dark mode (CSS variables in `index.css`, `dark` class toggled in
 `App.tsx`); responsive sidebar→topbar layout. Mobile-app readiness comes from the
 DOM-free `core/`.
 
+## 10. Exercise (separate from Yoga)
+
+A library of exercises covering **every body region** (upper, lower, core, cardio,
+full-body) and muscle group, each with a MET value, target muscles, equipment,
+difficulty, instructions and **≥3 evidences** (Verified ✓ badge).
+
+- **Library** — search + filter by muscle, region or equipment.
+- **Add / edit** — create custom exercises or edit a default (stored as an
+  override; defaults stay pristine), mirroring the food editor.
+- **Workout plan** — "Generate" builds a **deterministic routine** from the
+  `FitnessProfile`: a split (`fullBody` / `upperLower` / `pushPullLegs`) sized to
+  days-per-week, filtered to available equipment and difficulty, respecting
+  injuries; sets/reps preset by goal.
+- **Logging** — log a completed day; calories burned are estimated via the shared
+  MET engine and added to today's `activityLog`.
+
+Code: `features/exercise/{ExerciseLibrary,ExerciseEditor,WorkoutPlan}.tsx`,
+`core/exercise/{schema,filters,routine-engine,volume}.ts`,
+`core/activity/calories.ts`. Seed: `public/data/exercises.default.json`.
+
+## 11. Yoga (separate from Exercise)
+
+A distinct library of asanas spanning **every family** (standing, seated, forward
+bends, backbends, twists, balance, inversions, arm balances, restorative,
+pranayama, meditation), each with Sanskrit + English names, focus tags, steps,
+benefits, **contraindications** and ≥3 evidences.
+
+- **Library** — search + filter by family, focus or level.
+- **Add / edit** — custom asanas or overrides of defaults.
+- **Sequence builder** — "Generate" builds a **deterministic flow** for the
+  user's yoga goal & level, safely ordered (breath → standing → balance → peak →
+  seated → meditation → rest) and skipping asanas whose contraindications match
+  the user's injuries.
+- **Logging** — log a practice; calories estimated per pose via the shared MET
+  engine.
+
+Code: `features/yoga/{AsanaLibrary,AsanaEditor,SequenceBuilder}.tsx`,
+`core/yoga/{schema,filters,sequence-engine,duration}.ts`,
+`core/activity/calories.ts`. Seed: `public/data/asanas.default.json`.
+
+## 12. Activity vs intake (calories burned)
+
+Exercise and yoga logs feed a single `activityLog`. The dashboard's **Activity
+today** card shows calories burned, active minutes and the net (food − burn)
+**beside** intake. In v1 this is informational only — nutrition targets are
+**not** adjusted (a clean hook in `core/activity/calories.ts` +
+`summarizeForDate` leaves "eat-back calories" easy to enable later).
+Code: `core/activity/{calories,summary}.ts`, `features/shared/ActivitySummary.tsx`,
+`features/shared/ActivityHistory.tsx`.
+
 ## Not yet built (roadmap)
 
-Multi-day plan history UI, accounts/cloud sync, barcode scan, the `tools/ingest/`
-build-time data pipeline to grow the food DB toward the planned 80–120 items, and
-the React Native mobile client.
+Activity feeding nutrition targets ("eat-back" calories), multi-day plan & workout
+history UI, accounts/cloud sync, barcode scan, the `tools/ingest/` build-time data
+pipeline to grow the databases, and the React Native mobile client.

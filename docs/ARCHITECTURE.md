@@ -17,23 +17,24 @@ startup. There is **no backend** and **no runtime third-party API calls**.
 
 ```
 ┌──────────────────────── React UI (src/features/, src/components/) ─────────┐
-│  onboarding · dashboard · planner · foods · recipes · data                 │
+│  onboarding · dashboard · planner · foods · recipes · exercise · yoga · data│
 │  Reads/writes the store; renders pure-core outputs. No business logic here.│
 └───────────────┬────────────────────────────────────────────────────────────┘
                 │ selectors + actions
 ┌───────────────▼──────────────── Zustand store (src/store/) ────────────────┐
-│  reference data (defaultFoods, defaultRecipes, rda) — loaded, not persisted │
-│  user data (profile, customFoods, foodOverrides, customRecipes, plans)      │
-│  persisted to localStorage; export/import as a Zod-validated Backup         │
+│  reference data (defaultFoods/Recipes/Exercises/Asanas, rda) — not persisted│
+│  user data (profile, custom*/overrides, plans, fitness, routines,           │
+│  sequences, activityLog) → localStorage; export/import as a Zod Backup      │
 └───────────────┬────────────────────────────────────────────────────────────┘
                 │ calls pure functions
-┌───────────────▼──────────────── Nutrition core (src/core/) ────────────────┐
-│  schema (Zod types) · nutrition-engine · planner · filters · totals · recipes│
+┌───────────────▼──────────────── Pure core (src/core/) ─────────────────────┐
+│  nutrition: schema · nutrition-engine · planner · filters · totals · recipes│
+│  movement:  activity/ (shared MET engine) · exercise/ · yoga/ · fitness     │
 │  Pure, deterministic, unit-tested. No React, no DOM, no fetch.              │
 └───────────────┬────────────────────────────────────────────────────────────┘
                 │ reads
 ┌───────────────▼──────────────── Seed data (public/data/) ──────────────────┐
-│  foods.default.json · recipes.default.json · rda.icmr-nin-2020.json         │
+│  foods · recipes · rda · exercises · asanas (default JSON)                   │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -58,6 +59,22 @@ nutrition inside a component, add a function to `core/` instead.
 - **Zod everywhere at the boundary** — schemas validate seed JSON on load, food/
   recipe edits before save, and imported backups. The TS types are inferred from
   the same schemas (`z.infer`), so there is one definition per concept.
+- **Exercise and Yoga are two bounded domains** (`core/exercise/`, `core/yoga/`)
+  that never import each other. They share exactly one thing: the MET-based
+  calorie engine in `core/activity/` (`metCalories` — one source of truth for
+  "calories burned"). Difficulty and the activity-log shape also live there.
+  New muscle groups, equipment and asana families are added as **data** (a key
+  list), not code branches (open/closed).
+- **Movement prefs are decoupled from the diet profile** — `FitnessProfile`
+  (`core/fitness.ts`) is a separate persisted field, so the nutrition engine
+  stays unaware of exercise/yoga concepts.
+- **Calories burned are informational in v1** — shown beside intake; nutrition
+  targets are unchanged. The dashboard depends only on one narrow aggregation
+  (`summarizeForDate` over `activityLog`), so "eat-back calories" can later be
+  switched on in one place.
+- **One backup aggregator** — `core/backup.ts` `BackupSchema` composes the
+  persisted slices of every domain (nutrition + movement). It lives apart from
+  `schema.ts` to avoid a cycle (domain schemas import `schema.ts` for `Evidence`).
 
 ## Data flow examples
 
@@ -68,6 +85,13 @@ nutrition inside a component, add a function to `core/` instead.
   internally) → `Plan` → `planTotals` vs targets → UI.
 - **Add recipe to plan:** `addRecipeToPlan(recipe, meal)` scales ingredients to
   one serving and appends to today's `Plan` in the store.
+- **Generate a workout:** `FitnessProfile` → `generateRoutine(fitness, exercises)`
+  (filters by equipment/difficulty/limitations internally) → `WorkoutRoutine` →
+  `saveRoutine`. Logging a day → `dayEstimatedKcal` (via `metCalories`) →
+  `activityLog` → dashboard `Activity today` card.
+- **Generate a yoga flow:** `FitnessProfile` → `generateSequence(fitness, asanas)`
+  (level + contraindication filtered, safely ordered) → `Sequence`; logging →
+  `sequenceEstimatedKcal` → `activityLog`.
 
 ## Tech stack
 
@@ -85,7 +109,12 @@ preview browser tooling.
 ## Constraints to preserve
 
 1. Don't import React/DOM/`fetch` into `src/core/`.
-2. Any new persisted state must be added to the store's `partialize`, the
-   `Backup` schema, `exportBackup`, `importBackup`, and `resetUserData`.
+2. Any new persisted state must be wired in **five** places: the store state +
+   `partialize`, `core/backup.ts` `BackupSchema`, `exportBackup`, `importBackup`,
+   and `resetUserData`. (Currently: profile, custom foods/overrides, recipes,
+   plans, fitness, custom exercises/overrides, custom asanas/overrides, workout
+   routines, yoga sequences, activityLog.)
 3. New nutrients must be added to `NUTRIENT_KEYS`/`NUTRIENT_META` and the grouped
    schemas — they then flow through totals, targets and the editor automatically.
+4. Keep the exercise and yoga domains independent of each other; put anything
+   they both need in `core/activity/` (the shared movement primitive).

@@ -12,6 +12,8 @@ import { emptyVector, planTotals } from "@/core/totals";
 import { Ring } from "@/features/shared/Ring";
 import { NutrientCoverage } from "@/features/shared/NutrientCoverage";
 import { useTargets } from "@/features/shared/useTargets";
+import { useTodayActivity } from "@/features/shared/useActivity";
+import { ActivitySummaryCard } from "@/features/shared/ActivitySummary";
 import { fmt } from "@/lib/format";
 import { selectFoodsById, useAppStore } from "@/store/useAppStore";
 
@@ -22,6 +24,7 @@ export function Dashboard() {
   const plans = useAppStore((s) => s.plans);
   const foodsById = useAppStore(selectFoodsById);
   const breakdown = useTargets();
+  const activity = useTodayActivity();
 
   const todayPlan = plans.find((p) => p.id === `plan-${todayStr()}`);
   const totals = useMemo(
@@ -96,6 +99,13 @@ export function Dashboard() {
           />
         </CardContent>
       </Card>
+
+      {/* Activity (exercise + yoga) — shown beside intake, targets unchanged */}
+      <ActivitySummaryCard
+        summary={activity}
+        consumedKcal={totals.energy_kcal}
+        targetKcal={targets.energy_kcal}
+      />
 
       {/* Micronutrient coverage */}
       <Card>
