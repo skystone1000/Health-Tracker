@@ -10,16 +10,47 @@
     "focus": ["balance", "flexibility"],
     "steps": [
       "Stand with the feet together or hip-width, weight even across both soles.",
-      "Lengthen the spine, roll the shoulders back and down, arms by the sides.",
-      "Breathe steadily and hold, grounding through the feet."
+      "Lengthen the spine, roll the shoulders back and down, and breathe steadily."
     ],
-    "benefits": ["Improves posture", "Builds steadiness and body awareness"],
-    "contraindications": [],
+    "benefits": ["Improves posture and alignment", "Builds steadiness and body awareness"],
+    "cons": ["Looks simple but easy to collapse the posture without attention"],
+    "contraindications": ["low-blood-pressure"],
+    "styles": ["hatha", "iyengar", "vinyasa"],
+    "tags": ["foundational", "posture", "standing"],
+    "counterAsanaIds": [],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Tadasana" },
       { "source": "Yoga Journal pose library", "ref": "Mountain Pose", "url": "https://www.yogajournal.com/poses/mountain-pose/" },
       { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga", "value_seen": "MET 2.5" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "virabhadrasana-i",
+    "sanskritName": "Virabhadrasana I",
+    "englishName": "Warrior I",
+    "aliases": ["warrior 1"],
+    "family": "standing",
+    "difficulty": "beginner",
+    "metValue": 3.0,
+    "focus": ["strength", "balance"],
+    "steps": [
+      "From a lunge, turn the back foot in ~45° and square the hips forward.",
+      "Bend the front knee over the ankle and reach the arms overhead; switch sides."
+    ],
+    "benefits": ["Strengthens legs and opens the chest", "Builds stamina and focus"],
+    "cons": ["Can strain the lower back if the ribs flare"],
+    "contraindications": ["knee-injury", "high-blood-pressure"],
+    "styles": ["hatha", "vinyasa", "ashtanga", "iyengar"],
+    "tags": ["standing", "strength", "heart-opener"],
+    "counterAsanaIds": ["uttanasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Virabhadrasana I" },
+      { "source": "Yoga Journal pose library", "ref": "Warrior I", "url": "https://www.yogajournal.com/poses/warrior-i-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 standing yoga", "value_seen": "MET ~3.0" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -35,16 +66,47 @@
     "focus": ["strength", "balance"],
     "steps": [
       "Step the feet wide, turn the front foot out and bend the front knee over the ankle.",
-      "Extend the arms parallel to the floor, gaze over the front hand.",
-      "Hold with the back leg strong, then switch sides."
+      "Extend the arms parallel to the floor, gaze over the front hand; switch sides."
     ],
     "benefits": ["Strengthens the legs", "Opens the hips and chest"],
+    "cons": ["Front knee can drift inward and stress the joint"],
     "contraindications": ["knee-injury"],
+    "styles": ["hatha", "vinyasa", "ashtanga", "iyengar"],
+    "tags": ["standing", "strength", "hip-opener"],
+    "counterAsanaIds": ["uttanasana"],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Virabhadrasana II" },
       { "source": "Yoga Journal pose library", "ref": "Warrior II", "url": "https://www.yogajournal.com/poses/warrior-ii-pose/" },
-      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power/standing yoga", "value_seen": "MET ~3.0" }
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 standing yoga", "value_seen": "MET ~3.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "utkatasana",
+    "sanskritName": "Utkatasana",
+    "englishName": "Chair Pose",
+    "aliases": ["fierce pose"],
+    "family": "standing",
+    "difficulty": "beginner",
+    "metValue": 3.5,
+    "focus": ["strength"],
+    "steps": [
+      "Stand with feet together, bend the knees and sit the hips back as if into a chair.",
+      "Reach the arms overhead, keeping the chest lifted; hold and breathe."
+    ],
+    "benefits": ["Strengthens thighs, glutes and core", "Builds heat and endurance"],
+    "cons": ["Demanding on the knees and lower back if overheld"],
+    "contraindications": ["knee-injury", "low-blood-pressure"],
+    "styles": ["vinyasa", "power", "ashtanga"],
+    "tags": ["standing", "strength", "energizing"],
+    "counterAsanaIds": ["uttanasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Utkatasana" },
+      { "source": "Yoga Journal pose library", "ref": "Chair Pose", "url": "https://www.yogajournal.com/poses/chair-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power yoga", "value_seen": "MET ~3.5" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -60,11 +122,14 @@
     "focus": ["flexibility", "balance"],
     "steps": [
       "From a wide stance, turn the front foot out and extend the torso over the front leg.",
-      "Rest the front hand on the shin or floor and reach the top arm up.",
-      "Hold with a long spine, then switch sides."
+      "Rest the front hand on the shin or floor and reach the top arm up; switch sides."
     ],
-    "benefits": ["Stretches the side body and hamstrings", "Improves balance"],
-    "contraindications": ["low-blood-pressure"],
+    "benefits": ["Stretches the side body and hamstrings", "Improves balance and digestion"],
+    "cons": ["Tendency to round the spine reaching for the floor"],
+    "contraindications": ["low-blood-pressure", "neck-injury"],
+    "styles": ["hatha", "iyengar", "ashtanga", "sivananda"],
+    "tags": ["standing", "side-stretch", "hamstrings"],
+    "counterAsanaIds": ["uttanasana"],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Utthita Trikonasana" },
@@ -85,16 +150,299 @@
     "focus": ["balance"],
     "steps": [
       "Shift weight onto one foot and place the other sole on the inner calf or thigh.",
-      "Bring the palms together at the chest or overhead.",
-      "Fix the gaze on a steady point, then switch sides."
+      "Bring the palms together at the chest or overhead; fix the gaze, then switch sides."
     ],
-    "benefits": ["Improves balance and focus", "Strengthens the standing leg"],
+    "benefits": ["Improves balance and focus", "Strengthens the standing leg and ankles"],
+    "cons": ["Avoid pressing the foot into the side of the knee"],
     "contraindications": [],
+    "styles": ["hatha", "iyengar", "vinyasa"],
+    "tags": ["balance", "focus", "standing"],
+    "counterAsanaIds": ["uttanasana"],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Vrksasana" },
       { "source": "Yoga Journal pose library", "ref": "Tree Pose", "url": "https://www.yogajournal.com/poses/tree-pose/" },
       { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga", "value_seen": "MET 2.5" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "ardha-chandrasana",
+    "sanskritName": "Ardha Chandrasana",
+    "englishName": "Half Moon Pose",
+    "aliases": ["half moon"],
+    "family": "balance",
+    "difficulty": "intermediate",
+    "metValue": 3.0,
+    "focus": ["balance", "strength"],
+    "steps": [
+      "From Triangle, bend the front knee and step the back foot in, hand to the floor ahead.",
+      "Lift the back leg parallel to the floor and open the chest, top arm reaching up; switch sides."
+    ],
+    "benefits": ["Builds balance and leg strength", "Opens the hips and chest"],
+    "cons": ["Challenging for the standing ankle and balance"],
+    "contraindications": ["low-blood-pressure", "neck-injury"],
+    "styles": ["iyengar", "vinyasa", "hatha"],
+    "tags": ["balance", "hip-opener", "standing"],
+    "counterAsanaIds": ["uttanasana"],
+    "defaultHoldSec": 25,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Ardha Chandrasana" },
+      { "source": "Yoga Journal pose library", "ref": "Half Moon Pose", "url": "https://www.yogajournal.com/poses/half-moon-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 standing yoga", "value_seen": "MET ~3.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "sukhasana",
+    "sanskritName": "Sukhasana",
+    "englishName": "Easy Pose",
+    "aliases": ["easy seat"],
+    "family": "seated",
+    "difficulty": "beginner",
+    "metValue": 2.0,
+    "focus": ["relaxation", "breath"],
+    "steps": [
+      "Sit cross-legged with the hips slightly elevated on a folded blanket if needed.",
+      "Lengthen the spine, rest the hands on the knees and breathe evenly."
+    ],
+    "benefits": ["Encourages an upright, relaxed posture", "Prepares for breathwork and meditation"],
+    "cons": ["Knees can strain if the hips are tight and unsupported"],
+    "contraindications": ["knee-injury"],
+    "styles": ["hatha", "kundalini", "sivananda"],
+    "tags": ["seated", "calming", "meditation"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 60,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Sukhasana" },
+      { "source": "Yoga Journal pose library", "ref": "Easy Pose", "url": "https://www.yogajournal.com/poses/easy-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga (seated)", "value_seen": "MET ~2.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "dandasana",
+    "sanskritName": "Dandasana",
+    "englishName": "Staff Pose",
+    "aliases": ["seated staff"],
+    "family": "seated",
+    "difficulty": "beginner",
+    "metValue": 2.0,
+    "focus": ["strength"],
+    "steps": [
+      "Sit with the legs extended straight, feet flexed, hands beside the hips.",
+      "Lengthen the spine tall and engage the thighs; hold and breathe."
+    ],
+    "benefits": ["Builds core and back awareness", "Foundation for seated poses"],
+    "cons": ["Tight hamstrings cause the lower back to round"],
+    "contraindications": [],
+    "styles": ["hatha", "iyengar"],
+    "tags": ["seated", "foundational", "posture"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Dandasana" },
+      { "source": "Yoga Journal pose library", "ref": "Staff Pose", "url": "https://www.yogajournal.com/poses/staff-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga (seated)", "value_seen": "MET ~2.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "baddha-konasana",
+    "sanskritName": "Baddha Konasana",
+    "englishName": "Bound Angle Pose",
+    "aliases": ["butterfly", "cobbler pose"],
+    "family": "seated",
+    "difficulty": "beginner",
+    "metValue": 2.3,
+    "focus": ["flexibility", "relaxation"],
+    "steps": [
+      "Sit and bring the soles of the feet together, letting the knees fall open.",
+      "Hold the feet and lengthen the spine; optionally fold forward."
+    ],
+    "benefits": ["Opens the hips and inner thighs", "Calming, good for long holds"],
+    "cons": ["Forcing the knees down can strain them"],
+    "contraindications": ["groin-injury", "knee-injury"],
+    "styles": ["hatha", "yin", "iyengar"],
+    "tags": ["seated", "hip-opener", "calming"],
+    "counterAsanaIds": ["dandasana"],
+    "defaultHoldSec": 60,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Baddha Konasana" },
+      { "source": "Yoga Journal pose library", "ref": "Bound Angle Pose", "url": "https://www.yogajournal.com/poses/bound-angle-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "gomukhasana",
+    "sanskritName": "Gomukhasana",
+    "englishName": "Cow Face Pose",
+    "aliases": ["cow-faced"],
+    "family": "seated",
+    "difficulty": "intermediate",
+    "metValue": 2.3,
+    "focus": ["flexibility"],
+    "steps": [
+      "Stack the bent knees, then clasp the hands behind the back (top elbow up, bottom elbow down).",
+      "Lengthen the spine and breathe; switch sides."
+    ],
+    "benefits": ["Opens the shoulders, chest and hips", "Improves shoulder mobility"],
+    "cons": ["Shoulder bind is intense; use a strap"],
+    "contraindications": ["shoulder-injury", "knee-injury"],
+    "styles": ["hatha", "yin", "iyengar"],
+    "tags": ["seated", "shoulder-opener", "hip-opener"],
+    "counterAsanaIds": ["dandasana"],
+    "defaultHoldSec": 45,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Gomukhasana" },
+      { "source": "Yoga Journal pose library", "ref": "Cow Face Pose", "url": "https://www.yogajournal.com/poses/cow-face-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "padmasana",
+    "sanskritName": "Padmasana",
+    "englishName": "Lotus Pose",
+    "aliases": ["lotus"],
+    "family": "seated",
+    "difficulty": "advanced",
+    "metValue": 2.0,
+    "focus": ["relaxation", "breath"],
+    "steps": [
+      "From a cross-legged seat, place each foot on the opposite thigh (only if the knees allow).",
+      "Rest the hands on the knees, lengthen the spine and settle the breath."
+    ],
+    "benefits": ["A stable seat for meditation", "Calms the mind"],
+    "cons": ["High risk to the knees if the hips are tight — never force it"],
+    "contraindications": ["knee-injury", "ankle-injury"],
+    "styles": ["hatha", "sivananda", "kundalini"],
+    "tags": ["seated", "meditation", "calming"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 60,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Padmasana" },
+      { "source": "Yoga Journal pose library", "ref": "Lotus Pose", "url": "https://www.yogajournal.com/poses/lotus-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga (seated)", "value_seen": "MET ~2.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "paschimottanasana",
+    "sanskritName": "Paschimottanasana",
+    "englishName": "Seated Forward Bend",
+    "aliases": [],
+    "family": "forwardBend",
+    "difficulty": "intermediate",
+    "metValue": 2.3,
+    "focus": ["flexibility", "relaxation"],
+    "steps": [
+      "Sit with the legs extended straight in front of you.",
+      "Hinge from the hips and fold forward, reaching toward the feet with a long spine."
+    ],
+    "benefits": ["Stretches the hamstrings and spine", "Calms the mind"],
+    "cons": ["Rounding from the waist can strain the lower back"],
+    "contraindications": ["back-injury", "sciatica"],
+    "styles": ["hatha", "yin", "sivananda"],
+    "tags": ["forward-bend", "hamstrings", "calming"],
+    "counterAsanaIds": ["setu-bandhasana"],
+    "defaultHoldSec": 45,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Paschimottanasana" },
+      { "source": "Yoga Journal pose library", "ref": "Seated Forward Bend", "url": "https://www.yogajournal.com/poses/seated-forward-bend/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "uttanasana",
+    "sanskritName": "Uttanasana",
+    "englishName": "Standing Forward Bend",
+    "aliases": [],
+    "family": "forwardBend",
+    "difficulty": "beginner",
+    "metValue": 2.3,
+    "focus": ["flexibility"],
+    "steps": [
+      "Stand tall, then hinge from the hips and fold forward, knees soft.",
+      "Let the head and neck relax; hold, then roll up slowly to stand."
+    ],
+    "benefits": ["Stretches the hamstrings and back", "Relieves tension and calms"],
+    "cons": ["Coming up too fast can cause light-headedness"],
+    "contraindications": ["back-injury", "low-blood-pressure"],
+    "styles": ["hatha", "vinyasa", "ashtanga"],
+    "tags": ["forward-bend", "hamstrings", "calming"],
+    "counterAsanaIds": ["bhujangasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Uttanasana" },
+      { "source": "Yoga Journal pose library", "ref": "Standing Forward Bend", "url": "https://www.yogajournal.com/poses/standing-forward-bend/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "janu-sirsasana",
+    "sanskritName": "Janu Sirsasana",
+    "englishName": "Head-to-Knee Forward Bend",
+    "aliases": [],
+    "family": "forwardBend",
+    "difficulty": "beginner",
+    "metValue": 2.3,
+    "focus": ["flexibility", "relaxation"],
+    "steps": [
+      "Sit with one leg extended and the other foot to the inner thigh.",
+      "Fold over the straight leg with a long spine; switch sides."
+    ],
+    "benefits": ["Stretches hamstrings and the back", "Gently calming"],
+    "cons": ["Avoid forcing the head to the knee — hinge from the hip"],
+    "contraindications": ["back-injury", "knee-injury"],
+    "styles": ["hatha", "yin", "iyengar"],
+    "tags": ["forward-bend", "hamstrings", "calming"],
+    "counterAsanaIds": ["setu-bandhasana"],
+    "defaultHoldSec": 45,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Janu Sirsasana" },
+      { "source": "Yoga Journal pose library", "ref": "Head-to-Knee Forward Bend", "url": "https://www.yogajournal.com/poses/head-to-knee-forward-bend/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "adho-mukha-svanasana",
+    "sanskritName": "Adho Mukha Svanasana",
+    "englishName": "Downward-Facing Dog",
+    "aliases": ["down dog", "downward dog"],
+    "family": "forwardBend",
+    "difficulty": "beginner",
+    "metValue": 3.0,
+    "focus": ["strength", "flexibility"],
+    "steps": [
+      "From hands and knees, tuck the toes and lift the hips up and back into an inverted V.",
+      "Press the hands down, lengthen the spine and reach the heels toward the floor."
+    ],
+    "benefits": ["Strengthens arms and shoulders", "Stretches hamstrings, calves and spine"],
+    "cons": ["Wrist-intensive; can strain the shoulders if overarched"],
+    "contraindications": ["wrist-injury", "high-blood-pressure", "glaucoma"],
+    "styles": ["vinyasa", "ashtanga", "hatha", "power"],
+    "tags": ["full-body", "energizing", "transition"],
+    "counterAsanaIds": ["balasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Adho Mukha Svanasana" },
+      { "source": "Yoga Journal pose library", "ref": "Downward-Facing Dog", "url": "https://www.yogajournal.com/poses/downward-facing-dog/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 vinyasa/power yoga", "value_seen": "MET ~3.0" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -110,11 +458,14 @@
     "focus": ["flexibility", "strength"],
     "steps": [
       "Lie face down with hands under the shoulders, elbows close to the body.",
-      "Press lightly into the hands and lift the chest, keeping the hips grounded.",
-      "Hold, then lower with control."
+      "Press lightly into the hands and lift the chest, keeping the hips grounded."
     ],
     "benefits": ["Mobilises the spine", "Opens the chest and shoulders"],
+    "cons": ["Easy to overarch and compress the lower back"],
     "contraindications": ["pregnancy", "back-injury", "wrist-injury"],
+    "styles": ["hatha", "sivananda", "vinyasa"],
+    "tags": ["backbend", "heart-opener", "spine"],
+    "counterAsanaIds": ["balasana"],
     "defaultHoldSec": 20,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Bhujangasana" },
@@ -135,11 +486,14 @@
     "focus": ["strength", "flexibility"],
     "steps": [
       "Lie on your back with knees bent and feet hip-width near the hips.",
-      "Press into the feet to lift the hips, rolling the shoulders under.",
-      "Hold, then lower the spine down slowly."
+      "Press into the feet to lift the hips, rolling the shoulders under; lower slowly."
     ],
-    "benefits": ["Strengthens the glutes and back", "Opens the chest"],
+    "benefits": ["Strengthens the glutes and back", "Opens the chest; gentle backbend"],
+    "cons": ["Avoid turning the head while the neck bears weight"],
     "contraindications": ["neck-injury"],
+    "styles": ["hatha", "iyengar", "restorative"],
+    "tags": ["backbend", "heart-opener", "glutes"],
+    "counterAsanaIds": ["balasana"],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Setu Bandha Sarvangasana" },
@@ -150,51 +504,113 @@
     "source": "default"
   },
   {
-    "id": "paschimottanasana",
-    "sanskritName": "Paschimottanasana",
-    "englishName": "Seated Forward Bend",
-    "aliases": [],
-    "family": "forwardBend",
+    "id": "ustrasana",
+    "sanskritName": "Ustrasana",
+    "englishName": "Camel Pose",
+    "aliases": ["camel"],
+    "family": "backbend",
     "difficulty": "intermediate",
-    "metValue": 2.3,
-    "focus": ["flexibility", "relaxation"],
+    "metValue": 3.0,
+    "focus": ["flexibility", "strength"],
     "steps": [
-      "Sit with the legs extended straight in front of you.",
-      "Hinge from the hips and fold forward, reaching toward the feet.",
-      "Hold with a long spine and relaxed breath."
+      "Kneel with hips over knees, hands on the lower back.",
+      "Lift the chest and reach the hands toward the heels, leading with the sternum; rise slowly."
     ],
-    "benefits": ["Stretches the hamstrings and spine", "Calms the mind"],
-    "contraindications": ["back-injury"],
-    "defaultHoldSec": 45,
+    "benefits": ["Deeply opens the chest, abdomen and hip flexors", "Improves spinal extension"],
+    "cons": ["Can strain the lower back and neck; keep the neck long"],
+    "contraindications": ["back-injury", "neck-injury", "high-blood-pressure"],
+    "styles": ["hatha", "vinyasa", "iyengar"],
+    "tags": ["backbend", "heart-opener", "deep"],
+    "counterAsanaIds": ["balasana"],
+    "defaultHoldSec": 20,
     "evidences": [
-      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Paschimottanasana" },
-      { "source": "Yoga Journal pose library", "ref": "Seated Forward Bend", "url": "https://www.yogajournal.com/poses/seated-forward-bend/" },
-      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Ustrasana" },
+      { "source": "Yoga Journal pose library", "ref": "Camel Pose", "url": "https://www.yogajournal.com/poses/camel-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 hatha/power yoga", "value_seen": "MET ~3.0" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
   },
   {
-    "id": "uttanasana",
-    "sanskritName": "Uttanasana",
-    "englishName": "Standing Forward Bend",
-    "aliases": [],
-    "family": "forwardBend",
-    "difficulty": "beginner",
-    "metValue": 2.3,
+    "id": "dhanurasana",
+    "sanskritName": "Dhanurasana",
+    "englishName": "Bow Pose",
+    "aliases": ["bow"],
+    "family": "backbend",
+    "difficulty": "intermediate",
+    "metValue": 3.0,
+    "focus": ["flexibility", "strength"],
+    "steps": [
+      "Lie face down, bend the knees and reach back to hold the ankles.",
+      "Kick the feet into the hands to lift the chest and thighs; release slowly."
+    ],
+    "benefits": ["Strong chest and hip-flexor opener", "Strengthens the back body"],
+    "cons": ["Intense compression of the lower back"],
+    "contraindications": ["back-injury", "neck-injury", "high-blood-pressure", "pregnancy"],
+    "styles": ["hatha", "sivananda", "power"],
+    "tags": ["backbend", "heart-opener", "deep"],
+    "counterAsanaIds": ["balasana"],
+    "defaultHoldSec": 20,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Dhanurasana" },
+      { "source": "Yoga Journal pose library", "ref": "Bow Pose", "url": "https://www.yogajournal.com/poses/bow-pose/" },
+      { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Dhanurasana" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "urdhva-mukha-svanasana",
+    "sanskritName": "Urdhva Mukha Svanasana",
+    "englishName": "Upward-Facing Dog",
+    "aliases": ["up dog", "upward dog"],
+    "family": "backbend",
+    "difficulty": "intermediate",
+    "metValue": 3.0,
+    "focus": ["strength", "flexibility"],
+    "steps": [
+      "Lie face down, hands by the lower ribs; press into the hands and tops of the feet.",
+      "Straighten the arms, lifting the chest and thighs off the floor, shoulders back."
+    ],
+    "benefits": ["Strengthens arms and back", "Opens the chest; key Vinyasa transition"],
+    "cons": ["Wrist-intensive; avoid sinking into the shoulders"],
+    "contraindications": ["wrist-injury", "back-injury", "pregnancy"],
+    "styles": ["vinyasa", "ashtanga", "power"],
+    "tags": ["backbend", "heart-opener", "transition"],
+    "counterAsanaIds": ["adho-mukha-svanasana"],
+    "defaultHoldSec": 15,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Urdhva Mukha Svanasana" },
+      { "source": "Yoga Journal pose library", "ref": "Upward-Facing Dog", "url": "https://www.yogajournal.com/poses/upward-facing-dog/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 vinyasa/power yoga", "value_seen": "MET ~3.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "matsyasana",
+    "sanskritName": "Matsyasana",
+    "englishName": "Fish Pose",
+    "aliases": ["fish"],
+    "family": "backbend",
+    "difficulty": "intermediate",
+    "metValue": 2.5,
     "focus": ["flexibility"],
     "steps": [
-      "Stand tall, then hinge from the hips and fold forward.",
-      "Let the head and neck relax; bend the knees as needed.",
-      "Hold, then roll up slowly to stand."
+      "Lie on your back, tuck the hands under the hips, and lift the chest to rest the crown lightly on the floor.",
+      "Keep weight in the forearms, not the head; release slowly."
     ],
-    "benefits": ["Stretches the hamstrings and back", "Relieves tension"],
-    "contraindications": ["back-injury", "low-blood-pressure"],
+    "benefits": ["Opens the chest and throat", "Classic counter-pose to Shoulderstand"],
+    "cons": ["Compresses the neck if weight rests on the head"],
+    "contraindications": ["neck-injury", "high-blood-pressure", "low-blood-pressure"],
+    "styles": ["sivananda", "hatha", "iyengar"],
+    "tags": ["backbend", "heart-opener", "counter-pose"],
+    "counterAsanaIds": ["balasana"],
     "defaultHoldSec": 30,
     "evidences": [
-      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Uttanasana" },
-      { "source": "Yoga Journal pose library", "ref": "Standing Forward Bend", "url": "https://www.yogajournal.com/poses/standing-forward-bend/" },
-      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET 2.3" }
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Matsyasana" },
+      { "source": "Yoga Journal pose library", "ref": "Fish Pose", "url": "https://www.yogajournal.com/poses/fish-pose/" },
+      { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Matsyasana" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -210,11 +626,14 @@
     "focus": ["flexibility"],
     "steps": [
       "Sit with one leg bent, foot outside the opposite thigh.",
-      "Lengthen the spine and twist toward the bent knee, using the arm as leverage.",
-      "Hold, then switch sides."
+      "Lengthen the spine and twist toward the bent knee; switch sides."
     ],
     "benefits": ["Improves spinal mobility", "Aids digestion"],
+    "cons": ["Avoid cranking the twist from the neck"],
     "contraindications": ["pregnancy", "spine-injury"],
+    "styles": ["hatha", "sivananda", "iyengar"],
+    "tags": ["twist", "spine", "digestion"],
+    "counterAsanaIds": ["paschimottanasana"],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Ardha Matsyendrasana" },
@@ -225,26 +644,169 @@
     "source": "default"
   },
   {
-    "id": "sukhasana",
-    "sanskritName": "Sukhasana",
-    "englishName": "Easy Pose",
-    "aliases": ["easy seat"],
-    "family": "seated",
+    "id": "supta-matsyendrasana",
+    "sanskritName": "Supta Matsyendrasana",
+    "englishName": "Supine Spinal Twist",
+    "aliases": ["reclined twist"],
+    "family": "twist",
+    "difficulty": "beginner",
+    "metValue": 2.0,
+    "focus": ["flexibility", "relaxation"],
+    "steps": [
+      "Lie on your back, draw one knee in and guide it across the body.",
+      "Extend the arms wide and gaze away from the knee; switch sides."
+    ],
+    "benefits": ["Gently releases the spine and lower back", "Relaxing; good counter-twist"],
+    "cons": ["Keep both shoulders grounded — don't force the knee down"],
+    "contraindications": ["pregnancy", "spine-injury"],
+    "styles": ["yin", "restorative", "hatha"],
+    "tags": ["twist", "calming", "counter-pose"],
+    "counterAsanaIds": ["savasana"],
+    "defaultHoldSec": 45,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Jathara Parivartanasana (supine twist)" },
+      { "source": "Yoga Journal pose library", "ref": "Supine Spinal Twist", "url": "https://www.yogajournal.com/poses/reclining-twist/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02101 stretching/hatha", "value_seen": "MET ~2.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "parighasana",
+    "sanskritName": "Parighasana",
+    "englishName": "Gate Pose",
+    "aliases": ["gate"],
+    "family": "lateralBend",
+    "difficulty": "beginner",
+    "metValue": 2.3,
+    "focus": ["flexibility"],
+    "steps": [
+      "Kneel and extend one leg out to the side, foot flat.",
+      "Reach over the extended leg, side-bending the torso; switch sides."
+    ],
+    "benefits": ["Stretches the side body and intercostals", "Opens the hips and hamstrings"],
+    "cons": ["Mind the knee bearing weight on the floor — pad it"],
+    "contraindications": ["knee-injury"],
+    "styles": ["iyengar", "hatha"],
+    "tags": ["side-stretch", "lateral-bend", "hips"],
+    "counterAsanaIds": ["uttanasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Parighasana" },
+      { "source": "Yoga Journal pose library", "ref": "Gate Pose", "url": "https://www.yogajournal.com/poses/gate-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "marjaryasana-bitilasana",
+    "sanskritName": "Marjaryasana–Bitilasana",
+    "englishName": "Cat–Cow Pose",
+    "aliases": ["cat cow", "cat and cow"],
+    "family": "kneeling",
+    "difficulty": "beginner",
+    "metValue": 2.3,
+    "focus": ["flexibility"],
+    "steps": [
+      "On hands and knees, inhale to drop the belly and lift the gaze (cow).",
+      "Exhale to round the spine and tuck the chin (cat); flow with the breath."
+    ],
+    "benefits": ["Warms and mobilises the spine", "Links breath to movement"],
+    "cons": ["Keep the wrists comfortable; make a fist if needed"],
+    "contraindications": ["wrist-injury", "neck-injury"],
+    "styles": ["hatha", "vinyasa", "restorative"],
+    "tags": ["kneeling", "spine", "warm-up"],
+    "counterAsanaIds": ["balasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Yoga Journal pose library", "ref": "Cat Pose", "url": "https://www.yogajournal.com/poses/cat-pose/" },
+      { "source": "Yoga Journal pose library", "ref": "Cow Pose", "url": "https://www.yogajournal.com/poses/cow-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga", "value_seen": "MET 2.3" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "vajrasana",
+    "sanskritName": "Vajrasana",
+    "englishName": "Thunderbolt Pose",
+    "aliases": ["diamond pose"],
+    "family": "kneeling",
     "difficulty": "beginner",
     "metValue": 2.0,
     "focus": ["relaxation", "breath"],
     "steps": [
-      "Sit cross-legged with the hips slightly elevated on a folded blanket if needed.",
-      "Lengthen the spine and rest the hands on the knees.",
-      "Soften the shoulders and breathe evenly."
+      "Kneel and sit back on the heels with the spine tall.",
+      "Rest the hands on the thighs and breathe evenly."
     ],
-    "benefits": ["Encourages an upright, relaxed posture", "Prepares for breathwork"],
-    "contraindications": ["knee-injury"],
+    "benefits": ["Aids digestion (often done after meals)", "A stable seat for breathwork"],
+    "cons": ["Pressure on the ankles and knees over long holds"],
+    "contraindications": ["knee-injury", "ankle-injury"],
+    "styles": ["hatha", "kundalini", "sivananda"],
+    "tags": ["kneeling", "digestion", "meditation"],
+    "counterAsanaIds": [],
     "defaultHoldSec": 60,
     "evidences": [
-      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Sukhasana" },
-      { "source": "Yoga Journal pose library", "ref": "Easy Pose", "url": "https://www.yogajournal.com/poses/easy-pose/" },
-      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga (seated)", "value_seen": "MET ~2.0" }
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Vajrasana" },
+      { "source": "Yoga Journal pose library", "ref": "Thunderbolt Pose", "url": "https://www.yogajournal.com/poses/hero-pose/" },
+      { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Vajrasana" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "malasana",
+    "sanskritName": "Malasana",
+    "englishName": "Garland Pose",
+    "aliases": ["yogi squat"],
+    "family": "squatting",
+    "difficulty": "beginner",
+    "metValue": 2.5,
+    "focus": ["flexibility"],
+    "steps": [
+      "Squat with the feet about hip-width, toes slightly turned out.",
+      "Bring the palms together at the chest, elbows pressing the knees open."
+    ],
+    "benefits": ["Opens the hips, groin and ankles", "Improves squat mobility"],
+    "cons": ["Heels may lift if the ankles are tight — support them"],
+    "contraindications": ["knee-injury", "ankle-injury"],
+    "styles": ["hatha", "yin", "vinyasa"],
+    "tags": ["squat", "hip-opener", "grounding"],
+    "counterAsanaIds": ["dandasana"],
+    "defaultHoldSec": 45,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Malasana" },
+      { "source": "Yoga Journal pose library", "ref": "Garland Pose", "url": "https://www.yogajournal.com/poses/garland-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga", "value_seen": "MET 2.5" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "supta-baddha-konasana",
+    "sanskritName": "Supta Baddha Konasana",
+    "englishName": "Reclining Bound Angle",
+    "aliases": ["reclining butterfly"],
+    "family": "reclining",
+    "difficulty": "beginner",
+    "metValue": 1.8,
+    "focus": ["relaxation", "flexibility"],
+    "steps": [
+      "Lie back (on a bolster if available) and bring the soles of the feet together, knees open.",
+      "Rest the arms by the sides and breathe softly; support the knees with blocks."
+    ],
+    "benefits": ["Gently opens the hips and chest", "Deeply restful"],
+    "cons": ["Support the knees to avoid groin strain"],
+    "contraindications": ["groin-injury", "knee-injury"],
+    "styles": ["restorative", "yin", "iyengar"],
+    "tags": ["reclining", "hip-opener", "calming"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 120,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Supta Baddha Konasana" },
+      { "source": "Yoga Journal pose library", "ref": "Reclining Bound Angle", "url": "https://www.yogajournal.com/poses/reclining-bound-angle-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 07020 lying quietly / restorative", "value_seen": "MET ~1.8" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -260,16 +822,75 @@
     "focus": ["strength", "balance"],
     "steps": [
       "Lie on your back and lift the legs and hips, supporting the back with the hands.",
-      "Stack the hips over the shoulders with the legs reaching up.",
-      "Hold steadily, then lower the spine down slowly."
+      "Stack the hips over the shoulders with the legs reaching up; lower slowly."
     ],
     "benefits": ["Builds core and shoulder strength", "Calms the nervous system"],
-    "contraindications": ["neck-injury", "high-blood-pressure", "pregnancy", "glaucoma"],
+    "cons": ["Significant load on the neck — never turn the head in the pose"],
+    "contraindications": ["neck-injury", "high-blood-pressure", "pregnancy", "glaucoma", "menstruation"],
+    "styles": ["sivananda", "hatha", "iyengar"],
+    "tags": ["inversion", "calming", "advanced"],
+    "counterAsanaIds": ["matsyasana"],
     "defaultHoldSec": 30,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Salamba Sarvangasana" },
       { "source": "Yoga Journal pose library", "ref": "Supported Shoulderstand", "url": "https://www.yogajournal.com/poses/supported-shoulderstand/" },
-      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power yoga", "value_seen": "MET ~3.0" }
+      { "source": "Art of Living — Sarvangasana cautions", "ref": "contraindications", "url": "https://www.artofliving.org/yoga/yoga-poses/shoulder-stand-sarvangasana" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "halasana",
+    "sanskritName": "Halasana",
+    "englishName": "Plough Pose",
+    "aliases": ["plow"],
+    "family": "inversion",
+    "difficulty": "advanced",
+    "metValue": 3.0,
+    "focus": ["flexibility", "strength"],
+    "steps": [
+      "From Shoulderstand, lower the feet overhead toward the floor.",
+      "Support the back with the hands; keep the neck long and lift out slowly."
+    ],
+    "benefits": ["Stretches the spine and shoulders", "Calms the mind"],
+    "cons": ["Heavy load on the neck and upper spine"],
+    "contraindications": ["neck-injury", "high-blood-pressure", "pregnancy", "glaucoma", "menstruation"],
+    "styles": ["sivananda", "hatha", "iyengar"],
+    "tags": ["inversion", "spine", "advanced"],
+    "counterAsanaIds": ["matsyasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Halasana" },
+      { "source": "Yoga Journal pose library", "ref": "Plough Pose", "url": "https://www.yogajournal.com/poses/plow-pose/" },
+      { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Halasana" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "sirsasana",
+    "sanskritName": "Sirsasana",
+    "englishName": "Headstand",
+    "aliases": ["head stand"],
+    "family": "inversion",
+    "difficulty": "advanced",
+    "metValue": 4.0,
+    "focus": ["strength", "balance"],
+    "steps": [
+      "Interlace the fingers, set the forearms and crown down, and walk the feet in.",
+      "Lift the legs with control (against a wall when learning); come down slowly."
+    ],
+    "benefits": ["Builds shoulder, core and focus", "The traditional 'king' of asanas"],
+    "cons": ["Serious neck/cervical risk — learn with supervision"],
+    "contraindications": ["neck-injury", "high-blood-pressure", "glaucoma", "pregnancy", "heart-condition"],
+    "styles": ["sivananda", "iyengar", "hatha"],
+    "tags": ["inversion", "advanced", "focus"],
+    "counterAsanaIds": ["balasana"],
+    "defaultHoldSec": 30,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Salamba Sirsasana" },
+      { "source": "Yoga Journal pose library", "ref": "Headstand", "url": "https://www.yogajournal.com/poses/supported-headstand/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power yoga", "value_seen": "MET ~4.0" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -285,16 +906,75 @@
     "focus": ["strength", "balance"],
     "steps": [
       "Squat with the hands planted shoulder-width, knees resting on the upper arms.",
-      "Lean forward, shifting weight onto the hands and lifting the feet.",
-      "Balance with the gaze forward, then lower down."
+      "Lean forward, shifting weight onto the hands and lifting the feet; balance, then lower."
     ],
-    "benefits": ["Builds arm, wrist and core strength", "Develops focus"],
+    "benefits": ["Builds arm, wrist and core strength", "Develops focus and confidence"],
+    "cons": ["Wrist-intensive; risk of face-plant — pad in front"],
     "contraindications": ["wrist-injury", "pregnancy"],
+    "styles": ["vinyasa", "ashtanga", "power"],
+    "tags": ["arm-balance", "strength", "advanced"],
+    "counterAsanaIds": ["balasana"],
     "defaultHoldSec": 20,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Bakasana" },
       { "source": "Yoga Journal pose library", "ref": "Crow Pose", "url": "https://www.yogajournal.com/poses/crane-crow-pose/" },
       { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power yoga", "value_seen": "MET ~4.0" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "chaturanga-dandasana",
+    "sanskritName": "Chaturanga Dandasana",
+    "englishName": "Four-Limbed Staff Pose",
+    "aliases": ["low plank", "chaturanga"],
+    "family": "armBalance",
+    "difficulty": "intermediate",
+    "metValue": 3.5,
+    "focus": ["strength"],
+    "steps": [
+      "From plank, shift forward on the toes and lower halfway, elbows hugging the ribs.",
+      "Keep the body in one line, shoulders level with the elbows; then transition or rest."
+    ],
+    "benefits": ["Builds arm, shoulder and core strength", "Core of the Vinyasa flow"],
+    "cons": ["Shoulders easily dip below elbows, stressing the joint"],
+    "contraindications": ["wrist-injury", "shoulder-injury", "pregnancy"],
+    "styles": ["vinyasa", "ashtanga", "power"],
+    "tags": ["arm-balance", "strength", "transition"],
+    "counterAsanaIds": ["adho-mukha-svanasana"],
+    "defaultHoldSec": 15,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Chaturanga Dandasana" },
+      { "source": "Yoga Journal pose library", "ref": "Four-Limbed Staff Pose", "url": "https://www.yogajournal.com/poses/four-limbed-staff-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power yoga", "value_seen": "MET ~3.5" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "vasisthasana",
+    "sanskritName": "Vasisthasana",
+    "englishName": "Side Plank Pose",
+    "aliases": ["side plank"],
+    "family": "armBalance",
+    "difficulty": "intermediate",
+    "metValue": 3.5,
+    "focus": ["strength", "balance"],
+    "steps": [
+      "From plank, roll onto the outer edge of one foot and stack the body, top arm reaching up.",
+      "Press the bottom hand down and lift the hips; switch sides."
+    ],
+    "benefits": ["Strengthens the wrists, arms, core and obliques", "Improves balance"],
+    "cons": ["Wrist-intensive; don't let the hips sag"],
+    "contraindications": ["wrist-injury", "shoulder-injury"],
+    "styles": ["vinyasa", "power", "ashtanga"],
+    "tags": ["arm-balance", "core", "balance"],
+    "counterAsanaIds": ["balasana"],
+    "defaultHoldSec": 20,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Vasisthasana" },
+      { "source": "Yoga Journal pose library", "ref": "Side Plank Pose", "url": "https://www.yogajournal.com/poses/side-plank-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02151 power yoga", "value_seen": "MET ~3.5" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -310,16 +990,47 @@
     "focus": ["relaxation", "flexibility"],
     "steps": [
       "Kneel and sit back on the heels, then fold the torso forward over the thighs.",
-      "Rest the forehead on the mat and extend the arms forward or back.",
-      "Breathe softly and relax."
+      "Rest the forehead down and extend the arms forward or back; breathe softly."
     ],
-    "benefits": ["Releases the back and hips", "Promotes relaxation"],
+    "benefits": ["Releases the back and hips", "A universal resting counter-pose"],
+    "cons": ["Knee or ankle discomfort — pad them or widen the knees"],
     "contraindications": ["knee-injury", "pregnancy"],
+    "styles": ["restorative", "hatha", "yin"],
+    "tags": ["restorative", "calming", "counter-pose"],
+    "counterAsanaIds": [],
     "defaultHoldSec": 60,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Balasana" },
       { "source": "Yoga Journal pose library", "ref": "Child's Pose", "url": "https://www.yogajournal.com/poses/childs-pose/" },
       { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Balasana" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "viparita-karani",
+    "sanskritName": "Viparita Karani",
+    "englishName": "Legs-Up-the-Wall Pose",
+    "aliases": ["legs up the wall"],
+    "family": "restorative",
+    "difficulty": "beginner",
+    "metValue": 1.5,
+    "focus": ["relaxation"],
+    "steps": [
+      "Sit beside a wall, then swing the legs up it and lie back, hips close to the wall.",
+      "Rest the arms by the sides and stay for several minutes; roll to the side to exit."
+    ],
+    "benefits": ["Relieves tired legs", "Deeply calming, gentle inversion"],
+    "cons": ["Come out slowly to avoid light-headedness"],
+    "contraindications": ["glaucoma", "high-blood-pressure"],
+    "styles": ["restorative", "yin", "iyengar"],
+    "tags": ["restorative", "calming", "legs"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 180,
+    "evidences": [
+      { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Viparita Karani" },
+      { "source": "Yoga Journal pose library", "ref": "Legs-Up-the-Wall Pose", "url": "https://www.yogajournal.com/poses/legs-up-the-wall-pose/" },
+      { "source": "Compendium of Physical Activities (2011)", "ref": "code 07020 lying quietly / restorative", "value_seen": "MET ~1.5" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -335,11 +1046,14 @@
     "focus": ["relaxation"],
     "steps": [
       "Lie flat on your back with the legs relaxed and arms by the sides, palms up.",
-      "Close the eyes and release tension from head to toe.",
-      "Rest in stillness, breathing naturally."
+      "Close the eyes and release tension from head to toe; rest in stillness."
     ],
     "benefits": ["Deep relaxation", "Integrates the practice and lowers stress"],
+    "cons": ["Lying flat may be uncomfortable late in pregnancy — lie on the side"],
     "contraindications": [],
+    "styles": ["restorative", "hatha", "sivananda"],
+    "tags": ["restorative", "calming", "final-relaxation"],
+    "counterAsanaIds": [],
     "defaultHoldSec": 120,
     "evidences": [
       { "source": "Light on Yoga — B.K.S. Iyengar (1966)", "ref": "Savasana" },
@@ -360,16 +1074,75 @@
     "focus": ["breath", "relaxation"],
     "steps": [
       "Sit comfortably with a tall spine.",
-      "Use the thumb and ring finger to alternately close each nostril.",
-      "Inhale through one nostril and exhale through the other, alternating smoothly."
+      "Use the thumb and ring finger to alternately close each nostril, inhaling and exhaling smoothly."
     ],
     "benefits": ["Calms the nervous system", "Improves focus and breath control"],
+    "cons": ["Stop if you feel dizzy; keep the breath gentle"],
     "contraindications": [],
+    "styles": ["hatha", "kundalini", "sivananda"],
+    "tags": ["pranayama", "breath", "calming"],
+    "counterAsanaIds": [],
     "defaultHoldSec": 120,
     "evidences": [
       { "source": "Light on Pranayama — B.K.S. Iyengar (1981)", "ref": "Nadi Shodhana" },
       { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Nadi Shodhana Pranayama" },
-      { "source": "Compendium of Physical Activities (2011)", "ref": "code 02150 hatha yoga (seated breathing)", "value_seen": "MET ~1.5" }
+      { "source": "Wikipedia — Pranayama", "ref": "alternate nostril breathing", "url": "https://en.wikipedia.org/wiki/Pranayama" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "kapalabhati",
+    "sanskritName": "Kapalabhati",
+    "englishName": "Skull-Shining Breath",
+    "aliases": ["breath of fire (related)"],
+    "family": "pranayama",
+    "difficulty": "intermediate",
+    "metValue": 1.8,
+    "focus": ["breath"],
+    "steps": [
+      "Sit tall; take a normal inhale, then exhale sharply by snapping the belly in.",
+      "Let the inhale happen passively; repeat in short rounds."
+    ],
+    "benefits": ["Energising and clearing", "Tones the abdominal muscles"],
+    "cons": ["Forceful breathing can cause dizziness if overdone"],
+    "contraindications": ["pregnancy", "high-blood-pressure", "heart-condition", "hernia"],
+    "styles": ["hatha", "kundalini"],
+    "tags": ["pranayama", "breath", "energizing"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 60,
+    "evidences": [
+      { "source": "Light on Pranayama — B.K.S. Iyengar (1981)", "ref": "Kapalabhati" },
+      { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Kapalabhati" },
+      { "source": "Wikipedia — Pranayama", "ref": "kapalabhati", "url": "https://en.wikipedia.org/wiki/Pranayama" }
+    ],
+    "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
+    "source": "default"
+  },
+  {
+    "id": "bhramari",
+    "sanskritName": "Bhramari",
+    "englishName": "Humming Bee Breath",
+    "aliases": ["bee breath"],
+    "family": "pranayama",
+    "difficulty": "beginner",
+    "metValue": 1.5,
+    "focus": ["breath", "relaxation"],
+    "steps": [
+      "Sit tall, optionally closing the ears with the fingers.",
+      "Inhale, then exhale making a steady low humming sound; repeat."
+    ],
+    "benefits": ["Soothes the mind and reduces stress", "Eases tension and aids sleep"],
+    "cons": ["Keep the hum gentle; avoid straining the throat"],
+    "contraindications": ["ear-infection"],
+    "styles": ["hatha", "kundalini", "sivananda"],
+    "tags": ["pranayama", "breath", "calming"],
+    "counterAsanaIds": [],
+    "defaultHoldSec": 90,
+    "evidences": [
+      { "source": "Light on Pranayama — B.K.S. Iyengar (1981)", "ref": "Bhramari" },
+      { "source": "AYUSH Ministry — Common Yoga Protocol", "ref": "Bhramari Pranayama" },
+      { "source": "Wikipedia — Pranayama", "ref": "bhramari", "url": "https://en.wikipedia.org/wiki/Pranayama" }
     ],
     "verification": { "status": "verified", "confidence": "high", "lastReviewed": "2026-06-17" },
     "source": "default"
@@ -385,11 +1158,14 @@
     "focus": ["relaxation", "breath"],
     "steps": [
       "Sit in a comfortable, stable seat with the spine upright.",
-      "Rest the hands on the knees and close the eyes.",
-      "Observe the natural breath and let thoughts settle."
+      "Rest the hands on the knees, close the eyes and observe the natural breath."
     ],
     "benefits": ["Reduces stress", "Cultivates calm and concentration"],
+    "cons": ["Discomfort from sitting still — use support as needed"],
     "contraindications": [],
+    "styles": ["hatha", "kundalini", "sivananda"],
+    "tags": ["meditation", "calming", "focus"],
+    "counterAsanaIds": [],
     "defaultHoldSec": 300,
     "evidences": [
       { "source": "Patanjali Yoga Sutras", "ref": "Dhyana (meditation), limb 7" },

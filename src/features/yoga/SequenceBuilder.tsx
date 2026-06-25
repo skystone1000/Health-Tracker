@@ -6,14 +6,16 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
+  Label,
+  Select,
 } from "@/components/ui";
-import { generateSequence } from "@/core/yoga/sequence-engine";
+import { generateSequence, sequenceIdFor } from "@/core/yoga/sequence-engine";
 import { sequenceEstimatedKcal, sequenceTotals } from "@/core/yoga/duration";
-import type { Sequence } from "@/core/yoga/schema";
+import { YOGA_STYLES, type Sequence, type YogaStyle } from "@/core/yoga/schema";
 import { defaultFitnessProfile, type FitnessProfile } from "@/core/fitness";
 import { FitnessForm } from "@/features/shared/FitnessForm";
 import { ActivityHistory } from "@/features/shared/ActivityHistory";
-import { FAMILY_LABELS } from "@/lib/activity";
+import { FAMILY_LABELS, STYLE_LABELS } from "@/lib/activity";
 import { fmt } from "@/lib/format";
 import { todayStr } from "@/lib/activity";
 import { selectAllAsanas, selectAsanasById, useAppStore } from "@/store/useAppStore";
@@ -31,25 +33,28 @@ export function SequenceBuilder() {
   const [draftFitness, setDraftFitness] = useState<FitnessProfile>(
     fitness ?? defaultFitnessProfile(),
   );
+  const [style, setStyle] = useState<string>("");
   const [setupOpen, setSetupOpen] = useState(!fitness);
+
+  const styleArg = (style || undefined) as YogaStyle | undefined;
 
   const sequence: Sequence | undefined = useMemo(() => {
     if (!fitness) return undefined;
-    const id = `sequence-${fitness.yogaGoal}-${fitness.yogaLevel}`;
+    const id = sequenceIdFor(fitness, styleArg);
     return sequences.find((s) => s.id === id);
-  }, [fitness, sequences]);
+  }, [fitness, sequences, styleArg]);
 
   const weightKg = profile.weightKg;
 
   const saveAndGenerate = () => {
     setFitness(draftFitness);
-    saveSequence(generateSequence(draftFitness, asanas));
+    saveSequence(generateSequence(draftFitness, asanas, styleArg));
     setSetupOpen(false);
   };
 
   const regenerate = () => {
     if (!fitness) return;
-    saveSequence(generateSequence(fitness, asanas));
+    saveSequence(generateSequence(fitness, asanas, styleArg));
   };
 
   const logSequence = () => {
@@ -115,7 +120,22 @@ export function SequenceBuilder() {
                 </p>
               )}
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap items-end gap-2">
+              <div className="space-y-1">
+                <Label className="text-xs text-muted-foreground">Style</Label>
+                <Select
+                  className="h-9 w-[150px]"
+                  value={style}
+                  onChange={(e) => setStyle(e.target.value)}
+                >
+                  <option value="">Balanced</option>
+                  {YOGA_STYLES.map((s) => (
+                    <option key={s} value={s}>
+                      {STYLE_LABELS[s]}
+                    </option>
+                  ))}
+                </Select>
+              </div>
               <Button variant="outline" size="sm" onClick={() => setSetupOpen(true)}>
                 Edit setup
               </Button>

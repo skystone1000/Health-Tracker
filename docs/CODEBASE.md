@@ -34,10 +34,13 @@ src/core/                    PURE logic (no React/DOM) — every file has a test
     routine-engine.ts        generateRoutine(fitness, exercises) — deterministic split
     volume.ts                dayVolume + dayEstimatedKcal
   yoga/                      PURE yoga domain
-    schema.ts                Asana, AsanaFamily, YogaFocus, Sequence, SequencePose
-    filters.ts               level/contraindication filters + applyAsanaFilters
-    sequence-engine.ts       generateSequence(fitness, asanas) — safe-ordered flow
+    schema.ts                Asana (styles/tags/cons/counterAsanaIds), AsanaFamily, YogaStyle, Sequence
+    filters.ts               family/focus/level/style/tag filters + applyAsanaFilters
+    sequence-engine.ts       generateSequence(fitness, asanas, style?) — style-biased, counter-aware
     duration.ts              sequenceTotals + sequenceEstimatedKcal
+    counterpose.ts           OPPOSING_FAMILIES, isReasonableCounter, suggestCounters (viparit)
+    styles.ts                YOGA_STYLE_INFO + EIGHT_LIMBS (traditions / Patanjali reference)
+    theory.ts                YOGA_THEORY — the cited "Learn yoga" curriculum
   *.test.ts                  Vitest specs (incl. data.test.ts integrity checks per domain)
 
 src/store/
@@ -49,6 +52,7 @@ src/lib/
   format.ts                  fmt(), fmtNutrient(), pct(), progressTone()
   profile.ts                 defaultProfile(), WORK_TO_ACTIVITY, labels
   download.ts                downloadJson(), readJsonFile()
+  images.ts                  asanaImageUrl(id) — convention-based public image paths
 
 src/components/
   ui.tsx                     Button, Card, Input, Label, Select, Badge, Progress, Modal, Tabs
@@ -67,9 +71,11 @@ src/features/
   exercise/ExerciseLibrary.tsx Searchable/filterable exercise grid
   exercise/ExerciseEditor.tsx  View / edit / add an exercise (override or custom)
   exercise/WorkoutPlan.tsx     Generate + view routine, log a session
-  yoga/AsanaLibrary.tsx      Searchable/filterable asana grid
-  yoga/AsanaEditor.tsx       View / edit / add an asana (override or custom)
-  yoga/SequenceBuilder.tsx   Generate + view a flow, log a practice
+  yoga/AsanaLibrary.tsx      Asana grid; filter by family/focus/level/style/tag
+  yoga/AsanaEditor.tsx       Detail+edit: pros/cons/avoid/counter, styles, tags, counter picker
+  yoga/SequenceBuilder.tsx   Generate + view a flow (style-biased), log a practice
+  yoga/YogaLearn.tsx         /yoga/learn — theory & education knowledge base
+  yoga/AsanaImage.tsx        Asana illustration with 🧘 fallback (convention-based path)
   data/DataPage.tsx          Export / import / reset
   shared/useTargets.ts       Memoised computeTargets() hook
   shared/useActivity.ts      Memoised today's-activity summary/entries hooks
@@ -90,12 +96,20 @@ src/main.tsx                 React root + BrowserRouter
 |---|---|
 | Add/edit a default food | `public/data/foods.default.json` (≥3 evidences; `data.test.ts` enforces) |
 | Add a default recipe | `public/data/recipes.default.json` (ingredient `foodId`s must exist) |
+| Add a new asana (full guide) | [`ADD_YOGA_ASANA.md`](ADD_YOGA_ASANA.md) — data shape, enums, rules, image, verify |
+| Add a new exercise (full guide) | [`ADD_EXERCISE.md`](ADD_EXERCISE.md) — data shape, enums, rules, verify |
 | Add/edit a default exercise | `public/data/exercises.default.json` (≥3 evidences; `exercise/data.test.ts`) |
 | Add/edit a default asana | `public/data/asanas.default.json` (≥3 evidences; `yoga/data.test.ts`) |
+| Generate/populate asana images | [`docs/plan_4_yoga_images.md`](plan_4_yoga_images.md) → `public/images/asanas/<id>.webp` |
 | Change a nutrient formula (BMR/TDEE/macros) | `src/core/nutrition-engine.ts` (+ its test) |
 | Change RDA values | `public/data/rda.icmr-nin-2020.json` |
 | Add a new nutrient | `src/core/schema.ts` (`*_KEYS`, `NUTRIENT_META`, `MICRO_FALLBACK`) — flows everywhere |
 | Add a muscle group / asana family | `src/core/exercise/schema.ts` `MUSCLE_GROUPS` / `src/core/yoga/schema.ts` `ASANA_FAMILIES` (+ labels in `lib/activity.ts`) |
+| Add a yoga style / tag | `src/core/yoga/schema.ts` `YOGA_STYLES` / `src/lib/activity.ts` `KNOWN_TAGS` (+ `STYLE_LABELS`) |
+| Set a pose's counter (viparit) | `public/data/asanas.default.json` `counterAsanaIds` (must reference real ids; `yoga/data.test.ts` checks) |
+| Edit yoga theory / Learn page | `src/core/yoga/theory.ts` (sections) + `src/core/yoga/styles.ts` (styles & eight limbs) |
+| Change counter-pose suggestion logic | `src/core/yoga/counterpose.ts` `OPPOSING_FAMILIES` / `suggestCounters` |
+| Change yoga sequencing | `src/core/yoga/sequence-engine.ts` `generateSequence` (style bias, counter insertion) |
 | Change diet/exclusion rules | `src/core/filters.ts` (single source of truth) |
 | Change auto-generate logic | `src/core/planner.ts` `autoGeneratePlan` |
 | Change routine generation | `src/core/exercise/routine-engine.ts` `generateRoutine` |

@@ -1,5 +1,5 @@
 import { DIFFICULTY_RANK, type Difficulty } from "@/core/activity/schema";
-import type { Asana, AsanaFamily, YogaFocus } from "./schema";
+import type { Asana, AsanaFamily, YogaFocus, YogaStyle } from "./schema";
 
 /**
  * Single source of truth for asana selection — used by the library UI and the
@@ -28,6 +28,8 @@ export interface AsanaFilter {
   family?: AsanaFamily;
   focus?: YogaFocus;
   difficulty?: Difficulty;
+  style?: YogaStyle;
+  tag?: string;
 }
 
 export function applyAsanaFilters(list: Asana[], f: AsanaFilter): Asana[] {
@@ -42,6 +44,8 @@ export function applyAsanaFilters(list: Asana[], f: AsanaFilter): Asana[] {
     if (f.family && a.family !== f.family) return false;
     if (f.focus && !a.focus.includes(f.focus)) return false;
     if (f.difficulty && a.difficulty !== f.difficulty) return false;
+    if (f.style && !a.styles.includes(f.style)) return false;
+    if (f.tag && !a.tags.includes(f.tag)) return false;
     return true;
   });
 }

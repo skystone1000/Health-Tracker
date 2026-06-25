@@ -124,23 +124,45 @@ Code: `features/exercise/{ExerciseLibrary,ExerciseEditor,WorkoutPlan}.tsx`,
 
 ## 11. Yoga (separate from Exercise)
 
-A distinct library of asanas spanning **every family** (standing, seated, forward
-bends, backbends, twists, balance, inversions, arm balances, restorative,
-pranayama, meditation), each with Sanskrit + English names, focus tags, steps,
-benefits, **contraindications** and ≥3 evidences.
+A detailed library of ~40 asanas spanning **every family** (standing, seated,
+reclining, kneeling, squatting, forward bends, backbends, twists, lateral bends,
+balance, inversions, arm balances, restorative, pranayama, meditation), each with
+Sanskrit + English names, **styles/traditions** it belongs to, **tags**, steps,
+**benefits (pros)**, **cautions (cons)**, **who-should-avoid (contraindications)**,
+**counter / viparit poses**, and ≥3 evidences.
 
-- **Library** — search + filter by family, focus or level.
-- **Add / edit** — custom asanas or overrides of defaults.
+- **Library** — search + filter by family, focus, level, **style** (Hatha,
+  Vinyasa, Ashtanga, Iyengar, Yin, Restorative, Power, Kundalini, Sivananda) or
+  **tag**. Cross-linked from the Learn page (`/yoga?style=…`).
+- **Detail / edit** — shows pros, cons, who-should-avoid (with a not-medical-
+  advice disclaimer) and clickable **counter poses**; the editor edits styles,
+  tags, cons and a counter-pose picker with a "Suggest" button
+  (`suggestCounters`). Custom asanas or overrides of defaults.
 - **Sequence builder** — "Generate" builds a **deterministic flow** for the
-  user's yoga goal & level, safely ordered (breath → standing → balance → peak →
-  seated → meditation → rest) and skipping asanas whose contraindications match
-  the user's injuries.
+  user's yoga goal & level, safely ordered (breath → standing → peak → seated →
+  rest), skipping contraindicated asanas, **biased by a chosen style** (Yin holds
+  longer, Power shorter) and **auto-inserting a gentle counter-pose after deep
+  backbends** using each asana's `counterAsanaIds`.
 - **Logging** — log a practice; calories estimated per pose via the shared MET
   engine.
 
-Code: `features/yoga/{AsanaLibrary,AsanaEditor,SequenceBuilder}.tsx`,
-`core/yoga/{schema,filters,sequence-engine,duration}.ts`,
-`core/activity/calories.ts`. Seed: `public/data/asanas.default.json`.
+Each card and the detail modal show a contained, full-body pose **illustration**
+(`AsanaImage`, convention path `public/images/asanas/<id>.webp`, 🧘 fallback until
+populated — see [`docs/plan_4_yoga_images.md`](plan_4_yoga_images.md)).
+
+Code: `features/yoga/{AsanaLibrary,AsanaEditor,SequenceBuilder,YogaLearn,AsanaImage}.tsx`,
+`core/yoga/{schema,filters,sequence-engine,duration,counterpose,styles,theory}.ts`,
+`core/activity/calories.ts`, `lib/images.ts`. Seed: `public/data/asanas.default.json`.
+
+### 11a. Learn yoga (theory & education)
+
+A `/yoga/learn` knowledge base explaining yoga theory in plain language: what
+yoga is, history & origins, the four classical paths (Karma/Bhakti/Raja/Jnana),
+Patanjali's eight limbs, Hatha, pranayama, the three gunas, the chakras, modern
+styles & how to choose, and a glossary — each section **cited** and content-
+integrity tested. Note: Patanjali's "Ashtanga" (eight limbs) is philosophy,
+modelled as reference content, distinct from the Ashtanga *Vinyasa* style.
+Code: `features/yoga/YogaLearn.tsx`, `core/yoga/{theory,styles}.ts`.
 
 ## 12. Activity vs intake (calories burned)
 

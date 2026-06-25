@@ -6,7 +6,7 @@ import type {
   SplitType,
 } from "@/core/exercise/schema";
 import type { FitnessGoal, YogaGoal } from "@/core/fitness";
-import type { AsanaFamily, YogaFocus } from "@/core/yoga/schema";
+import type { AsanaFamily, YogaFocus, YogaStyle } from "@/core/yoga/schema";
 
 export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
   beginner: "Beginner",
@@ -65,9 +65,13 @@ export const GOAL_LABELS: Record<FitnessGoal, string> = {
 export const FAMILY_LABELS: Record<AsanaFamily, string> = {
   standing: "Standing",
   seated: "Seated",
+  reclining: "Reclining",
+  kneeling: "Kneeling",
+  squatting: "Squatting",
   forwardBend: "Forward bend",
   backbend: "Backbend",
   twist: "Twist",
+  lateralBend: "Lateral bend",
   balance: "Balance",
   inversion: "Inversion",
   armBalance: "Arm balance",
@@ -83,6 +87,41 @@ export const FOCUS_LABELS: Record<YogaFocus, string> = {
   relaxation: "Relaxation",
   breath: "Breath",
 };
+
+export const STYLE_LABELS: Record<YogaStyle, string> = {
+  hatha: "Hatha",
+  vinyasa: "Vinyasa / Flow",
+  ashtanga: "Ashtanga",
+  iyengar: "Iyengar",
+  kundalini: "Kundalini",
+  yin: "Yin",
+  restorative: "Restorative",
+  power: "Power",
+  sivananda: "Sivananda",
+};
+
+/** Curated tag suggestions for the library filter (schema stays free-form). */
+export const KNOWN_TAGS = [
+  "foundational",
+  "calming",
+  "energizing",
+  "hip-opener",
+  "heart-opener",
+  "shoulder-opener",
+  "side-stretch",
+  "hamstrings",
+  "core",
+  "balance",
+  "focus",
+  "spine",
+  "digestion",
+  "restorative",
+  "counter-pose",
+  "transition",
+  "advanced",
+  "meditation",
+  "breath",
+] as const;
 
 export const YOGA_GOAL_LABELS: Record<YogaGoal, string> = {
   flexibility: "Flexibility",

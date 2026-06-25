@@ -68,6 +68,15 @@ nutrition inside a component, add a function to `core/` instead.
 - **Movement prefs are decoupled from the diet profile** — `FitnessProfile`
   (`core/fitness.ts`) is a separate persisted field, so the nutrition engine
   stays unaware of exercise/yoga concepts.
+- **Counter-poses are id references, not object graphs** — an asana's
+  `counterAsanaIds` link to other asanas exactly like recipe→food ids, with a
+  referential-integrity test in `core/yoga/data.test.ts`. Counter logic lives in
+  `core/yoga/counterpose.ts`; the sequence engine uses it to insert gentle
+  counters after backbends.
+- **Yoga theory is structured, cited data** — `core/yoga/{theory,styles}.ts`
+  hold the Learn-page curriculum and traditions as typed, content-integrity-
+  tested data (not hardcoded JSX). Patanjali's eight limbs are reference content,
+  kept distinct from the Ashtanga *Vinyasa* style.
 - **Calories burned are informational in v1** — shown beside intake; nutrition
   targets are unchanged. The dashboard depends only on one narrow aggregation
   (`summarizeForDate` over `activityLog`), so "eat-back calories" can later be

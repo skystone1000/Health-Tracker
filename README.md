@@ -23,11 +23,13 @@ your browser, with no backend.
   cardio, full-body) and muscle group, a **routine generated from your profile**
   (equipment, experience, goal, split), session logging, and MET-based calorie
   estimates. Fully editable; add your own.
-- **Yoga** — a separate library of asanas spanning every family (standing,
-  seated, forward bends, backbends, twists, balance, inversions, arm balances,
-  restorative, pranayama, meditation), a **sequence generated for your goal &
-  level** (safely ordered from breath to rest, respecting contraindications),
-  and practice logging.
+- **Yoga** — a detailed library of asanas spanning every family, each tagged with
+  **styles/traditions** (Hatha, Vinyasa, Ashtanga, Iyengar, Yin, Restorative,
+  Power, Kundalini, Sivananda), **pros, cons, who-should-avoid** and **counter
+  (viparit) poses**. Filter by style/tag/family/level, generate a **style-biased
+  sequence** (safely ordered, contraindication-aware, with auto counter-poses),
+  log practices, and read a **Learn Yoga** theory section (history, the four
+  paths, Patanjali's eight limbs, pranayama, gunas, chakras, styles & glossary).
 - **Activity vs intake** — calories burned are estimated and shown **beside**
   your food intake on the dashboard (targets are left unchanged in v1).
 - **Diet filters** — Veg / Non-veg / Vegan + exclusions, applied consistently

@@ -1,14 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Badge, Button, Input, Label, Modal, Select } from "@/components/ui";
 import { DIFFICULTIES } from "@/core/activity/schema";
 import {
   ASANA_FAMILIES,
   AsanaSchema,
   YOGA_FOCI,
+  YOGA_STYLES,
   type Asana,
 } from "@/core/yoga/schema";
-import { DIFFICULTY_LABELS, FAMILY_LABELS, FOCUS_LABELS } from "@/lib/activity";
+import { suggestCounters } from "@/core/yoga/counterpose";
+import {
+  DIFFICULTY_LABELS,
+  FAMILY_LABELS,
+  FOCUS_LABELS,
+  KNOWN_TAGS,
+  STYLE_LABELS,
+} from "@/lib/activity";
 import { useAppStore } from "@/store/useAppStore";
+import { AsanaImage } from "./AsanaImage";
 
 interface Draft {
   id: string;
@@ -18,10 +27,14 @@ interface Draft {
   difficulty: Asana["difficulty"];
   metValue: number;
   focus: Asana["focus"];
+  styles: Asana["styles"];
+  tags: string[];
   defaultHoldSec: number;
   steps: string;
   benefits: string;
+  cons: string;
   contraindications: string;
+  counterAsanaIds: string[];
 }
 
 const slug = (s: string) =>
@@ -39,21 +52,29 @@ function toDraft(a: Asana | null): Draft {
     difficulty: a?.difficulty ?? "beginner",
     metValue: a?.metValue ?? 2.5,
     focus: a?.focus ?? ["flexibility"],
+    styles: a?.styles ?? ["hatha"],
+    tags: a?.tags ?? [],
     defaultHoldSec: a?.defaultHoldSec ?? 30,
     steps: a?.steps.join("\n") ?? "",
     benefits: a?.benefits.join("\n") ?? "",
+    cons: a?.cons.join("\n") ?? "",
     contraindications: a?.contraindications.join("\n") ?? "",
+    counterAsanaIds: a?.counterAsanaIds ?? [],
   };
 }
 
 export function AsanaEditor({
   asana,
+  all,
   open,
   onClose,
+  onOpenAsana,
 }: {
   asana: Asana | null;
+  all: Asana[];
   open: boolean;
   onClose: () => void;
+  onOpenAsana?: (a: Asana) => void;
 }) {
   const upsertAsana = useAppStore((s) => s.upsertAsana);
   const deleteAsana = useAppStore((s) => s.deleteAsana);
@@ -65,6 +86,8 @@ export function AsanaEditor({
   const [draft, setDraft] = useState<Draft>(toDraft(asana));
   const [error, setError] = useState<string | null>(null);
 
+  const byId = useMemo(() => new Map(all.map((a) => [a.id, a])), [all]);
+
   useEffect(() => {
     setDraft(toDraft(asana));
     setEditing(!asana);
@@ -73,10 +96,20 @@ export function AsanaEditor({
 
   const set = (patch: Partial<Draft>) => setDraft((d) => ({ ...d, ...patch }));
 
-  const toggleFocus = (f: Asana["focus"][number]) => {
-    const has = draft.focus.includes(f);
-    const next = has ? draft.focus.filter((x) => x !== f) : [...draft.focus, f];
-    set({ focus: next.length ? next : draft.focus });
+  const toggleArr = <K extends "focus" | "styles" | "tags" | "counterAsanaIds">(
+    key: K,
+    val: string,
+    allowEmpty = true,
+  ) => {
+    const list = draft[key] as string[];
+    const has = list.includes(val);
+    const next = has ? list.filter((x) => x !== val) : [...list, val];
+    set({ [key]: next.length || allowEmpty ? next : list } as unknown as Partial<Draft>);
+  };
+
+  const suggest = () => {
+    const pseudo = { ...(asana ?? {}), id: draft.id || "new", family: draft.family } as Asana;
+    set({ counterAsanaIds: suggestCounters(pseudo, all).map((a) => a.id) });
   };
 
   const save = () => {
@@ -95,10 +128,14 @@ export function AsanaEditor({
       difficulty: draft.difficulty,
       metValue: Number(draft.metValue),
       focus: draft.focus,
-      defaultHoldSec: Number(draft.defaultHoldSec) || 30,
+      styles: draft.styles,
+      tags: draft.tags,
       steps: lines(draft.steps),
       benefits: lines(draft.benefits),
+      cons: lines(draft.cons),
       contraindications: lines(draft.contraindications),
+      counterAsanaIds: draft.counterAsanaIds.filter((cid) => cid !== id),
+      defaultHoldSec: Number(draft.defaultHoldSec) || 30,
       evidences,
       verification: asana?.verification ?? {
         status: evidences.length >= 3 ? "verified" : "unverified",
@@ -131,17 +168,35 @@ export function AsanaEditor({
     >
       {!editing && asana ? (
         <div className="space-y-4">
+          <AsanaImage
+            asana={asana}
+            className="h-80 w-full rounded-lg border border-border"
+          />
           <div className="flex flex-wrap gap-1">
             <Badge variant="default">{FAMILY_LABELS[asana.family]}</Badge>
             <Badge variant="outline">
               {DIFFICULTY_LABELS[asana.difficulty]}
             </Badge>
-            {asana.focus.map((f) => (
-              <Badge key={f} variant="secondary">
-                {FOCUS_LABELS[f]}
+            {asana.styles.map((s) => (
+              <Badge key={s} variant="secondary">
+                {STYLE_LABELS[s]}
               </Badge>
             ))}
           </div>
+
+          {asana.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1">
+              {asana.tags.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground"
+                >
+                  #{t}
+                </span>
+              ))}
+            </div>
+          )}
+
           {asana.steps.length > 0 && (
             <ol className="list-decimal space-y-1 pl-5 text-sm">
               {asana.steps.map((s, i) => (
@@ -149,9 +204,10 @@ export function AsanaEditor({
               ))}
             </ol>
           )}
+
           {asana.benefits.length > 0 && (
             <div className="text-sm">
-              <Label>Benefits</Label>
+              <Label>Benefits (pros)</Label>
               <ul className="mt-1 list-disc pl-5 text-muted-foreground">
                 {asana.benefits.map((b, i) => (
                   <li key={i}>{b}</li>
@@ -159,11 +215,50 @@ export function AsanaEditor({
               </ul>
             </div>
           )}
-          {asana.contraindications.length > 0 && (
-            <p className="rounded-lg bg-amber-500/10 px-3 py-2 text-xs text-amber-700 dark:text-amber-400">
-              ⚠ Avoid with: {asana.contraindications.join(", ")}
-            </p>
+
+          {asana.cons.length > 0 && (
+            <div className="text-sm">
+              <Label>Cautions (cons)</Label>
+              <ul className="mt-1 list-disc pl-5 text-muted-foreground">
+                {asana.cons.map((c, i) => (
+                  <li key={i}>{c}</li>
+                ))}
+              </ul>
+            </div>
           )}
+
+          {asana.contraindications.length > 0 && (
+            <div>
+              <Label>Who should avoid it</Label>
+              <p className="mt-1 rounded-lg bg-amber-500/10 px-3 py-2 text-xs text-amber-700 dark:text-amber-400">
+                ⚠ {asana.contraindications.join(", ")}.
+                <br />
+                Not medical advice — consult a professional if unsure.
+              </p>
+            </div>
+          )}
+
+          {asana.counterAsanaIds.length > 0 && (
+            <div>
+              <Label>Counter pose (viparit)</Label>
+              <div className="mt-1 flex flex-wrap gap-2">
+                {asana.counterAsanaIds.map((cid) => {
+                  const c = byId.get(cid);
+                  if (!c) return null;
+                  return (
+                    <button
+                      key={cid}
+                      onClick={() => onOpenAsana?.(c)}
+                      className="rounded-full border border-border px-3 py-1 text-xs transition-colors hover:border-primary/40 hover:text-primary"
+                    >
+                      {c.englishName} →
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <div className="flex justify-end gap-2">
             {isOverridden && (
               <Button
@@ -259,26 +354,29 @@ export function AsanaEditor({
               />
             </div>
           </div>
-          <div className="space-y-1.5">
-            <Label>Focus</Label>
-            <div className="flex flex-wrap gap-1.5">
-              {YOGA_FOCI.map((f) => (
-                <button
-                  key={f}
-                  type="button"
-                  onClick={() => toggleFocus(f)}
-                  className={
-                    "rounded-lg border px-2.5 py-1 text-xs transition-colors " +
-                    (draft.focus.includes(f)
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border hover:bg-secondary")
-                  }
-                >
-                  {FOCUS_LABELS[f]}
-                </button>
-              ))}
-            </div>
-          </div>
+
+          <Chips
+            label="Focus"
+            options={[...YOGA_FOCI]}
+            selected={draft.focus}
+            labelFor={(f) => FOCUS_LABELS[f as Asana["focus"][number]]}
+            onToggle={(f) => toggleArr("focus", f, false)}
+          />
+          <Chips
+            label="Styles / traditions"
+            options={[...YOGA_STYLES]}
+            selected={draft.styles}
+            labelFor={(s) => STYLE_LABELS[s as Asana["styles"][number]]}
+            onToggle={(s) => toggleArr("styles", s)}
+          />
+          <Chips
+            label="Tags"
+            options={[...KNOWN_TAGS]}
+            selected={draft.tags}
+            labelFor={(t) => t}
+            onToggle={(t) => toggleArr("tags", t)}
+          />
+
           <div className="space-y-1.5">
             <Label>Steps (one per line)</Label>
             <textarea
@@ -288,7 +386,23 @@ export function AsanaEditor({
             />
           </div>
           <div className="space-y-1.5">
-            <Label>Contraindications (one per line)</Label>
+            <Label>Benefits / pros (one per line)</Label>
+            <textarea
+              className="flex min-h-[60px] w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              value={draft.benefits}
+              onChange={(e) => set({ benefits: e.target.value })}
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label>Cautions / cons (one per line)</Label>
+            <textarea
+              className="flex min-h-[60px] w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              value={draft.cons}
+              onChange={(e) => set({ cons: e.target.value })}
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label>Who should avoid (one per line)</Label>
             <textarea
               className="flex min-h-[60px] w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               value={draft.contraindications}
@@ -296,6 +410,50 @@ export function AsanaEditor({
               placeholder="e.g. pregnancy"
             />
           </div>
+
+          {/* Counter poses (viparit) */}
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between">
+              <Label>Counter poses (viparit)</Label>
+              <Button type="button" variant="ghost" size="sm" onClick={suggest}>
+                Suggest
+              </Button>
+            </div>
+            {draft.counterAsanaIds.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {draft.counterAsanaIds.map((cid) => (
+                  <Badge
+                    key={cid}
+                    variant="secondary"
+                    className="cursor-pointer"
+                    onClick={() => toggleArr("counterAsanaIds", cid)}
+                  >
+                    {byId.get(cid)?.englishName ?? cid} ✕
+                  </Badge>
+                ))}
+              </div>
+            )}
+            <Select
+              value=""
+              onChange={(e) => {
+                if (e.target.value) toggleArr("counterAsanaIds", e.target.value);
+              }}
+            >
+              <option value="">+ Add a counter pose…</option>
+              {all
+                .filter(
+                  (a) =>
+                    a.id !== (draft.id || "new") &&
+                    !draft.counterAsanaIds.includes(a.id),
+                )
+                .map((a) => (
+                  <option key={a.id} value={a.id}>
+                    {a.englishName}
+                  </option>
+                ))}
+            </Select>
+          </div>
+
           {error && <p className="text-sm text-destructive">{error}</p>}
           <div className="flex justify-end gap-2">
             <Button variant="ghost" onClick={onClose}>
@@ -306,5 +464,42 @@ export function AsanaEditor({
         </div>
       )}
     </Modal>
+  );
+}
+
+function Chips({
+  label,
+  options,
+  selected,
+  labelFor,
+  onToggle,
+}: {
+  label: string;
+  options: string[];
+  selected: string[];
+  labelFor: (v: string) => string;
+  onToggle: (v: string) => void;
+}) {
+  return (
+    <div className="space-y-1.5">
+      <Label>{label}</Label>
+      <div className="flex flex-wrap gap-1.5">
+        {options.map((o) => (
+          <button
+            key={o}
+            type="button"
+            onClick={() => onToggle(o)}
+            className={
+              "rounded-lg border px-2.5 py-1 text-xs transition-colors " +
+              (selected.includes(o)
+                ? "border-primary bg-primary/10 text-primary"
+                : "border-border hover:bg-secondary")
+            }
+          >
+            {labelFor(o)}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-# CLAUDE.md — working rules for this repository (Nourish)
+# AGENTS.md — working rules for this repository (Nourish)
 
 You are working on **Nourish**, an offline-first React + Vite diet & nutrition
 tracker. Follow these rules on every task.
@@ -29,7 +29,7 @@ formula, or alter the data model**, update the affected doc(s) in the same chang
   guides accurate so they stay usable without re-reading the whole project).
 
 **All Markdown files live in `docs/`** — the only exceptions are `README.md` and
-`CLAUDE.md`, which stay at the repo root. Create every new `.md` (plans, guides,
+`AGENTS.md`, which stay at the repo root. Create every new `.md` (plans, guides,
 notes) inside `docs/`.
 
 **To add a single asana or exercise, follow `docs/ADD_YOGA_ASANA.md` /

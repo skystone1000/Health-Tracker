@@ -1,33 +1,47 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Badge, Button, Card, CardContent, Input, Select } from "@/components/ui";
 import { applyAsanaFilters } from "@/core/yoga/filters";
 import {
   ASANA_FAMILIES,
   YOGA_FOCI,
+  YOGA_STYLES,
   type Asana,
   type AsanaFamily,
   type YogaFocus,
+  type YogaStyle,
 } from "@/core/yoga/schema";
 import { DIFFICULTIES, type Difficulty } from "@/core/activity/schema";
 import {
   DIFFICULTY_LABELS,
   FAMILY_LABELS,
   FOCUS_LABELS,
+  KNOWN_TAGS,
+  STYLE_LABELS,
 } from "@/lib/activity";
 import { selectAllAsanas, useAppStore } from "@/store/useAppStore";
 import { AsanaEditor } from "./AsanaEditor";
+import { AsanaImage } from "./AsanaImage";
 
 export function AsanaLibrary() {
   const allAsanas = useAppStore(selectAllAsanas);
   const overrides = useAppStore((s) => s.asanaOverrides);
+  const [params] = useSearchParams();
 
   const [search, setSearch] = useState("");
   const [family, setFamily] = useState("");
   const [focus, setFocus] = useState("");
   const [difficulty, setDifficulty] = useState("");
+  const [style, setStyle] = useState("");
+  const [tag, setTag] = useState("");
   const [editing, setEditing] = useState<Asana | null>(null);
   const [adding, setAdding] = useState(false);
+
+  // Cross-link from the Learn page: /yoga?style=hatha
+  useEffect(() => {
+    const s = params.get("style");
+    if (s) setStyle(s);
+  }, [params]);
 
   const filtered = useMemo(
     () =>
@@ -36,8 +50,10 @@ export function AsanaLibrary() {
         family: (family || undefined) as AsanaFamily | undefined,
         focus: (focus || undefined) as YogaFocus | undefined,
         difficulty: (difficulty || undefined) as Difficulty | undefined,
+        style: (style || undefined) as YogaStyle | undefined,
+        tag: tag || undefined,
       }),
-    [allAsanas, search, family, focus, difficulty],
+    [allAsanas, search, family, focus, difficulty, style, tag],
   );
 
   return (
@@ -51,6 +67,9 @@ export function AsanaLibrary() {
           </p>
         </div>
         <div className="flex gap-2">
+          <Link to="/yoga/learn">
+            <Button variant="outline">📖 Learn</Button>
+          </Link>
           <Link to="/yoga/sequence">
             <Button variant="secondary">My sequence →</Button>
           </Link>
@@ -101,15 +120,40 @@ export function AsanaLibrary() {
             </option>
           ))}
         </Select>
+        <Select
+          className="max-w-[160px]"
+          value={style}
+          onChange={(e) => setStyle(e.target.value)}
+        >
+          <option value="">All styles</option>
+          {YOGA_STYLES.map((s) => (
+            <option key={s} value={s}>
+              {STYLE_LABELS[s]}
+            </option>
+          ))}
+        </Select>
+        <Select
+          className="max-w-[150px]"
+          value={tag}
+          onChange={(e) => setTag(e.target.value)}
+        >
+          <option value="">All tags</option>
+          {KNOWN_TAGS.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </Select>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((a) => (
           <Card
             key={a.id}
-            className="cursor-pointer transition-colors hover:border-primary/40"
+            className="cursor-pointer overflow-hidden transition-colors hover:border-primary/40"
             onClick={() => setEditing(a)}
           >
+            <AsanaImage asana={a} className="h-56 w-full" />
             <CardContent className="p-4">
               <div className="flex items-start justify-between gap-2">
                 <div>
@@ -129,6 +173,9 @@ export function AsanaLibrary() {
                 <Badge variant="secondary">
                   {DIFFICULTY_LABELS[a.difficulty]}
                 </Badge>
+                {a.styles[0] && (
+                  <Badge variant="default">{STYLE_LABELS[a.styles[0]]}</Badge>
+                )}
                 {a.source === "user" && <Badge variant="default">custom</Badge>}
                 {overrides[a.id] && <Badge variant="default">edited</Badge>}
               </div>
@@ -144,10 +191,17 @@ export function AsanaLibrary() {
 
       <AsanaEditor
         asana={editing}
+        all={allAsanas}
         open={!!editing}
         onClose={() => setEditing(null)}
+        onOpenAsana={(a) => setEditing(a)}
       />
-      <AsanaEditor asana={null} open={adding} onClose={() => setAdding(false)} />
+      <AsanaEditor
+        asana={null}
+        all={allAsanas}
+        open={adding}
+        onClose={() => setAdding(false)}
+      />
     </div>
   );
 }

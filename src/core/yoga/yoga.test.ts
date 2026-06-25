@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { AsanaSchema, type Asana } from "./schema";
 import { applyAsanaFilters, isContraindicated, withinLevel } from "./filters";
-import { generateSequence } from "./sequence-engine";
+import { generateSequence, sequenceIdFor } from "./sequence-engine";
 import { sequenceEstimatedKcal, sequenceTotals } from "./duration";
 import { defaultFitnessProfile, type FitnessProfile } from "@/core/fitness";
 
@@ -76,6 +76,29 @@ describe("generateSequence", () => {
     const ids = seq.poses.map((p) => p.asanaId);
     expect(ids.indexOf("nadi")).toBeLessThan(ids.indexOf("tadasana"));
     expect(ids[ids.length - 1]).toBe("savasana");
+  });
+});
+
+describe("sequence style bias & counter-poses", () => {
+  const profile: FitnessProfile = {
+    ...defaultFitnessProfile(),
+    yogaGoal: "flexibility",
+    yogaLevel: "beginner",
+  };
+
+  it("Yin style lengthens holds vs balanced", () => {
+    const balanced = generateSequence(profile, catalogue);
+    const yin = generateSequence(profile, catalogue, "yin");
+    expect(yin.totalMin).toBeGreaterThan(balanced.totalMin);
+    expect(yin.id).toBe(sequenceIdFor(profile, "yin"));
+  });
+
+  it("inserts a gentle counter-pose after a backbend", () => {
+    const cobra = make({ id: "cobra", sanskritName: "Bhujangasana", englishName: "Cobra", family: "backbend", counterAsanaIds: ["child"] });
+    const child = make({ id: "child", sanskritName: "Balasana", englishName: "Child", family: "restorative", focus: ["relaxation"] });
+    const seq = generateSequence(profile, [cobra, child]);
+    const ids = seq.poses.map((p) => p.asanaId);
+    expect(ids.indexOf("child")).toBe(ids.indexOf("cobra") + 1);
   });
 });
 
