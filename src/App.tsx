@@ -12,6 +12,8 @@ import { WorkoutPlan } from "@/features/exercise/WorkoutPlan";
 import { AsanaLibrary } from "@/features/yoga/AsanaLibrary";
 import { SequenceBuilder } from "@/features/yoga/SequenceBuilder";
 import { YogaLearn } from "@/features/yoga/YogaLearn";
+import { MedicineLibrary } from "@/features/medicine/MedicineLibrary";
+import { MyCabinet } from "@/features/medicine/MyCabinet";
 import { DataPage } from "@/features/data/DataPage";
 
 function LoadingScreen({ message }: { message: string }) {
@@ -56,6 +58,8 @@ export default function App() {
         <Route path="/yoga" element={<AsanaLibrary />} />
         <Route path="/yoga/learn" element={<YogaLearn />} />
         <Route path="/yoga/sequence" element={<SequenceBuilder />} />
+        <Route path="/medicine" element={<MedicineLibrary />} />
+        <Route path="/medicine/cabinet" element={<MyCabinet />} />
         <Route path="/data" element={<DataPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
