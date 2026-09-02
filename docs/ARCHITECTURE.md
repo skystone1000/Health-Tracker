@@ -84,6 +84,12 @@ nutrition inside a component, add a function to `core/` instead.
 - **One backup aggregator** — `core/backup.ts` `BackupSchema` composes the
   persisted slices of every domain (nutrition + movement). It lives apart from
   `schema.ts` to avoid a cycle (domain schemas import `schema.ts` for `Evidence`).
+- **Medicine is a fourth bounded domain** (`core/medicine/`) — a reference
+  library (allopathy/homeopathy/biochemic) plus a personal stock/expiry layer.
+  It imports no other domain and is deliberately informational: no dosing/
+  recommender/interaction logic, and no effect on nutrition targets or the
+  activity log. Categories are **system-scoped data** (a Zod refinement), added
+  as key lists, not code branches.
 
 ## Data flow examples
 
@@ -122,7 +128,8 @@ preview browser tooling.
    `partialize`, `core/backup.ts` `BackupSchema`, `exportBackup`, `importBackup`,
    and `resetUserData`. (Currently: profile, custom foods/overrides, recipes,
    plans, fitness, custom exercises/overrides, custom asanas/overrides, workout
-   routines, yoga sequences, activityLog.)
+   routines, yoga sequences, activityLog, custom medicines/overrides, medicine
+   stock.)
 3. New nutrients must be added to `NUTRIENT_KEYS`/`NUTRIENT_META` and the grouped
    schemas — they then flow through totals, targets and the editor automatically.
 4. Keep the exercise and yoga domains independent of each other; put anything

@@ -174,6 +174,32 @@ today** card shows calories burned, active minutes and the net (food − burn)
 Code: `core/activity/{calories,summary}.ts`, `features/shared/ActivitySummary.tsx`,
 `features/shared/ActivityHistory.tsx`.
 
+## 13. Medicine inventory
+
+A curated reference library of common medicines across three systems —
+**allopathy** (popular OTC tablets), **homeopathy** (mother tinctures, dilutions,
+potencies) and **biochemic** (the Schuessler tissue salts + combinations) — plus
+a personal **"My cabinet"** layer marking what the user owns, with quantity and
+expiry.
+
+- **Library** — searchable grid; filter by **system**, a **system-scoped
+  category**, and an **"In my cabinet"** toggle. Verified/owned badges. Detail
+  view shows common uses, cautions, who-should-avoid, sources, and a prominent
+  **not-medical-advice disclaimer**.
+- **Add / edit** — create custom medicines or edit a default (stored as an
+  override; defaults stay pristine), mirroring the food/exercise editors. The
+  same editor captures the stock fields (owned / quantity / unit / expiry).
+- **My cabinet** — owned medicines grouped into **Expired / Expiring soon (≤30
+  days) / Low stock / OK**, computed by pure `core/medicine/stock.ts`.
+
+Informational only: no recommender, no dose calculator, no interaction checker,
+and no effect on nutrition targets or the activity log. Dose reminders/scheduling
+are roadmap.
+
+Code: `features/medicine/{MedicineLibrary,MedicineDetail,MedicineEditor,MyCabinet}.tsx`,
+`core/medicine/{schema,filters,stock}.ts`, `lib/medicine.ts`.
+Seed: `public/data/medicines.default.json`.
+
 ## Not yet built (roadmap)
 
 Activity feeding nutrition targets ("eat-back" calories), multi-day plan & workout
