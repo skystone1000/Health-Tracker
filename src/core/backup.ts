@@ -9,6 +9,7 @@ import { FitnessProfileSchema } from "@/core/fitness";
 import { ExerciseSchema, WorkoutRoutineSchema } from "@/core/exercise/schema";
 import { AsanaSchema, SequenceSchema } from "@/core/yoga/schema";
 import { ActivityLogEntrySchema } from "@/core/activity/schema";
+import { MedicineSchema, MedicineStockEntrySchema } from "@/core/medicine/schema";
 
 /**
  * Full backup payload for JSON export/import. Aggregates every persisted slice
@@ -33,5 +34,9 @@ export const BackupSchema = z.object({
   workoutRoutines: z.array(WorkoutRoutineSchema).default([]),
   yogaSequences: z.array(SequenceSchema).default([]),
   activityLog: z.array(ActivityLogEntrySchema).default([]),
+  // medicine
+  customMedicines: z.array(MedicineSchema).default([]),
+  medicineOverrides: z.record(z.string(), MedicineSchema).default({}),
+  medicineStock: z.array(MedicineStockEntrySchema).default([]),
 });
 export type Backup = z.infer<typeof BackupSchema>;
