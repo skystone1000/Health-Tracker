@@ -1,0 +1,141 @@
+[
+  {
+    "id": "paracetamol",
+    "name": "Paracetamol",
+    "brandNames": ["Crocin", "Dolo 650", "Calpol"],
+    "system": "allopathy",
+    "category": "analgesic",
+    "form": "tablet",
+    "commonUses": ["Fever", "Mild to moderate pain", "Headache"],
+    "dosageNote": "Commonly sold as 500 mg / 650 mg tablets. Follow the package leaflet or a clinician; do not exceed the stated daily maximum.",
+    "cautions": ["Overdose can cause serious liver damage", "Avoid combining multiple paracetamol-containing products"],
+    "contraindications": ["Severe liver disease"],
+    "tags": ["fever", "pain", "otc"],
+    "evidences": [
+      { "source": "WHO Model List of Essential Medicines", "ref": "23rd list, 2023", "url": "https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.02" },
+      { "source": "NHS medicines A to Z", "ref": "Paracetamol", "url": "https://www.nhs.uk/medicines/paracetamol-for-adults/" }
+    ]
+  },
+  {
+    "id": "cetirizine",
+    "name": "Cetirizine",
+    "brandNames": ["Zyrtec", "Cetzine", "Alerid"],
+    "system": "allopathy",
+    "category": "antihistamine",
+    "form": "tablet",
+    "commonUses": ["Allergic rhinitis", "Hives", "Itching"],
+    "dosageNote": "Typically one 10 mg tablet daily for adults. Follow the leaflet or a clinician.",
+    "cautions": ["May cause drowsiness in some people"],
+    "contraindications": ["Severe kidney disease without dose adjustment"],
+    "tags": ["allergy", "antihistamine", "otc"],
+    "evidences": [
+      { "source": "WHO Model List of Essential Medicines", "ref": "23rd list, 2023" },
+      { "source": "NHS medicines A to Z", "ref": "Cetirizine", "url": "https://www.nhs.uk/medicines/cetirizine/" }
+    ]
+  },
+  {
+    "id": "ors",
+    "name": "Oral Rehydration Salts (ORS)",
+    "brandNames": ["Electral", "WHO ORS"],
+    "system": "allopathy",
+    "category": "supplement",
+    "form": "powder",
+    "commonUses": ["Rehydration during diarrhoea", "Fluid and electrolyte replacement"],
+    "dosageNote": "Dissolve one sachet in the volume of clean water stated on the packet. Discard unused solution after 24 hours.",
+    "cautions": ["Use the exact water volume on the packet — do not over-concentrate"],
+    "contraindications": ["Severe dehydration needing intravenous fluids"],
+    "tags": ["diarrhoea", "hydration", "otc"],
+    "evidences": [
+      { "source": "WHO Model List of Essential Medicines", "ref": "Oral rehydration salts" },
+      { "source": "WHO/UNICEF ORS guidance", "ref": "Low-osmolarity ORS" }
+    ]
+  },
+  {
+    "id": "loperamide",
+    "name": "Loperamide",
+    "brandNames": ["Imodium"],
+    "system": "allopathy",
+    "category": "antidiarrheal",
+    "form": "tablet",
+    "commonUses": ["Short-term relief of acute diarrhoea"],
+    "dosageNote": "Follow the package leaflet; not for use when there is blood in the stool or high fever.",
+    "cautions": ["Do not use for more than the stated duration without advice"],
+    "contraindications": ["Dysentery (blood in stool with fever)", "Children under the labelled age"],
+    "tags": ["diarrhoea", "otc"],
+    "evidences": [
+      { "source": "NHS medicines A to Z", "ref": "Loperamide", "url": "https://www.nhs.uk/medicines/loperamide/" },
+      { "source": "WHO Model List of Essential Medicines", "ref": "Loperamide" }
+    ]
+  },
+  {
+    "id": "arnica-montana-30c",
+    "name": "Arnica Montana",
+    "brandNames": [],
+    "system": "homeopathy",
+    "category": "potency",
+    "form": "globules",
+    "potency": "30C",
+    "commonUses": ["Traditionally used for bruises and soreness after minor injury"],
+    "dosageNote": "Homeopathic potency preparation. There is no accepted conventional-medicine dosing; follow a qualified homeopath.",
+    "cautions": ["Homeopathic remedies are not a substitute for medical care in serious injury"],
+    "contraindications": [],
+    "tags": ["bruise", "injury"],
+    "evidences": [
+      { "source": "German Homoeopathic Pharmacopoeia (GHP)", "ref": "Arnica montana" },
+      { "source": "Homoeopathic Pharmacopoeia of the United States (HPUS)", "ref": "Arnica montana" }
+    ]
+  },
+  {
+    "id": "calendula-q",
+    "name": "Calendula Officinalis (Mother Tincture)",
+    "brandNames": [],
+    "system": "homeopathy",
+    "category": "mother-tincture",
+    "form": "drops",
+    "potency": "Q",
+    "commonUses": ["Traditionally used topically, diluted, for minor skin irritation"],
+    "dosageNote": "Mother tincture (Q). Dilute as directed; follow a qualified homeopath.",
+    "cautions": ["For external use as directed; avoid on deep or infected wounds"],
+    "contraindications": ["Known allergy to Asteraceae/daisy family plants"],
+    "tags": ["skin", "topical"],
+    "evidences": [
+      { "source": "German Homoeopathic Pharmacopoeia (GHP)", "ref": "Calendula officinalis" },
+      { "source": "Homoeopathic Pharmacopoeia of the United States (HPUS)", "ref": "Calendula officinalis" }
+    ]
+  },
+  {
+    "id": "calcarea-phosphorica-6x",
+    "name": "Calcarea Phosphorica 6X",
+    "brandNames": [],
+    "system": "biochemic",
+    "category": "tissue-salt",
+    "form": "tablet",
+    "potency": "6X",
+    "commonUses": ["One of the 12 Schuessler biochemic tissue salts; traditionally associated with bone and teeth support"],
+    "dosageNote": "Biochemic tissue-salt tablet, usually taken as directed on the label or by a practitioner.",
+    "cautions": ["Traditional biochemic use; not a substitute for medical care"],
+    "contraindications": [],
+    "tags": ["tissue-salt", "schuessler"],
+    "evidences": [
+      { "source": "Schuessler biochemic tissue salts reference", "ref": "Calcarea phosphorica (No. 2)" },
+      { "source": "German Homoeopathic Pharmacopoeia (GHP)", "ref": "Calcarea phosphorica" }
+    ]
+  },
+  {
+    "id": "bio-combination-6",
+    "name": "Bio-Combination 6 (Cough & Cold)",
+    "brandNames": [],
+    "system": "biochemic",
+    "category": "combination",
+    "form": "tablet",
+    "commonUses": ["A traditional biochemic combination of tissue salts marketed for cough and cold symptoms"],
+    "dosageNote": "Combination biochemic tablet; take as directed on the label or by a practitioner.",
+    "cautions": ["Traditional biochemic use; seek medical care if symptoms are severe or persistent"],
+    "contraindications": [],
+    "tags": ["cough", "cold", "combination"],
+    "evidences": [
+      { "source": "Schuessler biochemic tissue salts reference", "ref": "Bio-combination formulas" },
+      { "source": "Manufacturer product monograph", "ref": "Bio-Combination 6" }
+    ]
+  }
+]
