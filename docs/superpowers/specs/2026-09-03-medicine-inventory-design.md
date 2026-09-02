@@ -93,8 +93,15 @@ Fields:
 | `cautions`        | string[]   | general cautions |
 | `contraindications`| string[]  | who should avoid |
 | `tags`            | string[]   | cross-cutting, e.g. "fever", "cold", "skin" |
-| `evidences`       | Evidence[] | shared schema; **>=2** => Verified ✓ |
+| `evidences`       | Evidence[] | shared schema; every default carries **>=2** cited sources (enforced by `data.test.ts`) |
 | `source`          | "default" \| "user" | mirrors foods |
+
+**Verification signal (revised during review).** Unlike Foods/Yoga, medicine
+cards do **not** show a "Verified ✓" badge. In a medicine context a "Verified"
+label risks implying clinical endorsement, so the honest signal is instead the
+**cited Sources list plus the prominent not-medical-advice disclaimer** in the
+detail view. The `>=2` rule is a *data-quality gate* (every default must cite at
+least two sources), not a user-facing verified stamp.
 
 ### 3.2 System-scoped categories
 
@@ -159,8 +166,9 @@ New `/medicine` route (`src/App.tsx`) + a nav entry in
 
 - **`MedicineLibrary.tsx`** — searchable grid. Filters: **system**, **category**
   (scoped to the chosen system), and an **"owned only"** toggle. Each card shows
-  name/brand, form, a **Verified ✓ / Needs review** badge, and an **"In my
-  cabinet"** badge when owned.
+  name/brand, system·category, form/potency, and a **"✓ owned"** badge when the
+  medicine is in the cabinet (plus `custom`/`edited` badges). No "Verified" badge
+  — see the verification-signal note in §3.1.
 - **`MedicineDetail.tsx`** — common uses, dosage note, cautions,
   who-should-avoid, tags, evidences, and a **prominent not-medical-advice
   disclaimer**.

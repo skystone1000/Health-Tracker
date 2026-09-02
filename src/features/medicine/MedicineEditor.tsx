@@ -123,7 +123,22 @@ export function MedicineEditor({
       },
       source: isDefault ? "default" : "user",
     };
-    upsertMedicine(next);
+
+    // Only persist the medicine when its content actually changed. For a default
+    // this avoids writing a spurious override (and an "edited" badge) when the
+    // user merely toggled cabinet stock — stock is saved separately below.
+    const contentChanged =
+      !medicine ||
+      next.name !== medicine.name ||
+      next.system !== medicine.system ||
+      next.category !== medicine.category ||
+      next.form !== medicine.form ||
+      (next.potency ?? "") !== (medicine.potency ?? "") ||
+      next.brandNames.join("|") !== medicine.brandNames.join("|") ||
+      next.commonUses.join("|") !== medicine.commonUses.join("|") ||
+      next.cautions.join("|") !== medicine.cautions.join("|") ||
+      next.contraindications.join("|") !== medicine.contraindications.join("|");
+    if (contentChanged) upsertMedicine(next);
 
     const stock: MedicineStockEntry = {
       medicineId: id,
