@@ -18,6 +18,11 @@ import {
   type WorkoutRoutine,
 } from "@/core/exercise/schema";
 import { AsanaSchema, type Asana, type Sequence } from "@/core/yoga/schema";
+import {
+  MedicineSchema,
+  type Medicine,
+  type MedicineStockEntry,
+} from "@/core/medicine/schema";
 import type { ActivityLogEntry } from "@/core/activity/schema";
 import {
   entriesForDate,
@@ -35,6 +40,7 @@ interface AppState {
   defaultRecipes: Recipe[];
   defaultExercises: Exercise[];
   defaultAsanas: Asana[];
+  defaultMedicines: Medicine[];
   rda: RdaTable | null;
   loaded: boolean;
   loadError: string | null;
@@ -54,6 +60,9 @@ interface AppState {
   workoutRoutines: WorkoutRoutine[];
   yogaSequences: Sequence[];
   activityLog: ActivityLogEntry[];
+  customMedicines: Medicine[];
+  medicineOverrides: Record<string, Medicine>;
+  medicineStock: MedicineStockEntry[];
   theme: Theme;
 
   // ---- actions ----
@@ -81,6 +90,12 @@ interface AppState {
   deleteSequence: (id: string) => void;
   logActivity: (entry: ActivityLogEntry) => void;
   deleteActivity: (id: string) => void;
+  // medicine actions
+  upsertMedicine: (medicine: Medicine) => void;
+  deleteMedicine: (id: string) => void;
+  resetMedicine: (id: string) => void;
+  setStock: (entry: MedicineStockEntry) => void;
+  deleteStock: (medicineId: string) => void;
   // misc
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
@@ -93,6 +108,7 @@ const FoodArraySchema = z.array(FoodItemSchema);
 const RecipeArraySchema = z.array(RecipeSchema);
 const ExerciseArraySchema = z.array(ExerciseSchema);
 const AsanaArraySchema = z.array(AsanaSchema);
+const MedicineArraySchema = z.array(MedicineSchema);
 
 export const useAppStore = create<AppState>()(
   persist(
@@ -101,6 +117,7 @@ export const useAppStore = create<AppState>()(
       defaultRecipes: [],
       defaultExercises: [],
       defaultAsanas: [],
+      defaultMedicines: [],
       rda: null,
       loaded: false,
       loadError: null,
@@ -118,25 +135,36 @@ export const useAppStore = create<AppState>()(
       workoutRoutines: [],
       yogaSequences: [],
       activityLog: [],
+      customMedicines: [],
+      medicineOverrides: {},
+      medicineStock: [],
       theme: "light",
 
       init: async () => {
         if (get().loaded) return;
         try {
-          const [foodsRes, rdaRes, recipesRes, exercisesRes, asanasRes] =
-            await Promise.all([
-              fetch("/data/foods.default.json"),
-              fetch("/data/rda.icmr-nin-2020.json"),
-              fetch("/data/recipes.default.json"),
-              fetch("/data/exercises.default.json"),
-              fetch("/data/asanas.default.json"),
-            ]);
+          const [
+            foodsRes,
+            rdaRes,
+            recipesRes,
+            exercisesRes,
+            asanasRes,
+            medicinesRes,
+          ] = await Promise.all([
+            fetch("/data/foods.default.json"),
+            fetch("/data/rda.icmr-nin-2020.json"),
+            fetch("/data/recipes.default.json"),
+            fetch("/data/exercises.default.json"),
+            fetch("/data/asanas.default.json"),
+            fetch("/data/medicines.default.json"),
+          ]);
           if (
             !foodsRes.ok ||
             !rdaRes.ok ||
             !recipesRes.ok ||
             !exercisesRes.ok ||
-            !asanasRes.ok
+            !asanasRes.ok ||
+            !medicinesRes.ok
           )
             throw new Error("Failed to fetch seed data");
           const foods = FoodArraySchema.parse(await foodsRes.json());
@@ -144,12 +172,14 @@ export const useAppStore = create<AppState>()(
           const recipes = RecipeArraySchema.parse(await recipesRes.json());
           const exercises = ExerciseArraySchema.parse(await exercisesRes.json());
           const asanas = AsanaArraySchema.parse(await asanasRes.json());
+          const medicines = MedicineArraySchema.parse(await medicinesRes.json());
           set({
             defaultFoods: foods,
             rda,
             defaultRecipes: recipes,
             defaultExercises: exercises,
             defaultAsanas: asanas,
+            defaultMedicines: medicines,
             loaded: true,
             loadError: null,
           });
@@ -348,6 +378,64 @@ export const useAppStore = create<AppState>()(
           activityLog: state.activityLog.filter((e) => e.id !== id),
         })),
 
+      // ---- medicine actions ----
+      upsertMedicine: (medicine) =>
+        set((state) => {
+          if (medicine.source === "user") {
+            const exists = state.customMedicines.some(
+              (m) => m.id === medicine.id,
+            );
+            return {
+              customMedicines: exists
+                ? state.customMedicines.map((m) =>
+                    m.id === medicine.id ? medicine : m,
+                  )
+                : [...state.customMedicines, medicine],
+            };
+          }
+          // editing a default → store an override (defaults stay pristine)
+          return {
+            medicineOverrides: {
+              ...state.medicineOverrides,
+              [medicine.id]: medicine,
+            },
+          };
+        }),
+
+      deleteMedicine: (id) =>
+        set((state) => ({
+          customMedicines: state.customMedicines.filter((m) => m.id !== id),
+          medicineStock: state.medicineStock.filter((e) => e.medicineId !== id),
+        })),
+
+      resetMedicine: (id) =>
+        set((state) => {
+          const next = { ...state.medicineOverrides };
+          delete next[id];
+          return { medicineOverrides: next };
+        }),
+
+      setStock: (entry) =>
+        set((state) => {
+          const exists = state.medicineStock.some(
+            (e) => e.medicineId === entry.medicineId,
+          );
+          return {
+            medicineStock: exists
+              ? state.medicineStock.map((e) =>
+                  e.medicineId === entry.medicineId ? entry : e,
+                )
+              : [...state.medicineStock, entry],
+          };
+        }),
+
+      deleteStock: (medicineId) =>
+        set((state) => ({
+          medicineStock: state.medicineStock.filter(
+            (e) => e.medicineId !== medicineId,
+          ),
+        })),
+
       setTheme: (theme) => set({ theme }),
       toggleTheme: () =>
         set((state) => ({ theme: state.theme === "dark" ? "light" : "dark" })),
@@ -370,6 +458,9 @@ export const useAppStore = create<AppState>()(
           workoutRoutines: s.workoutRoutines,
           yogaSequences: s.yogaSequences,
           activityLog: s.activityLog,
+          customMedicines: s.customMedicines,
+          medicineOverrides: s.medicineOverrides,
+          medicineStock: s.medicineStock,
         };
       },
 
@@ -392,6 +483,9 @@ export const useAppStore = create<AppState>()(
           workoutRoutines: b.workoutRoutines,
           yogaSequences: b.yogaSequences,
           activityLog: b.activityLog,
+          customMedicines: b.customMedicines,
+          medicineOverrides: b.medicineOverrides,
+          medicineStock: b.medicineStock,
         });
         return { ok: true };
       },
@@ -411,6 +505,9 @@ export const useAppStore = create<AppState>()(
           workoutRoutines: [],
           yogaSequences: [],
           activityLog: [],
+          customMedicines: [],
+          medicineOverrides: {},
+          medicineStock: [],
         }),
     }),
     {
@@ -429,6 +526,9 @@ export const useAppStore = create<AppState>()(
         workoutRoutines: state.workoutRoutines,
         yogaSequences: state.yogaSequences,
         activityLog: state.activityLog,
+        customMedicines: state.customMedicines,
+        medicineOverrides: state.medicineOverrides,
+        medicineStock: state.medicineStock,
         theme: state.theme,
       }),
     },
@@ -475,6 +575,32 @@ export function selectAllAsanas(state: AppState): Asana[] {
 
 export function selectAsanasById(state: AppState): Map<string, Asana> {
   return new Map(selectAllAsanas(state).map((a) => [a.id, a]));
+}
+
+/** Effective medicine list: defaults with overrides applied, plus custom. */
+export function selectAllMedicines(state: AppState): Medicine[] {
+  const withOverrides = state.defaultMedicines.map(
+    (m) => state.medicineOverrides[m.id] ?? m,
+  );
+  return [...withOverrides, ...state.customMedicines];
+}
+
+export function selectMedicinesById(state: AppState): Map<string, Medicine> {
+  return new Map(selectAllMedicines(state).map((m) => [m.id, m]));
+}
+
+/** Map of medicineId → stock entry (the personal cabinet layer). */
+export function selectStockById(
+  state: AppState,
+): Map<string, MedicineStockEntry> {
+  return new Map(state.medicineStock.map((e) => [e.medicineId, e]));
+}
+
+/** Set of medicine ids the user currently owns (for the library "owned" badge). */
+export function selectOwnedMedicineIds(state: AppState): Set<string> {
+  return new Set(
+    state.medicineStock.filter((e) => e.owned).map((e) => e.medicineId),
+  );
 }
 
 /** Aggregate today's logged activity — the only thing the dashboard depends on. */

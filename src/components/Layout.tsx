@@ -10,6 +10,7 @@ const NAV = [
   { to: "/recipes", label: "Recipes", icon: "🍲" },
   { to: "/exercise", label: "Exercise", icon: "🏋" },
   { to: "/yoga", label: "Yoga", icon: "🧘" },
+  { to: "/medicine", label: "Medicine", icon: "💊" },
   { to: "/data", label: "Data & Backup", icon: "⤓" },
 ];
 

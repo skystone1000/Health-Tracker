@@ -13,6 +13,7 @@ public/data/                 Seed JSON (validated on load)
   rda.icmr-nin-2020.json     Micronutrient RDA by sex + age bracket
   exercises.default.json     Curated exercises (all regions/muscles) + ≥3 evidences
   asanas.default.json        Curated asanas (all families) + ≥3 evidences
+  medicines.default.json     Curated allopathy/homeo/biochemic medicines + >=2 evidences
 
 src/core/                    PURE logic (no React/DOM) — every file has a test
   schema.ts                  Zod schemas + inferred types; NUTRIENT_KEYS/META; MICRO_FALLBACK
@@ -41,6 +42,10 @@ src/core/                    PURE logic (no React/DOM) — every file has a test
     counterpose.ts           OPPOSING_FAMILIES, isReasonableCounter, suggestCounters (viparit)
     styles.ts                YOGA_STYLE_INFO + EIGHT_LIMBS (traditions / Patanjali reference)
     theory.ts                YOGA_THEORY — the cited "Learn yoga" curriculum
+  medicine/                  PURE medicine domain
+    schema.ts                Medicine, MedicineSystem, categories (system-scoped), forms, StockUnit, MedicineStockEntry
+    filters.ts               search + system/category/owned filters (applyMedicineFilters)
+    stock.ts                 pure derived views: expiringSoon / expired / lowStock / cabinetSummary
   *.test.ts                  Vitest specs (incl. data.test.ts integrity checks per domain)
 
 src/store/
@@ -53,6 +58,7 @@ src/lib/
   profile.ts                 defaultProfile(), WORK_TO_ACTIVITY, labels
   download.ts                downloadJson(), readJsonFile()
   images.ts                  asanaImageUrl(id) — convention-based public image paths
+  medicine.ts                SYSTEM/CATEGORY/FORM/UNIT display labels
 
 src/components/
   ui.tsx                     Button, Card, Input, Label, Select, Badge, Progress, Modal, Tabs
@@ -76,6 +82,10 @@ src/features/
   yoga/SequenceBuilder.tsx   Generate + view a flow (style-biased), log a practice
   yoga/YogaLearn.tsx         /yoga/learn — theory & education knowledge base
   yoga/AsanaImage.tsx        Asana illustration with 🧘 fallback (convention-based path)
+  medicine/MedicineLibrary.tsx  Searchable/filterable medicine grid + owned toggle
+  medicine/MedicineDetail.tsx   Read-only detail + not-medical-advice disclaimer
+  medicine/MedicineEditor.tsx   Add custom / edit-as-override + stock (owned/qty/expiry)
+  medicine/MyCabinet.tsx        Owned medicines grouped by expiry/stock status
   data/DataPage.tsx          Export / import / reset
   shared/useTargets.ts       Memoised computeTargets() hook
   shared/useActivity.ts      Memoised today's-activity summary/entries hooks
@@ -118,6 +128,10 @@ src/main.tsx                 React root + BrowserRouter
 | Add a persisted field | `src/store/useAppStore.ts` (state, partialize, export/import, resetUserData) + `src/core/backup.ts` `BackupSchema` |
 | Add a page/route | `src/App.tsx` + `src/components/Layout.tsx` (nav) + `src/features/<name>/` |
 | Tweak a UI primitive | `src/components/ui.tsx` |
+| Add/edit a default medicine | `public/data/medicines.default.json` (>=2 evidences; `core/medicine/data.test.ts`) |
+| Change medicine filtering | `src/core/medicine/filters.ts` `applyMedicineFilters` |
+| Change expiry / low-stock / cabinet grouping | `src/core/medicine/stock.ts` |
+| Add a medicine category/system/form | `src/core/medicine/schema.ts` (enums) + labels in `src/lib/medicine.ts` |
 | Adjust theme colors | `src/index.css` (CSS variables) + `tailwind.config.js` |
 
 ## Conventions
