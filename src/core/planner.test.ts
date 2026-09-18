@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { autoGeneratePlan, createEmptyPlan } from "./planner";
+import {
+  autoGeneratePlan,
+  createEmptyPlan,
+  NON_PLANNABLE_CATEGORIES,
+} from "./planner";
 import { planTotals } from "./totals";
 import { makeFood, makeNutrients } from "./test-fixtures";
 import type { FoodItem, UserProfile } from "./schema";
@@ -94,5 +98,40 @@ describe("autoGeneratePlan", () => {
       foods,
     );
     expect(vegan.meals.every((m) => m.items.length === 0)).toBe(true);
+  });
+});
+
+describe("autoGeneratePlan — non-plannable categories", () => {
+  const oil = makeFood({
+    id: "oil",
+    name: "Cooking oil",
+    category: "Fats & Oils",
+    dietTypes: ["veg", "vegan"],
+    nutrients: makeNutrients({ energy_kcal: 884, fat_g: 100 }),
+  });
+  const turmeric = makeFood({
+    id: "turmeric",
+    name: "Turmeric powder",
+    category: "Spices & Condiments",
+    dietTypes: ["veg", "vegan"],
+    nutrients: makeNutrients({ energy_kcal: 312, carbs_g: 67, protein_g: 9.7 }),
+  });
+
+  it("lists the categories that cooking inputs live in", () => {
+    expect(NON_PLANNABLE_CATEGORIES).toContain("Fats & Oils");
+    expect(NON_PLANNABLE_CATEGORIES).toContain("Spices & Condiments");
+  });
+
+  it("never puts oil or spices in a generated plan", () => {
+    const plan = autoGeneratePlan(profile, 2400, [...foods, oil, turmeric]);
+    const ids = plan.meals.flatMap((m) => m.items.map((i) => i.foodId));
+    expect(ids).not.toContain("oil");
+    expect(ids).not.toContain("turmeric");
+    expect(ids.length).toBeGreaterThan(0);
+  });
+
+  it("returns an empty plan when only non-plannable foods are available", () => {
+    const plan = autoGeneratePlan(profile, 2400, [oil, turmeric]);
+    expect(plan.meals.every((m) => m.items.length === 0)).toBe(true);
   });
 });

@@ -36,6 +36,8 @@ const dalTadka: Recipe = {
   servings: 2,
   ingredients: [{ foodId: "dal", quantity: 300 }],
   steps: ["Boil", "Temper"],
+  mealTypes: [],
+  references: [],
   source: "default",
 };
 
@@ -48,6 +50,8 @@ const paneerDish: Recipe = {
   servings: 1,
   ingredients: [{ foodId: "paneer", quantity: 120 }],
   steps: [],
+  mealTypes: [],
+  references: [],
   source: "default",
 };
 
@@ -60,6 +64,8 @@ const chickenDish: Recipe = {
   servings: 1,
   ingredients: [{ foodId: "chicken", quantity: 150 }],
   steps: [],
+  mealTypes: [],
+  references: [],
   source: "default",
 };
 

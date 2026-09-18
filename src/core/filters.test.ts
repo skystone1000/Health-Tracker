@@ -66,3 +66,49 @@ describe("applyFilters", () => {
     ).toEqual(["paneer"]);
   });
 });
+
+describe("applyFilters — facets and romanised aliases", () => {
+  const bhopla = makeFood({
+    id: "bhopla-sabji",
+    name: "Bhopla Sabji (pumpkin)",
+    aliases: ["Bhoplyachi bhaji", "Kaddu ki sabzi", "Pumpkin sabzi"],
+    category: "Vegetables",
+    mealTypes: ["side"],
+    region: "Maharashtrian",
+    dietTypes: ["veg", "vegan"],
+  });
+  const idli = makeFood({
+    id: "idli",
+    name: "Idli",
+    aliases: ["Idly"],
+    category: "Grains & Cereals",
+    mealTypes: ["breakfast"],
+    region: "South Indian",
+    dietTypes: ["veg", "vegan"],
+  });
+  const foods = [bhopla, idli];
+
+  it("finds a food by its romanised regional alias", () => {
+    const hits = applyFilters(foods, { dietType: "veg", search: "bhopla" });
+    expect(hits.map((f) => f.id)).toEqual(["bhopla-sabji"]);
+  });
+
+  it("matches an alias case-insensitively", () => {
+    const hits = applyFilters(foods, { dietType: "veg", search: "KADDU" });
+    expect(hits.map((f) => f.id)).toEqual(["bhopla-sabji"]);
+  });
+
+  it("filters by meal type", () => {
+    const hits = applyFilters(foods, { dietType: "veg", mealType: "breakfast" });
+    expect(hits.map((f) => f.id)).toEqual(["idli"]);
+  });
+
+  it("filters by region", () => {
+    const hits = applyFilters(foods, { dietType: "veg", region: "Maharashtrian" });
+    expect(hits.map((f) => f.id)).toEqual(["bhopla-sabji"]);
+  });
+
+  it("ignores facet filters that are not set", () => {
+    expect(applyFilters(foods, { dietType: "veg" })).toHaveLength(2);
+  });
+});

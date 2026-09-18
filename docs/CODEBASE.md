@@ -8,15 +8,17 @@ so you don't have to grep the whole tree. Pair with
 
 ```
 public/data/                 Seed JSON (validated on load)
-  foods.default.json         24 curated foods, full nutrient panel + ≥3 evidences
-  recipes.default.json       12 recipes referencing food ids
+  foods.default.json         ~120 curated foods, full nutrient panel + evidences
+  recipes.default.json       ~43 recipes referencing food ids (+ references, yieldGrams)
   rda.icmr-nin-2020.json     Micronutrient RDA by sex + age bracket
   exercises.default.json     Curated exercises (all regions/muscles) + ≥3 evidences
   asanas.default.json        Curated asanas (all families) + ≥3 evidences
   medicines.default.json     Curated allopathy/homeo/biochemic medicines + >=2 evidences
 
 src/core/                    PURE logic (no React/DOM) — every file has a test
-  schema.ts                  Zod schemas + inferred types; NUTRIENT_KEYS/META; MICRO_FALLBACK
+  schema.ts                  Zod schemas + inferred types; NUTRIENT_KEYS/META; MICRO_FALLBACK;
+                             FOOD_CATEGORIES / MEAL_TYPES / FOOD_REGIONS / PREP_STYLES / ITEM_TYPES; Reference
+  grouping.ts                groupFoods() — pure facet grouping for the food list
   nutrition-engine.ts        BMR, TDEE, calorie goal, macro & micro targets
   planner.ts                 createEmptyPlan + autoGeneratePlan (3 layers)
   filters.ts                 dietAllows / matchesDiet / isExcluded / applyFilters
@@ -104,8 +106,13 @@ src/main.tsx                 React root + BrowserRouter
 
 | Task | Files |
 |---|---|
-| Add/edit a default food | `public/data/foods.default.json` (≥3 evidences; `data.test.ts` enforces) |
-| Add a default recipe | `public/data/recipes.default.json` (ingredient `foodId`s must exist) |
+| Add a food or dish (full guide) | [`ADD_FOOD.md`](ADD_FOOD.md) — data shape, enums, diet tags, sourcing rules, verify |
+| Add/edit a default food | `public/data/foods.default.json` (≥3 evidences verified / ≥2 needsReview) |
+| Add a default recipe | `public/data/recipes.default.json` (ingredient `foodId`s must exist; needs ≥1 reference) |
+| Add a food category / meal type / region / prep style | `src/core/schema.ts` (`FOOD_CATEGORIES`, `MEAL_TYPES`, `FOOD_REGIONS`, `PREP_STYLES`) — grouping & filters follow |
+| Change how the food list groups | `src/core/grouping.ts` `groupFoods` (+ `GROUP_KEYS` / `GROUP_LABELS`) |
+| Stop a category being auto-planned | `src/core/planner.ts` `NON_PLANNABLE_CATEGORIES` |
+| Add a reference link to a recipe | `public/data/recipes.default.json` `references[]`; rendered by `RecipeDetail.tsx` |
 | Add a new asana (full guide) | [`ADD_YOGA_ASANA.md`](ADD_YOGA_ASANA.md) — data shape, enums, rules, image, verify |
 | Add a new exercise (full guide) | [`ADD_EXERCISE.md`](ADD_EXERCISE.md) — data shape, enums, rules, verify |
 | Add/edit a default exercise | `public/data/exercises.default.json` (≥3 evidences; `exercise/data.test.ts`) |

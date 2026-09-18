@@ -72,6 +72,17 @@ function pick<T>(arr: T[], index: number): T | undefined {
  * draws one protein-rich, one carb-rich and one produce item from rotating
  * buckets (variety across meals) and scales quantities to the meal's kcal share.
  */
+/**
+ * Categories that are never auto-planned as a food in their own right. Oil,
+ * sugar and spices are cooking inputs — high in energy or carbs by mass, so the
+ * carb/protein buckets below would otherwise happily serve you 40 g of
+ * turmeric. They remain fully usable in recipes and manual meal building.
+ */
+export const NON_PLANNABLE_CATEGORIES: string[] = [
+  "Fats & Oils",
+  "Spices & Condiments",
+];
+
 export function autoGeneratePlan(
   profile: UserProfile,
   targetCalories: number,
@@ -84,7 +95,7 @@ export function autoGeneratePlan(
   const available = applyFilters(foods, {
     dietType: profile.dietType,
     exclusions: profile.exclusions,
-  });
+  }).filter((f) => !NON_PLANNABLE_CATEGORIES.includes(f.category));
   if (available.length === 0) return plan;
 
   const proteinFoods = [...available].sort(

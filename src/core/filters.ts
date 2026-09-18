@@ -1,10 +1,12 @@
-import type { DietType, FoodItem } from "./schema";
+import type { DietType, FoodItem, MealType } from "./schema";
 
 export interface FilterCriteria {
   dietType: DietType;
   exclusions?: string[];
   search?: string;
   category?: string;
+  mealType?: string;
+  region?: string;
 }
 
 /**
@@ -59,6 +61,12 @@ export function applyFilters(
     if (!matchesDiet(food, criteria.dietType)) return false;
     if (isExcluded(food, exclusions)) return false;
     if (criteria.category && food.category !== criteria.category) return false;
+    if (
+      criteria.mealType &&
+      !food.mealTypes.includes(criteria.mealType as MealType)
+    )
+      return false;
+    if (criteria.region && food.region !== criteria.region) return false;
     if (search) {
       const hay = [food.name, food.category, ...food.aliases]
         .join(" ")

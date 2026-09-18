@@ -84,6 +84,27 @@ nutrition inside a component, add a function to `core/` instead.
 - **One backup aggregator** — `core/backup.ts` `BackupSchema` composes the
   persisted slices of every domain (nutrition + movement). It lives apart from
   `schema.ts` to avoid a cycle (domain schemas import `schema.ts` for `Evidence`).
+- **Food taxonomy is strict on seed data, permissive on user data.**
+  `FOOD_CATEGORIES` is a real enum, but `FoodItemSchema.category` stays
+  `z.string()`: a hard enum would make a user's persisted custom food fail to
+  parse and lose their whole `localStorage` blob. The enum is enforced only by
+  `core/data.test.ts`, against the default seed file.
+- **Facets are data, not code branches.** `mealTypes`, `region`, `prep` and
+  `itemType` are optional enum-backed fields; `core/grouping.ts` groups by any of
+  them from a single table. Adding a facet value is a one-line schema edit —
+  filters, grouping and the UI follow automatically.
+- **Cooking inputs are excluded from auto-generate.** `NON_PLANNABLE_CATEGORIES`
+  (Fats & Oils, Spices & Condiments) is filtered out of the planner's buckets:
+  oil and sugar are energy- and carb-dense by mass, so the carb bucket would
+  otherwise serve turmeric as a meal. They stay fully usable in recipes.
+- **A dish is both a food and a recipe.** The food carries a measured panel (one
+  tap to log); the recipe carries ingredients and method. They share an `id`, and
+  the recipe's `yieldGrams` (cooked weight) makes them comparable — `data.test.ts`
+  fails the build if the two disagree by more than 25 %.
+- **Citations must resolve to the item.** Evidence and reference URLs point at a
+  record or an item-specific search, never a bare homepage; the evidence
+  threshold is tied to the claim (`verified` ≥3, `needsReview` ≥2) so weakly
+  sourced items ship badged rather than with invented citations.
 - **Medicine is a fourth bounded domain** (`core/medicine/`) — a reference
   library (allopathy/homeopathy/biochemic) plus a personal stock/expiry layer.
   It imports no other domain and is deliberately informational: no dosing/
@@ -132,5 +153,7 @@ preview browser tooling.
    stock.)
 3. New nutrients must be added to `NUTRIENT_KEYS`/`NUTRIENT_META` and the grouped
    schemas — they then flow through totals, targets and the editor automatically.
+   New food categories/facet values go in the enums in `core/schema.ts` and flow
+   through `core/grouping.ts`, `core/filters.ts` and the Food database UI.
 4. Keep the exercise and yoga domains independent of each other; put anything
    they both need in `core/activity/` (the shared movement primitive).

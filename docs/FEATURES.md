@@ -49,10 +49,26 @@ Code: `features/planner/Planner.tsx`, `planner/FoodPicker.tsx`, `core/planner.ts
 
 ## 4. Food database
 
-Searchable, category- and diet-filterable grid. Each food shows kcal/protein per
-reference quantity, diet tags, a **Verified ✓ / Needs review / Unverified** badge,
-and a "🍲 N recipes" link to its recipe options.
-Code: `features/foods/FoodDatabase.tsx`, `core/filters.ts`.
+Searchable grid of ~120 foods — Indian staples, dishes, fruits, dry fruits and
+cooking ingredients. Each food shows kcal/protein per reference quantity, diet
+tags, a **Verified ✓ / Needs review / Unverified** badge, a `dish` badge for
+composed preparations, and a "🍲 N recipes" link to its recipe options.
+
+**Filters:** search (matches name, category and **romanised regional aliases** —
+"bhopla" and "kaddu" both find the pumpkin sabji), category, meal type, region,
+and "respect my diet".
+
+**Group by (toggle):** a `Group by` select switches the flat grid into collapsible
+sections — by **Category, Meal type, Region, Preparation, Type (ingredient/dish)
+or Diet**. Sections carry a count badge, follow the schema's enum order rather
+than alphabetical, and put facet-less foods in an "Unclassified" group sorted
+last. Multi-valued facets (meal type, diet) list a food under every group it
+belongs to. `No grouping` restores the plain grid. The choice is remembered in
+`localStorage` (a UI preference — deliberately *not* in the store or the backup).
+
+Foods carry four optional facets: `mealTypes`, `region`, `prep`, `itemType`.
+Regional names live in `aliases` as plain ASCII, so no extra fonts are needed.
+Code: `features/foods/FoodDatabase.tsx`, `core/grouping.ts`, `core/filters.ts`.
 
 ## 5. Food editor & add-food
 
@@ -62,9 +78,14 @@ Editing a default food creates a user **override** (reset to restore default);
 new foods are saved as custom. A food with ≥3 evidences is auto-marked verified.
 Code: `features/foods/FoodEditor.tsx`.
 
-**Data verification:** every default food carries ≥3 evidences from authoritative
-sources (IFCT/ICMR-NIN, USDA FoodData Central, Open Food Facts, INDB),
-cross-checked before being marked verified. Enforced by `core/data.test.ts`.
+**Data verification:** a `verified` food carries **≥3** evidences from
+authoritative sources (IFCT/ICMR-NIN, USDA FoodData Central, Open Food Facts,
+INDB, Nutritionix); a `needsReview` one carries **≥2**. The lower tier exists so
+thinly-sourced regional dishes can ship honestly badged "⚠ Needs review" instead
+of carrying an invented third citation. Every evidence must link to **the item**
+(a record page or an item-specific search) — bare homepages are rejected.
+A read-only **Sources** block in the food detail renders them as links.
+Enforced by `core/data.test.ts`. See [ADD_FOOD.md](ADD_FOOD.md).
 
 ## 6. Recipes
 
@@ -78,6 +99,16 @@ per serving and as a share of daily targets.
 - **Add to plan:** add one serving's ingredients to a chosen meal in today's plan.
 - **Custom recipes:** users add their own (ingredients picked from the food DB,
   steps, servings); `baseFoodIds` is derived so they appear under their foods.
+- **References:** every recipe cites where its **method** and its **nutrition
+  basis** come from (`references[]`, rendered as links in the detail view and
+  editable in the recipe editor).
+- **Dishes exist twice** — as a `FoodItem` with its own measured panel *and* as a
+  recipe, linked by a shared `id`. `yieldGrams` (cooked weight of the whole
+  recipe) lets `data.test.ts` check the two agree within ±25 %; without it,
+  water-absorbing dishes like khichdi could not be compared at all.
+  ~43 recipes ship by default, covering Indian breakfasts (upma, idli, dosa,
+  poha, thepla), sabjis, dals, khichdis, South Indian staples (sambar, rasam,
+  curd rice, pongal) and sweets.
 
 Code: `features/recipes/Recipes.tsx`, `RecipeDetail.tsx`, `RecipeEditor.tsx`,
 `core/recipes.ts`. Seed: `public/data/recipes.default.json`.

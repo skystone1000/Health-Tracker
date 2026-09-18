@@ -5,6 +5,7 @@ import {
   type DietType,
   type FoodItem,
   type Recipe,
+  type Reference,
 } from "@/core/schema";
 import { useAppStore } from "@/store/useAppStore";
 
@@ -22,6 +23,8 @@ function blankRecipe(): Recipe {
     servings: 1,
     ingredients: [],
     steps: [],
+    references: [],
+    mealTypes: [],
     source: "user",
   };
 }
@@ -76,6 +79,22 @@ export function RecipeEditor({
   const removeIngredient = (i: number) =>
     set({ ingredients: draft.ingredients.filter((_, idx) => idx !== i) });
 
+  const addReference = () =>
+    set({
+      references: [
+        ...draft.references,
+        { title: "", source: "", url: "", kind: "recipe" as const },
+      ],
+    });
+  const setReference = (i: number, patch: Partial<Reference>) =>
+    set({
+      references: draft.references.map((r, idx) =>
+        idx === i ? { ...r, ...patch } : r,
+      ),
+    });
+  const removeReference = (i: number) =>
+    set({ references: draft.references.filter((_, idx) => idx !== i) });
+
   const save = () => {
     const steps = stepsText
       .split("\n")
@@ -90,6 +109,7 @@ export function RecipeEditor({
       baseFoodIds: [...new Set(ingredients.map((i) => i.foodId))],
       ingredients,
       steps,
+      references: draft.references.filter((r) => r.title.trim() || r.url.trim()),
       source: "user",
     };
     const parsed = RecipeSchema.safeParse(candidate);
@@ -207,6 +227,65 @@ export function RecipeEditor({
             className="flex w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             placeholder={"Boil the dal…\nPrepare the tadka…"}
           />
+        </div>
+
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between">
+            <Label>References</Label>
+            <Button type="button" variant="outline" size="sm" onClick={addReference}>
+              + Add reference
+            </Button>
+          </div>
+          <div className="space-y-2">
+            {draft.references.map((ref, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-1 gap-2 rounded-lg border border-border p-2 sm:grid-cols-2"
+              >
+                <Input
+                  placeholder="Title"
+                  value={ref.title}
+                  onChange={(e) => setReference(i, { title: e.target.value })}
+                />
+                <Input
+                  placeholder="Source (site, book…)"
+                  value={ref.source}
+                  onChange={(e) => setReference(i, { source: e.target.value })}
+                />
+                <Input
+                  placeholder="https://…"
+                  value={ref.url}
+                  onChange={(e) => setReference(i, { url: e.target.value })}
+                />
+                <div className="flex gap-2">
+                  <Select
+                    value={ref.kind}
+                    onChange={(e) =>
+                      setReference(i, {
+                        kind: e.target.value as Reference["kind"],
+                      })
+                    }
+                  >
+                    <option value="recipe">Method</option>
+                    <option value="nutrition">Nutrition</option>
+                  </Select>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => removeReference(i)}
+                  >
+                    Remove
+                  </Button>
+                </div>
+              </div>
+            ))}
+            {draft.references.length === 0 && (
+              <p className="text-xs text-muted-foreground">
+                Where the method came from — helps anyone reviewing this recipe.
+              </p>
+            )}
+          </div>
         </div>
 
         {error && <p className="text-sm text-destructive">{error}</p>}
