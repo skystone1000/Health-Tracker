@@ -296,3 +296,29 @@ export function Tabs({
     </div>
   );
 }
+
+// ---------------------------------------------------------------------------
+// SourceLink — a citation that becomes a real link only when a URL exists
+// ---------------------------------------------------------------------------
+export function SourceLink({
+  url,
+  className,
+  children,
+}: {
+  url?: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const href = url?.trim();
+  if (!href) return <span className={className}>{children}</span>;
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn("text-primary underline-offset-2 hover:underline", className)}
+    >
+      {children}
+    </a>
+  );
+}

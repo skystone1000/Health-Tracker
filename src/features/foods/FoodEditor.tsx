@@ -6,6 +6,7 @@ import {
   Label,
   Modal,
   Select,
+  SourceLink,
 } from "@/components/ui";
 import {
   FoodItemSchema,
@@ -40,6 +41,8 @@ function blankFood(): FoodItem {
     verification: { status: "unverified", confidence: "low" },
     source: "user",
     editable: true,
+    mealTypes: [],
+    itemType: "ingredient",
   };
 }
 
@@ -227,13 +230,35 @@ export function FoodEditor({
           onChange={setNutrient}
         />
 
+        {/* Read-only source links — the citations behind the numbers above. */}
+        {draft.evidences.some((ev) => ev.source.trim() || ev.url?.trim()) && (
+          <div>
+            <Label>Sources</Label>
+            <ul className="mt-2 space-y-1 rounded-lg bg-secondary/50 p-3 text-sm">
+              {draft.evidences.map((ev, i) => (
+                <li key={i} className="flex flex-wrap items-baseline gap-x-2">
+                  <SourceLink url={ev.url}>
+                    {ev.source || "Untitled source"}
+                    {ev.ref ? ` — ${ev.ref}` : ""}
+                  </SourceLink>
+                  {ev.value_seen && (
+                    <span className="text-xs text-muted-foreground">
+                      ({ev.value_seen})
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Evidences */}
         <div>
           <div className="mb-2 flex items-center justify-between">
             <Label>Evidence sources</Label>
             <Badge variant={draft.evidences.length >= 3 ? "success" : "warning"}>
               {draft.evidences.length} source
-              {draft.evidences.length === 1 ? "" : "s"} · ≥3 to verify
+              {draft.evidences.length === 1 ? "" : "s"} · ≥3 to verify, ≥2 to ship
             </Badge>
           </div>
           <div className="space-y-2">

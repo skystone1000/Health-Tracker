@@ -57,6 +57,8 @@ export function makeFood(over: Partial<FoodItem> & { id: string }): FoodItem {
     verification: { status: "verified", confidence: "high" },
     source: "default",
     editable: true,
+    mealTypes: [],
+    itemType: "ingredient",
     ...over,
   };
 }

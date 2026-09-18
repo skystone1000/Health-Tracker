@@ -3,201 +3,3000 @@
     "id": "dal-tadka",
     "name": "Dal Tadka",
     "cuisine": "Indian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["toor-dal-cooked"],
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "toor-dal-cooked"
+    ],
     "servings": 2,
-    "ingredients": [{ "foodId": "toor-dal-cooked", "quantity": 300 }],
+    "ingredients": [
+      {
+        "foodId": "toor-dal-cooked",
+        "quantity": 300
+      }
+    ],
     "steps": [
       "Boil toor dal with turmeric and salt until soft.",
       "Prepare a tadka of cumin, garlic and dry chillies in a little oil.",
       "Pour the tadka over the dal and simmer for 2 minutes."
     ],
     "notes": "Classic everyday dal. For vegan, temper in oil instead of ghee.",
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Dal Tadka method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=dal%20tadka",
+        "kind": "recipe"
+      },
+      {
+        "title": "Dal Tadka nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=pigeon%20peas%2C%20mature%20seeds%2C%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "palak-paneer",
     "name": "Palak Paneer",
     "cuisine": "Indian",
-    "dietTypes": ["veg"],
-    "baseFoodIds": ["paneer", "spinach-cooked"],
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "paneer",
+      "spinach-cooked"
+    ],
     "servings": 2,
     "ingredients": [
-      { "foodId": "spinach-cooked", "quantity": 250 },
-      { "foodId": "paneer", "quantity": 150 }
+      {
+        "foodId": "spinach-cooked",
+        "quantity": 250
+      },
+      {
+        "foodId": "paneer",
+        "quantity": 150
+      }
     ],
     "steps": [
       "Blanch and purée the spinach.",
       "Sauté onion, ginger-garlic and spices, add the spinach purée.",
       "Fold in paneer cubes and simmer for 5 minutes."
     ],
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Palak Paneer method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=palak%20paneer",
+        "kind": "recipe"
+      },
+      {
+        "title": "Palak Paneer nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=paneer%20indian%20cheese",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "rajma-chawal",
     "name": "Rajma Chawal",
     "cuisine": "Indian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["rajma-cooked", "rice-white-cooked"],
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "rajma-cooked",
+      "rice-white-cooked"
+    ],
     "servings": 2,
     "ingredients": [
-      { "foodId": "rajma-cooked", "quantity": 250 },
-      { "foodId": "rice-white-cooked", "quantity": 300 }
+      {
+        "foodId": "rajma-cooked",
+        "quantity": 250
+      },
+      {
+        "foodId": "rice-white-cooked",
+        "quantity": 300
+      }
     ],
     "steps": [
       "Cook the rajma in an onion-tomato masala until thick.",
       "Serve hot over steamed rice."
     ],
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Rajma Chawal method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=rajma%20chawal",
+        "kind": "recipe"
+      },
+      {
+        "title": "Rajma Chawal nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=kidney%20beans%2C%20red%2C%20mature%20seeds%2C%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "chana-masala",
     "name": "Chana Masala",
     "cuisine": "Indian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["chickpea-boiled"],
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "chickpea-boiled"
+    ],
     "servings": 2,
     "ingredients": [
-      { "foodId": "chickpea-boiled", "quantity": 300 },
-      { "foodId": "potato-boiled", "quantity": 100 }
+      {
+        "foodId": "chickpea-boiled",
+        "quantity": 300
+      },
+      {
+        "foodId": "potato-boiled",
+        "quantity": 100
+      }
     ],
     "steps": [
       "Simmer boiled chickpeas and potato in a spiced onion-tomato gravy.",
       "Finish with garam masala and fresh coriander."
     ],
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Chana Masala method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=chana%20masala",
+        "kind": "recipe"
+      },
+      {
+        "title": "Chana Masala nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=chickpeas%2C%20mature%20seeds%2C%20cooked%2C%20boiled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "soya-chunk-curry",
     "name": "Soya Chunk Curry",
     "cuisine": "Indian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["soya-chunks-cooked"],
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "soya-chunks-cooked"
+    ],
     "servings": 2,
     "ingredients": [
-      { "foodId": "soya-chunks-cooked", "quantity": 250 },
-      { "foodId": "potato-boiled", "quantity": 100 }
+      {
+        "foodId": "soya-chunks-cooked",
+        "quantity": 250
+      },
+      {
+        "foodId": "potato-boiled",
+        "quantity": 100
+      }
     ],
     "steps": [
       "Boil soya chunks, squeeze out water.",
       "Cook in an onion-tomato masala with potato until the gravy thickens."
     ],
     "notes": "High-protein vegetarian/vegan main.",
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Soya Chunk Curry method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=soya%20chunk%20curry",
+        "kind": "recipe"
+      },
+      {
+        "title": "Soya Chunk Curry nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=soy%20protein%20textured%20chunks%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "paneer-bhurji",
     "name": "Paneer Bhurji",
     "cuisine": "Indian",
-    "dietTypes": ["veg"],
-    "baseFoodIds": ["paneer"],
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "paneer"
+    ],
     "servings": 1,
-    "ingredients": [{ "foodId": "paneer", "quantity": 120 }],
+    "ingredients": [
+      {
+        "foodId": "paneer",
+        "quantity": 120
+      }
+    ],
     "steps": [
       "Crumble paneer.",
       "Sauté onion, tomato, green chilli and spices, then toss in the paneer."
     ],
-    "source": "default"
-  },
-  {
-    "id": "moong-dal-khichdi",
-    "name": "Moong Dal Khichdi",
-    "cuisine": "Indian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["moong-dal-cooked", "rice-white-cooked"],
-    "servings": 2,
-    "ingredients": [
-      { "foodId": "moong-dal-cooked", "quantity": 200 },
-      { "foodId": "rice-white-cooked", "quantity": 200 }
+    "source": "default",
+    "references": [
+      {
+        "title": "Paneer Bhurji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=paneer%20bhurji",
+        "kind": "recipe"
+      },
+      {
+        "title": "Paneer Bhurji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=paneer%20indian%20cheese",
+        "kind": "nutrition"
+      }
     ],
-    "steps": [
-      "Pressure-cook rice and moong dal together with turmeric and salt.",
-      "Temper with cumin and serve soft and warm."
-    ],
-    "notes": "Light, easy-to-digest comfort food.",
-    "source": "default"
+    "mealTypes": []
   },
   {
     "id": "sprouts-salad",
     "name": "Sprouts Chaat Salad",
     "cuisine": "Indian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["moong-sprouts"],
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "moong-sprouts"
+    ],
     "servings": 1,
-    "ingredients": [{ "foodId": "moong-sprouts", "quantity": 150 }],
+    "ingredients": [
+      {
+        "foodId": "moong-sprouts",
+        "quantity": 150
+      }
+    ],
     "steps": [
       "Toss sprouts with chopped onion, tomato and cucumber.",
       "Season with lemon juice, chaat masala and salt."
     ],
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Sprouts Chaat Salad method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=sprouts%20chaat%20salad",
+        "kind": "recipe"
+      },
+      {
+        "title": "Sprouts Chaat Salad nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=mung%20beans%2C%20mature%20seeds%2C%20sprouted%2C%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "oats-banana-porridge",
     "name": "Oats Banana Porridge",
     "cuisine": "Continental",
-    "dietTypes": ["veg"],
-    "baseFoodIds": ["oats-cooked"],
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "oats-cooked"
+    ],
     "servings": 1,
     "ingredients": [
-      { "foodId": "oats-cooked", "quantity": 200 },
-      { "foodId": "milk-whole", "quantity": 100 },
-      { "foodId": "banana", "quantity": 60 },
-      { "foodId": "almonds", "quantity": 15 }
+      {
+        "foodId": "oats-cooked",
+        "quantity": 200
+      },
+      {
+        "foodId": "milk-whole",
+        "quantity": 100
+      },
+      {
+        "foodId": "banana",
+        "quantity": 60
+      },
+      {
+        "foodId": "almonds",
+        "quantity": 15
+      }
     ],
     "steps": [
       "Cook oats in milk until creamy.",
       "Top with sliced banana and chopped almonds."
     ],
     "notes": "Swap milk for a plant milk to make it vegan.",
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Oats Banana Porridge method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=oats%20banana%20porridge",
+        "kind": "recipe"
+      },
+      {
+        "title": "Oats Banana Porridge nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=oats%2C%20regular%2C%20cooked%20with%20water",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "tofu-stir-fry",
     "name": "Tofu & Spinach Stir-fry",
     "cuisine": "Asian",
-    "dietTypes": ["veg", "vegan"],
-    "baseFoodIds": ["tofu-firm"],
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "tofu-firm"
+    ],
     "servings": 1,
     "ingredients": [
-      { "foodId": "tofu-firm", "quantity": 150 },
-      { "foodId": "spinach-cooked", "quantity": 100 }
+      {
+        "foodId": "tofu-firm",
+        "quantity": 150
+      },
+      {
+        "foodId": "spinach-cooked",
+        "quantity": 100
+      }
     ],
     "steps": [
       "Pan-sear cubed tofu until golden.",
       "Add spinach and a splash of soy sauce; toss for a minute."
     ],
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Tofu & Spinach Stir-fry method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=tofu%20spinach%20stir%20fry",
+        "kind": "recipe"
+      },
+      {
+        "title": "Tofu & Spinach Stir-fry nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=tofu%2C%20firm%2C%20prepared%20with%20calcium%20sulfate",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "egg-bhurji",
     "name": "Egg Bhurji",
     "cuisine": "Indian",
-    "dietTypes": ["nonveg"],
-    "baseFoodIds": ["egg-boiled"],
+    "dietTypes": [
+      "nonveg"
+    ],
+    "baseFoodIds": [
+      "egg-boiled"
+    ],
     "servings": 1,
-    "ingredients": [{ "foodId": "egg-boiled", "quantity": 150 }],
+    "ingredients": [
+      {
+        "foodId": "egg-boiled",
+        "quantity": 150
+      }
+    ],
     "steps": [
       "Scramble eggs with onion, tomato, green chilli and spices."
     ],
-    "source": "default"
+    "source": "default",
+    "references": [
+      {
+        "title": "Egg Bhurji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=egg%20bhurji",
+        "kind": "recipe"
+      },
+      {
+        "title": "Egg Bhurji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=egg%2C%20whole%2C%20cooked%2C%20hard-boiled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
   },
   {
     "id": "grilled-chicken-bowl",
     "name": "Grilled Chicken Rice Bowl",
     "cuisine": "Continental",
-    "dietTypes": ["nonveg"],
-    "baseFoodIds": ["chicken-breast-cooked"],
+    "dietTypes": [
+      "nonveg"
+    ],
+    "baseFoodIds": [
+      "chicken-breast-cooked"
+    ],
     "servings": 1,
     "ingredients": [
-      { "foodId": "chicken-breast-cooked", "quantity": 150 },
-      { "foodId": "brown-rice-cooked", "quantity": 150 },
-      { "foodId": "spinach-cooked", "quantity": 100 }
+      {
+        "foodId": "chicken-breast-cooked",
+        "quantity": 150
+      },
+      {
+        "foodId": "brown-rice-cooked",
+        "quantity": 150
+      },
+      {
+        "foodId": "spinach-cooked",
+        "quantity": 100
+      }
     ],
     "steps": [
       "Grill the seasoned chicken breast and slice.",
       "Serve over brown rice with sautéed spinach."
     ],
     "notes": "High-protein, balanced bowl.",
+    "source": "default",
+    "references": [
+      {
+        "title": "Grilled Chicken Rice Bowl method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=grilled%20chicken%20rice%20bowl",
+        "kind": "recipe"
+      },
+      {
+        "title": "Grilled Chicken Rice Bowl nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=chicken%2C%20breast%2C%20meat%20only%2C%20cooked%2C%20roasted",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": []
+  },
+  {
+    "id": "khajur-anjeer-ladoo",
+    "name": "Khajur Anjeer Ladoo (no added sugar)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "dates-khajoor",
+      "dried-figs-anjeer"
+    ],
+    "servings": 12,
+    "ingredients": [
+      {
+        "foodId": "dates-khajoor",
+        "quantity": 200
+      },
+      {
+        "foodId": "dried-figs-anjeer",
+        "quantity": 100
+      },
+      {
+        "foodId": "cashew-kaju",
+        "quantity": 50
+      },
+      {
+        "foodId": "almonds",
+        "quantity": 50
+      },
+      {
+        "foodId": "walnuts-akhrot",
+        "quantity": 40
+      }
+    ],
+    "steps": [
+      "Deseed the dates and soak the figs in warm water for 10 minutes, then chop both fine.",
+      "Dry-roast the cashews, almonds and walnuts on low heat until fragrant, cool and coarsely crush.",
+      "Blend the dates and figs to a sticky paste.",
+      "Warm the paste in a pan for 4-5 minutes until it leaves the sides, then fold in the crushed nuts.",
+      "Cool slightly and roll into 12 ladoos. Keeps for a week in an airtight jar."
+    ],
+    "notes": "No added sugar - all sweetness is from the dates and figs. One ladoo is roughly 35 g.",
+    "yieldGrams": 420,
+    "references": [
+      {
+        "title": "Dates and figs ladoo without sugar",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=dates%20figs%20ladoo",
+        "kind": "recipe"
+      },
+      {
+        "title": "Dried fruit and nut composition",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=dates%20medjool",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "snack",
+      "dessert"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "sheera-rava",
+    "name": "Rava Sheera",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "cashew-kaju",
+      "ghee",
+      "raisins-kishmish",
+      "rava-sooji",
+      "sugar-white"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "rava-sooji",
+        "quantity": 100
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 40
+      },
+      {
+        "foodId": "sugar-white",
+        "quantity": 80
+      },
+      {
+        "foodId": "cashew-kaju",
+        "quantity": 10
+      },
+      {
+        "foodId": "raisins-kishmish",
+        "quantity": 10
+      }
+    ],
+    "steps": [
+      "Roast the rava in ghee on low heat until it smells nutty and turns pale golden, about 8 minutes.",
+      "Fry the cashews and raisins in the same ghee and set aside.",
+      "Bring 300 ml water to a boil with the sugar, stirring until dissolved.",
+      "Pour the hot syrup into the roasted rava slowly, stirring hard to avoid lumps.",
+      "Cover and cook 3-4 minutes until the sheera leaves the sides of the pan; fold in the nuts."
+    ],
+    "notes": "Ghee-heavy by design - reduce the ghee to 20 g to cut roughly 70 kcal per 100 g.",
+    "yieldGrams": 480,
+    "references": [
+      {
+        "title": "Rava sheera (sooji halwa) method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=sooji%20halwa%20rava%20sheera",
+        "kind": "recipe"
+      },
+      {
+        "title": "Rava Sheera nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rava%20sooji",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "dessert"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "upma-rava",
+    "name": "Rava Upma",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "curry-leaves",
+      "green-chilli",
+      "mustard-seeds",
+      "onion-raw",
+      "rava-sooji",
+      "salt"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "rava-sooji",
+        "quantity": 100
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 15
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 40
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 5
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Dry-roast the rava until fragrant and set aside.",
+      "Heat the oil, splutter the mustard seeds, then add curry leaves, green chilli and onion; saute until the onion is soft.",
+      "Add 300 ml water and the salt, and bring to a rolling boil.",
+      "Lower the heat and pour in the rava in a steady stream, stirring continuously.",
+      "Cover and steam 3-4 minutes until the water is absorbed and the upma is fluffy."
+    ],
+    "notes": "Vegan as written. A tablespoon of ghee instead of oil makes it vegetarian but not vegan.",
+    "yieldGrams": 420,
+    "references": [
+      {
+        "title": "Rava upma method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=rava%20upma",
+        "kind": "recipe"
+      },
+      {
+        "title": "Rava Upma nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rava%20sooji",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "idli",
+    "name": "Idli",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "rice-raw-milled",
+      "salt",
+      "urad-dal-raw"
+    ],
+    "servings": 6,
+    "ingredients": [
+      {
+        "foodId": "rice-raw-milled",
+        "quantity": 100
+      },
+      {
+        "foodId": "urad-dal-raw",
+        "quantity": 50
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Soak the rice and urad dal separately for 5-6 hours.",
+      "Grind the urad dal to a light, airy paste and the rice to a slightly coarse one; combine with the salt.",
+      "Ferment the batter 8-12 hours in a warm place until it has visibly risen.",
+      "Pour into greased idli moulds and steam 10-12 minutes until a skewer comes out clean."
+    ],
+    "notes": "Fermentation raises B-vitamin availability. Batter absorbs water, so cooked yield is far above raw ingredient weight.",
+    "yieldGrams": 450,
+    "references": [
+      {
+        "title": "Idli batter and steaming method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=idli",
+        "kind": "recipe"
+      },
+      {
+        "title": "Idli nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20raw%20milled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "medu-vada",
+    "name": "Medu Vada",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "curry-leaves",
+      "ginger-raw",
+      "green-chilli",
+      "salt",
+      "urad-dal-raw"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "urad-dal-raw",
+        "quantity": 100
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 25
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 5
+      },
+      {
+        "foodId": "ginger-raw",
+        "quantity": 5
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Soak the urad dal 4 hours, drain well and grind to a thick fluffy batter using as little water as possible.",
+      "Beat in the chopped chilli, ginger, curry leaves and salt.",
+      "Wet your palm, shape a portion into a disc and make a hole in the centre.",
+      "Deep-fry on medium heat until golden and crisp on both sides; drain on paper."
+    ],
+    "notes": "The 25 g oil is absorbed oil, not the frying quantity. Deep-frying drives off water, so the yield is well below the raw batter weight.",
+    "yieldGrams": 200,
+    "references": [
+      {
+        "title": "Medu vada method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=medu%20vada",
+        "kind": "recipe"
+      },
+      {
+        "title": "Medu Vada nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=urad%20dal%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "snack"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "dosa-plain",
+    "name": "Dosa (plain)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "rice-raw-milled",
+      "salt",
+      "urad-dal-raw"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "rice-raw-milled",
+        "quantity": 100
+      },
+      {
+        "foodId": "urad-dal-raw",
+        "quantity": 33
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 10
+      }
+    ],
+    "steps": [
+      "Soak the rice and urad dal separately for 5-6 hours, then grind to a smooth batter and add salt.",
+      "Ferment 8-12 hours until risen and slightly sour; thin with water to a pouring consistency.",
+      "Heat a tawa, pour a ladle of batter and spread outward in a spiral to a thin circle.",
+      "Drizzle oil around the edge and cook until the base is golden and the dosa lifts off cleanly."
+    ],
+    "notes": "Plain sada dosa with no potato filling. A masala dosa adds roughly the aloo sabji panel on top.",
+    "yieldGrams": 330,
+    "references": [
+      {
+        "title": "Dosa batter and tawa method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=plain%20dosa",
+        "kind": "recipe"
+      },
+      {
+        "title": "Dosa (plain) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20raw%20milled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "seviyan-kheer",
+    "name": "Seviyan Kheer (sweet shevaya)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "cashew-kaju",
+      "ghee",
+      "milk-whole",
+      "raisins-kishmish",
+      "sugar-white",
+      "vermicelli-seviyan-raw"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "vermicelli-seviyan-raw",
+        "quantity": 60
+      },
+      {
+        "foodId": "milk-whole",
+        "quantity": 500
+      },
+      {
+        "foodId": "sugar-white",
+        "quantity": 60
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 10
+      },
+      {
+        "foodId": "cashew-kaju",
+        "quantity": 10
+      },
+      {
+        "foodId": "raisins-kishmish",
+        "quantity": 10
+      }
+    ],
+    "steps": [
+      "Fry the cashews and raisins in ghee until golden and set aside.",
+      "Roast the vermicelli in the same ghee until it turns light brown.",
+      "Bring the milk to a boil, add the roasted vermicelli and simmer until soft, stirring often.",
+      "Stir in the sugar and simmer 5 more minutes until it thickens slightly; top with the fried nuts."
+    ],
+    "notes": "The milk reduces while simmering, so the cooked yield is below the sum of the raw ingredients.",
+    "yieldGrams": 550,
+    "references": [
+      {
+        "title": "Seviyan kheer / semiya payasam method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=seviyan%20kheer",
+        "kind": "recipe"
+      },
+      {
+        "title": "Seviyan Kheer (sweet shevaya) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=milk%20whole",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "dessert"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "semiya-upma",
+    "name": "Semiya Upma (spicy shevaya)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "curry-leaves",
+      "green-chilli",
+      "mustard-seeds",
+      "onion-raw",
+      "salt",
+      "vermicelli-seviyan-raw"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "vermicelli-seviyan-raw",
+        "quantity": 100
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 15
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 40
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 5
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Dry-roast the vermicelli until golden and set aside.",
+      "Heat the oil, splutter the mustard seeds, then add curry leaves, chilli and onion and saute until soft.",
+      "Pour in 250 ml water with the salt and bring to a boil.",
+      "Add the roasted vermicelli, cover and cook on low until the water is absorbed and the strands are separate."
+    ],
+    "notes": "The savoury counterpart to seviyan kheer - same vermicelli, no milk or sugar.",
+    "yieldGrams": 380,
+    "references": [
+      {
+        "title": "Semiya upma method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=semiya%20upma",
+        "kind": "recipe"
+      },
+      {
+        "title": "Semiya Upma (spicy shevaya) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=vermicelli%20seviyan%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "masoor-dal-tadka",
+    "name": "Masoor Dal Tadka",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "cumin-seeds",
+      "garlic-raw",
+      "masoor-dal-cooked",
+      "onion-raw",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "masoor-dal-cooked",
+        "quantity": 250
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 10
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 40
+      },
+      {
+        "foodId": "garlic-raw",
+        "quantity": 5
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Pressure-cook the masoor dal with turmeric and salt until soft.",
+      "Heat the oil, crackle the cumin, then fry the garlic and onion until golden.",
+      "Add the tomato and cook until it breaks down and the oil separates.",
+      "Pour the tadka over the dal, simmer 5 minutes and adjust the consistency with hot water."
+    ],
+    "notes": "Vegan as written; a spoon of ghee in the tadka is the common non-vegan variation.",
+    "yieldGrams": 340,
+    "references": [
+      {
+        "title": "Masoor dal tadka method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=masoor%20dal",
+        "kind": "recipe"
+      },
+      {
+        "title": "Masoor Dal Tadka nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=masoor%20dal%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "khichdi-plain",
+    "name": "Moong Dal Khichdi (plain)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "ghee",
+      "moong-dal-cooked",
+      "rice-white-cooked",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "rice-white-cooked",
+        "quantity": 200
+      },
+      {
+        "foodId": "moong-dal-cooked",
+        "quantity": 150
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 5
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Rinse equal parts rice and moong dal and pressure-cook with turmeric, salt and plenty of water until very soft.",
+      "Mash lightly to a soft, porridge-like consistency and stir in the ghee."
+    ],
+    "notes": "The plain, easily digestible version served when unwell. See khichdi-tadka for the spiced one.",
+    "yieldGrams": 357,
+    "references": [
+      {
+        "title": "Plain moong dal khichdi method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=moong%20dal%20khichdi",
+        "kind": "recipe"
+      },
+      {
+        "title": "Moong Dal Khichdi (plain) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20white%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "khichdi-tadka",
+    "name": "Masala Khichdi (tadka)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "cumin-seeds",
+      "ghee",
+      "green-chilli",
+      "moong-dal-cooked",
+      "onion-raw",
+      "rice-white-cooked",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "rice-white-cooked",
+        "quantity": 200
+      },
+      {
+        "foodId": "moong-dal-cooked",
+        "quantity": 150
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 10
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 5
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 3
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Pressure-cook the rice and moong dal with turmeric and salt until soft.",
+      "Heat the ghee and oil, crackle the cumin, then saute the onion, green chilli and tomato until the oil separates.",
+      "Fold the tadka through the cooked khichdi and simmer 2 minutes."
+    ],
+    "notes": "Swap the ghee for oil to make this vegan.",
+    "yieldGrams": 430,
+    "references": [
+      {
+        "title": "Masala khichdi method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=masala%20khichdi",
+        "kind": "recipe"
+      },
+      {
+        "title": "Masala Khichdi (tadka) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20white%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "aloo-sabji",
+    "name": "Aloo Sabji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "coriander-leaves",
+      "coriander-powder",
+      "cumin-seeds",
+      "onion-raw",
+      "potato-boiled",
+      "red-chilli-powder",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "potato-boiled",
+        "quantity": 250
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 15
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 40
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 40
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "coriander-powder",
+        "quantity": 3
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      },
+      {
+        "foodId": "coriander-leaves",
+        "quantity": 5
+      }
+    ],
+    "steps": [
+      "Heat the oil and crackle the cumin seeds.",
+      "Saute the onion until golden, then add the tomato, turmeric, coriander and chilli powder and cook until the oil separates.",
+      "Add the cubed boiled potato and salt, toss to coat and cook 5 minutes.",
+      "Add a splash of water for a looser gravy and finish with coriander leaves."
+    ],
+    "notes": "Dry Punjabi-style aloo. Add 150 ml water for the thinner rassa version.",
+    "yieldGrams": 330,
+    "references": [
+      {
+        "title": "Aloo Sabji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=aloo%20sabji",
+        "kind": "recipe"
+      },
+      {
+        "title": "Aloo Sabji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=potato%20boiled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner",
+      "side"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "cabbage-sabji",
+    "name": "Cabbage Sabji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cabbage-raw",
+      "coconut-fresh-grated",
+      "cooking-oil-sunflower",
+      "green-chilli",
+      "mustard-seeds",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "cabbage-raw",
+        "quantity": 250
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 12
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 5
+      },
+      {
+        "foodId": "coconut-fresh-grated",
+        "quantity": 15
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Heat the oil and splutter the mustard seeds.",
+      "Add the green chilli and turmeric, then the shredded cabbage and salt.",
+      "Cover and cook on medium heat 8-10 minutes, stirring once, until the cabbage wilts but keeps a bite.",
+      "Finish with the grated coconut."
+    ],
+    "notes": "Cabbage loses a lot of water, so the cooked yield is well under the raw weight.",
+    "yieldGrams": 220,
+    "references": [
+      {
+        "title": "Cabbage Sabji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=cabbage%20sabji",
+        "kind": "recipe"
+      },
+      {
+        "title": "Cabbage Sabji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=cabbage%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "side"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "cauliflower-sabji",
+    "name": "Cauliflower Sabji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cauliflower-raw",
+      "cooking-oil-sunflower",
+      "coriander-powder",
+      "onion-raw",
+      "potato-boiled",
+      "red-chilli-powder",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "cauliflower-raw",
+        "quantity": 250
+      },
+      {
+        "foodId": "potato-boiled",
+        "quantity": 50
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 15
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "coriander-powder",
+        "quantity": 3
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Heat the oil and saute the onion until translucent.",
+      "Add the tomato and the ground spices and cook until the oil separates.",
+      "Add the cauliflower florets, potato cubes and salt; toss to coat.",
+      "Cover and cook on low 12-15 minutes, stirring gently, until the cauliflower is tender."
+    ],
+    "notes": "The classic aloo-gobi ratio. Leave out the potato for a lighter side.",
+    "yieldGrams": 300,
+    "references": [
+      {
+        "title": "Cauliflower Sabji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=gobi%20sabji%20aloo%20gobi",
+        "kind": "recipe"
+      },
+      {
+        "title": "Cauliflower Sabji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=cauliflower%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner",
+      "side"
+    ],
+    "region": "North Indian",
+    "source": "default"
+  },
+  {
+    "id": "tomato-sabji",
+    "name": "Tomato Sabji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "cumin-seeds",
+      "jaggery-gur",
+      "onion-raw",
+      "red-chilli-powder",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "tomato-raw",
+        "quantity": 300
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 12
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "jaggery-gur",
+        "quantity": 5
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Heat the oil and crackle the cumin seeds.",
+      "Saute the onion briefly, then add the chopped tomato, turmeric, chilli powder and salt.",
+      "Cook covered on low 10 minutes until the tomato collapses into a thick pulp.",
+      "Stir in the jaggery to balance the acidity and simmer 2 more minutes."
+    ],
+    "notes": "The jaggery is what stops this tasting sharp - do not skip it.",
+    "yieldGrams": 250,
+    "references": [
+      {
+        "title": "Tomato Sabji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=tamatar%20ki%20sabzi",
+        "kind": "recipe"
+      },
+      {
+        "title": "Tomato Sabji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=tomato%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "side"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "methi-sabji",
+    "name": "Methi Sabji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "garlic-raw",
+      "green-chilli",
+      "methi-leaves-raw",
+      "potato-boiled",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "methi-leaves-raw",
+        "quantity": 200
+      },
+      {
+        "foodId": "potato-boiled",
+        "quantity": 60
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 12
+      },
+      {
+        "foodId": "garlic-raw",
+        "quantity": 5
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 3
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Wash the methi leaves well, chop and squeeze out the excess water to reduce bitterness.",
+      "Heat the oil, fry the crushed garlic and green chilli, then add the turmeric.",
+      "Add the methi and potato cubes with the salt.",
+      "Cook uncovered on medium heat 8 minutes so the leaves lose their raw water."
+    ],
+    "notes": "A strong source of calcium and vitamin K. Squeezing the leaves cuts the bitterness.",
+    "yieldGrams": 200,
+    "references": [
+      {
+        "title": "Methi Sabji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=methi%20sabji",
+        "kind": "recipe"
+      },
+      {
+        "title": "Methi Sabji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=methi%20leaves%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "side"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "bhindi-sabji",
+    "name": "Bhindi Sabji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "coriander-powder",
+      "okra-raw",
+      "onion-raw",
+      "red-chilli-powder",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "okra-raw",
+        "quantity": 250
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 20
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 30
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "coriander-powder",
+        "quantity": 3
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Wash and dry the okra completely, then cut into rounds - any water makes it slimy.",
+      "Heat the oil and fry the okra uncovered on medium-high heat 10 minutes without stirring too often.",
+      "Add the onion and cook until the sliminess is gone and the edges crisp.",
+      "Stir in the ground spices and salt and cook 2 more minutes."
+    ],
+    "notes": "Never cover the pan - trapped steam is what makes bhindi slimy.",
+    "yieldGrams": 220,
+    "references": [
+      {
+        "title": "Bhindi Sabji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=bhindi%20sabji%20okra",
+        "kind": "recipe"
+      },
+      {
+        "title": "Bhindi Sabji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=okra%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner",
+      "side"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "bhopla-sabji",
+    "name": "Bhopla Sabji (pumpkin)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "jaggery-gur",
+      "mustard-seeds",
+      "pumpkin-raw",
+      "red-chilli-powder",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "pumpkin-raw",
+        "quantity": 300
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 12
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "jaggery-gur",
+        "quantity": 10
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Heat the oil and splutter the mustard seeds.",
+      "Add the turmeric and the cubed pumpkin with the salt and toss to coat.",
+      "Cover and cook on low 12 minutes until the pumpkin is soft enough to mash against the pan.",
+      "Stir in the jaggery and chilli powder and cook 2 more minutes - it should taste sweet-sour-hot."
+    ],
+    "notes": "Very high in vitamin A. The jaggery is traditional, not optional, in the Maharashtrian version.",
+    "yieldGrams": 250,
+    "references": [
+      {
+        "title": "Bhopla Sabji (pumpkin) method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=kaddu%20ki%20sabzi%20pumpkin",
+        "kind": "recipe"
+      },
+      {
+        "title": "Bhopla Sabji (pumpkin) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=pumpkin%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "side"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "kanda-poha",
+    "name": "Kanda Poha",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "curry-leaves",
+      "green-chilli",
+      "mustard-seeds",
+      "onion-raw",
+      "peanuts-roasted",
+      "poha-flattened-rice",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "poha-flattened-rice",
+        "quantity": 100
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 15
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 60
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 5
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 2
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "peanuts-roasted",
+        "quantity": 15
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Rinse the poha in a colander until just softened, then drain and rest 10 minutes - never soak it.",
+      "Heat the oil, splutter the mustard seeds, fry the peanuts, then add curry leaves, chilli and onion.",
+      "Saute until the onion is translucent, add the turmeric and salt.",
+      "Fold in the poha gently, cover and steam 3 minutes. Finish with lemon and coriander."
+    ],
+    "notes": "Rinse, never soak - soaked poha turns to paste.",
+    "yieldGrams": 300,
+    "references": [
+      {
+        "title": "Kanda Poha method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=kanda%20poha",
+        "kind": "recipe"
+      },
+      {
+        "title": "Kanda Poha nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=poha%20flattened%20rice",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "aloo-paratha",
+    "name": "Aloo Paratha",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "atta-whole-wheat-flour",
+      "coriander-leaves",
+      "ghee",
+      "green-chilli",
+      "onion-raw",
+      "potato-boiled",
+      "red-chilli-powder",
+      "salt"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "atta-whole-wheat-flour",
+        "quantity": 120
+      },
+      {
+        "foodId": "potato-boiled",
+        "quantity": 150
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 20
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 20
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 4
+      },
+      {
+        "foodId": "coriander-leaves",
+        "quantity": 5
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Knead the atta with water and a little salt into a soft dough and rest it 20 minutes.",
+      "Mash the boiled potato with onion, chilli, coriander, chilli powder and salt.",
+      "Stuff a portion of filling into a dough ball, seal and roll out gently to an even disc.",
+      "Cook on a hot tawa, smearing ghee on both sides, until golden brown spots appear."
+    ],
+    "notes": "Roll gently and evenly - pressing hard tears the seal and the filling escapes.",
+    "yieldGrams": 330,
+    "references": [
+      {
+        "title": "Aloo Paratha method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=aloo%20paratha",
+        "kind": "recipe"
+      },
+      {
+        "title": "Aloo Paratha nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=atta%20whole%20wheat%20flour",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "lunch"
+    ],
+    "region": "Punjabi",
+    "source": "default"
+  },
+  {
+    "id": "methi-thepla",
+    "name": "Methi Thepla",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "atta-whole-wheat-flour",
+      "besan-gram-flour",
+      "cooking-oil-sunflower",
+      "curd-dahi",
+      "methi-leaves-raw",
+      "red-chilli-powder",
+      "salt",
+      "turmeric-powder"
+    ],
+    "servings": 6,
+    "ingredients": [
+      {
+        "foodId": "atta-whole-wheat-flour",
+        "quantity": 150
+      },
+      {
+        "foodId": "methi-leaves-raw",
+        "quantity": 60
+      },
+      {
+        "foodId": "besan-gram-flour",
+        "quantity": 25
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 25
+      },
+      {
+        "foodId": "curd-dahi",
+        "quantity": 30
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 2
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Mix the atta, besan, chopped methi, turmeric, chilli powder and salt.",
+      "Add the curd and a little oil and knead to a soft, pliable dough; rest 15 minutes.",
+      "Roll thin discs and roast on a tawa with a little oil until brown spots appear on both sides.",
+      "Cool completely before stacking - they keep for 2-3 days of travel."
+    ],
+    "notes": "Made with curd, so vegetarian rather than vegan. Travels well without refrigeration.",
+    "yieldGrams": 280,
+    "references": [
+      {
+        "title": "Methi Thepla method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=methi%20thepla",
+        "kind": "recipe"
+      },
+      {
+        "title": "Methi Thepla nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=atta%20whole%20wheat%20flour",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "snack"
+    ],
+    "region": "Gujarati",
+    "source": "default"
+  },
+  {
+    "id": "khaman-dhokla",
+    "name": "Khaman Dhokla",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "besan-gram-flour",
+      "cooking-oil-sunflower",
+      "curry-leaves",
+      "ginger-raw",
+      "green-chilli",
+      "mustard-seeds",
+      "salt",
+      "sugar-white"
+    ],
+    "servings": 6,
+    "ingredients": [
+      {
+        "foodId": "besan-gram-flour",
+        "quantity": 150
+      },
+      {
+        "foodId": "sugar-white",
+        "quantity": 20
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 20
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 5
+      },
+      {
+        "foodId": "ginger-raw",
+        "quantity": 5
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 3
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 3
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Whisk the besan with water, ginger-chilli paste, sugar and salt into a smooth lump-free batter.",
+      "Stir in the eno or soda right before steaming and pour immediately into a greased tray.",
+      "Steam 15-18 minutes until a skewer comes out clean, then cool and cut into squares.",
+      "Pour over a tempering of mustard seeds and curry leaves in hot oil with a little sugar water."
+    ],
+    "notes": "Add the raising agent last and steam at once, or the batter loses its lift.",
+    "yieldGrams": 420,
+    "references": [
+      {
+        "title": "Khaman Dhokla method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=khaman%20dhokla",
+        "kind": "recipe"
+      },
+      {
+        "title": "Khaman Dhokla nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=besan%20gram%20flour",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "snack"
+    ],
+    "region": "Gujarati",
+    "source": "default"
+  },
+  {
+    "id": "sambar",
+    "name": "Sambar",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "carrot-raw",
+      "cooking-oil-sunflower",
+      "coriander-powder",
+      "curry-leaves",
+      "mustard-seeds",
+      "onion-raw",
+      "pumpkin-raw",
+      "red-chilli-powder",
+      "salt",
+      "tamarind-pulp",
+      "tomato-raw",
+      "toor-dal-cooked",
+      "turmeric-powder"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "toor-dal-cooked",
+        "quantity": 200
+      },
+      {
+        "foodId": "pumpkin-raw",
+        "quantity": 60
+      },
+      {
+        "foodId": "carrot-raw",
+        "quantity": 50
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 50
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 50
+      },
+      {
+        "foodId": "tamarind-pulp",
+        "quantity": 15
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 10
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 2
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "coriander-powder",
+        "quantity": 5
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 3
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Pressure-cook the toor dal with turmeric until completely soft and whisk smooth.",
+      "Boil the mixed vegetables with tamarind extract until just tender.",
+      "Add the cooked dal, sambar powder and salt and simmer 8-10 minutes.",
+      "Finish with a tempering of mustard seeds and curry leaves in hot oil."
+    ],
+    "notes": "Any firm vegetable works - drumstick, brinjal and ash gourd are all traditional.",
+    "yieldGrams": 650,
+    "references": [
+      {
+        "title": "Sambar method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=sambar",
+        "kind": "recipe"
+      },
+      {
+        "title": "Sambar nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=toor%20dal%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "rasam",
+    "name": "Rasam",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "coriander-leaves",
+      "cumin-seeds",
+      "curry-leaves",
+      "garlic-raw",
+      "mustard-seeds",
+      "salt",
+      "tamarind-pulp",
+      "tomato-raw",
+      "toor-dal-cooked",
+      "turmeric-powder"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "tomato-raw",
+        "quantity": 150
+      },
+      {
+        "foodId": "tamarind-pulp",
+        "quantity": 20
+      },
+      {
+        "foodId": "toor-dal-cooked",
+        "quantity": 60
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 8
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 3
+      },
+      {
+        "foodId": "garlic-raw",
+        "quantity": 5
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 3
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "coriander-leaves",
+        "quantity": 5
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Extract the tamarind in 500 ml warm water and discard the solids.",
+      "Simmer the tamarind water with crushed tomato, turmeric, rasam powder and salt until the raw smell goes.",
+      "Add the thin cooked dal and heat through - do not let it boil hard once the dal is in.",
+      "Temper mustard, cumin, garlic and curry leaves in oil and pour over; finish with coriander."
+    ],
+    "notes": "Thin and drinkable by design. Never boil after adding the dal or it goes cloudy.",
+    "yieldGrams": 700,
+    "references": [
+      {
+        "title": "Rasam method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=rasam",
+        "kind": "recipe"
+      },
+      {
+        "title": "Rasam nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=tomato%20raw",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "curd-rice",
+    "name": "Curd Rice",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "cooking-oil-sunflower",
+      "curd-dahi",
+      "curry-leaves",
+      "ginger-raw",
+      "green-chilli",
+      "milk-whole",
+      "mustard-seeds",
+      "rice-white-cooked",
+      "salt"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "rice-white-cooked",
+        "quantity": 250
+      },
+      {
+        "foodId": "curd-dahi",
+        "quantity": 200
+      },
+      {
+        "foodId": "milk-whole",
+        "quantity": 50
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 8
+      },
+      {
+        "foodId": "mustard-seeds",
+        "quantity": 2
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 2
+      },
+      {
+        "foodId": "green-chilli",
+        "quantity": 4
+      },
+      {
+        "foodId": "ginger-raw",
+        "quantity": 4
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Mash the warm cooked rice lightly so it loses its grain structure.",
+      "Cool to room temperature, then mix in the curd and milk with salt - never add curd to hot rice.",
+      "Temper mustard seeds, curry leaves, chilli and ginger in oil and stir through.",
+      "Rest 20 minutes before serving so the flavours settle."
+    ],
+    "notes": "Cool the rice first - hot rice splits the curd and turns it sour.",
+    "yieldGrams": 510,
+    "references": [
+      {
+        "title": "Curd Rice method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=curd%20rice%20thayir%20sadam",
+        "kind": "recipe"
+      },
+      {
+        "title": "Curd Rice nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20white%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "pav-bhaji",
+    "name": "Pav Bhaji",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "cauliflower-raw",
+      "coriander-leaves",
+      "garam-masala",
+      "ghee",
+      "green-peas",
+      "onion-raw",
+      "pav-bread",
+      "potato-boiled",
+      "red-chilli-powder",
+      "salt",
+      "tomato-raw"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "potato-boiled",
+        "quantity": 200
+      },
+      {
+        "foodId": "cauliflower-raw",
+        "quantity": 80
+      },
+      {
+        "foodId": "green-peas",
+        "quantity": 60
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 120
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 80
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 30
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 4
+      },
+      {
+        "foodId": "garam-masala",
+        "quantity": 6
+      },
+      {
+        "foodId": "coriander-leaves",
+        "quantity": 8
+      },
+      {
+        "foodId": "salt",
+        "quantity": 5
+      },
+      {
+        "foodId": "pav-bread",
+        "quantity": 200
+      }
+    ],
+    "steps": [
+      "Boil and mash the potato, cauliflower and peas together into a coarse pulp.",
+      "Fry the onion in ghee until golden, add the tomato and cook until the fat separates.",
+      "Add the chilli powder and pav bhaji masala, then the mashed vegetables and salt; mash further in the pan.",
+      "Simmer 10 minutes with a little water until thick, and toast the split pav in ghee until crisp."
+    ],
+    "notes": "The ghee is what makes it taste like the street version. The pav is counted in the yield.",
+    "yieldGrams": 700,
+    "references": [
+      {
+        "title": "Pav Bhaji method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=pav%20bhaji",
+        "kind": "recipe"
+      },
+      {
+        "title": "Pav Bhaji nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=potato%20boiled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner",
+      "snack"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "chole",
+    "name": "Chole (chana masala)",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "chickpea-boiled",
+      "cooking-oil-sunflower",
+      "coriander-powder",
+      "garam-masala",
+      "garlic-raw",
+      "ginger-raw",
+      "onion-raw",
+      "red-chilli-powder",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "chickpea-boiled",
+        "quantity": 300
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 80
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 100
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 20
+      },
+      {
+        "foodId": "ginger-raw",
+        "quantity": 8
+      },
+      {
+        "foodId": "garlic-raw",
+        "quantity": 8
+      },
+      {
+        "foodId": "garam-masala",
+        "quantity": 5
+      },
+      {
+        "foodId": "coriander-powder",
+        "quantity": 5
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 3
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Fry the onion in oil until deep golden, then add the ginger-garlic paste.",
+      "Add the tomato and ground spices and cook until the oil separates cleanly.",
+      "Add the boiled chana with some of its cooking water and the salt.",
+      "Simmer 15 minutes, mashing a few chickpeas to thicken the gravy."
+    ],
+    "notes": "Mashing a spoonful of the chana is what thickens the gravy without cream.",
+    "yieldGrams": 560,
+    "references": [
+      {
+        "title": "Chole (chana masala) method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=chole%20chana%20masala",
+        "kind": "recipe"
+      },
+      {
+        "title": "Chole (chana masala) nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=chickpea%20boiled",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Punjabi",
+    "source": "default"
+  },
+  {
+    "id": "veg-pulao",
+    "name": "Vegetable Pulao",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "carrot-raw",
+      "cashew-kaju",
+      "cumin-seeds",
+      "garam-masala",
+      "ghee",
+      "green-peas",
+      "onion-raw",
+      "rice-white-cooked",
+      "salt"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "rice-white-cooked",
+        "quantity": 300
+      },
+      {
+        "foodId": "green-peas",
+        "quantity": 60
+      },
+      {
+        "foodId": "carrot-raw",
+        "quantity": 60
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 50
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 20
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 3
+      },
+      {
+        "foodId": "garam-masala",
+        "quantity": 4
+      },
+      {
+        "foodId": "cashew-kaju",
+        "quantity": 15
+      },
+      {
+        "foodId": "salt",
+        "quantity": 4
+      }
+    ],
+    "steps": [
+      "Heat the ghee, crackle the cumin and fry the cashews until golden.",
+      "Saute the sliced onion until light brown, then add the carrot and peas.",
+      "Add the garam masala and salt and toss for a minute.",
+      "Fold in the cooked rice gently so the grains stay separate, and steam covered 3 minutes."
+    ],
+    "notes": "Fold, do not stir - stirring breaks the grains and turns pulao into khichdi.",
+    "yieldGrams": 500,
+    "references": [
+      {
+        "title": "Vegetable Pulao method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=veg%20pulao",
+        "kind": "recipe"
+      },
+      {
+        "title": "Vegetable Pulao nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20white%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "North Indian",
+    "source": "default"
+  },
+  {
+    "id": "jowar-bhakri",
+    "name": "Jowar Bhakri",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "jowar-flour",
+      "salt"
+    ],
+    "servings": 2,
+    "ingredients": [
+      {
+        "foodId": "jowar-flour",
+        "quantity": 100
+      },
+      {
+        "foodId": "salt",
+        "quantity": 2
+      }
+    ],
+    "steps": [
+      "Mix the jowar flour with salt and hot water and knead to a firm, smooth dough.",
+      "Pat a ball out by hand into a round disc, dusting with dry flour - a rolling pin cracks it.",
+      "Roast on a hot tawa, wet the top surface with water, flip and cook until it puffs.",
+      "Finish directly over the flame for a few seconds until it balloons."
+    ],
+    "notes": "Gluten-free and hand-patted. Hot water in the dough is what holds it together.",
+    "yieldGrams": 160,
+    "references": [
+      {
+        "title": "Jowar Bhakri method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=jowar%20bhakri",
+        "kind": "recipe"
+      },
+      {
+        "title": "Jowar Bhakri nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=jowar%20flour",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Maharashtrian",
+    "source": "default"
+  },
+  {
+    "id": "puri",
+    "name": "Puri",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "atta-whole-wheat-flour",
+      "cooking-oil-sunflower",
+      "salt"
+    ],
+    "servings": 6,
+    "ingredients": [
+      {
+        "foodId": "atta-whole-wheat-flour",
+        "quantity": 150
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 35
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Knead the atta with salt and just enough water into a stiff dough - stiffer than roti dough.",
+      "Rest 15 minutes, then roll into small even discs without any dusting flour.",
+      "Slide into hot oil and press down gently with a slotted spoon so it puffs up.",
+      "Flip once, fry until pale gold and drain well."
+    ],
+    "notes": "The 35 g oil is absorbed oil, not the frying quantity. Stiff dough and hot oil are what make puris puff.",
+    "yieldGrams": 220,
+    "references": [
+      {
+        "title": "Puri method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=puri%20poori",
+        "kind": "recipe"
+      },
+      {
+        "title": "Puri nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=atta%20whole%20wheat%20flour",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "lunch"
+    ],
+    "region": "Pan-Indian",
+    "source": "default"
+  },
+  {
+    "id": "ven-pongal",
+    "name": "Ven Pongal",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg"
+    ],
+    "baseFoodIds": [
+      "cashew-kaju",
+      "cumin-seeds",
+      "curry-leaves",
+      "ghee",
+      "ginger-raw",
+      "moong-dal-cooked",
+      "rice-white-cooked",
+      "salt"
+    ],
+    "servings": 3,
+    "ingredients": [
+      {
+        "foodId": "rice-white-cooked",
+        "quantity": 250
+      },
+      {
+        "foodId": "moong-dal-cooked",
+        "quantity": 120
+      },
+      {
+        "foodId": "ghee",
+        "quantity": 25
+      },
+      {
+        "foodId": "cashew-kaju",
+        "quantity": 15
+      },
+      {
+        "foodId": "cumin-seeds",
+        "quantity": 4
+      },
+      {
+        "foodId": "ginger-raw",
+        "quantity": 5
+      },
+      {
+        "foodId": "curry-leaves",
+        "quantity": 3
+      },
+      {
+        "foodId": "salt",
+        "quantity": 3
+      }
+    ],
+    "steps": [
+      "Dry-roast the moong dal until fragrant, then pressure-cook it with the rice until very soft.",
+      "Mash lightly to a soft, porridge-like texture.",
+      "Fry the cashews, cumin, crushed pepper, ginger and curry leaves in ghee.",
+      "Pour the tempering over and mix well with the salt."
+    ],
+    "notes": "The savoury breakfast pongal, distinct from the sweet sakkarai pongal.",
+    "yieldGrams": 450,
+    "references": [
+      {
+        "title": "Ven Pongal method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=ven%20pongal",
+        "kind": "recipe"
+      },
+      {
+        "title": "Ven Pongal nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=rice%20white%20cooked",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast"
+    ],
+    "region": "South Indian",
+    "source": "default"
+  },
+  {
+    "id": "misal",
+    "name": "Misal",
+    "cuisine": "Indian",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "baseFoodIds": [
+      "coconut-fresh-grated",
+      "cooking-oil-sunflower",
+      "coriander-leaves",
+      "garam-masala",
+      "moong-sprouts",
+      "onion-raw",
+      "red-chilli-powder",
+      "salt",
+      "tomato-raw",
+      "turmeric-powder"
+    ],
+    "servings": 4,
+    "ingredients": [
+      {
+        "foodId": "moong-sprouts",
+        "quantity": 250
+      },
+      {
+        "foodId": "onion-raw",
+        "quantity": 80
+      },
+      {
+        "foodId": "tomato-raw",
+        "quantity": 60
+      },
+      {
+        "foodId": "cooking-oil-sunflower",
+        "quantity": 25
+      },
+      {
+        "foodId": "garam-masala",
+        "quantity": 8
+      },
+      {
+        "foodId": "red-chilli-powder",
+        "quantity": 5
+      },
+      {
+        "foodId": "turmeric-powder",
+        "quantity": 1
+      },
+      {
+        "foodId": "coconut-fresh-grated",
+        "quantity": 20
+      },
+      {
+        "foodId": "coriander-leaves",
+        "quantity": 8
+      },
+      {
+        "foodId": "salt",
+        "quantity": 5
+      }
+    ],
+    "steps": [
+      "Cook the sprouts with turmeric and salt until just tender but not mushy.",
+      "Fry the onion and coconut in oil until dark golden, then grind to a kala masala paste with the spices.",
+      "Add the tomato and paste to the sprouts with water and simmer into a thin spicy usal.",
+      "Serve topped with farsan, raw onion and coriander, with pav on the side."
+    ],
+    "notes": "The tarri (spicy oil layer) on top is the point. Pav is served alongside and not counted in this yield.",
+    "yieldGrams": 600,
+    "references": [
+      {
+        "title": "Misal method",
+        "source": "Nutritionix recipe reference",
+        "url": "https://www.nutritionix.com/search?q=misal%20pav",
+        "kind": "recipe"
+      },
+      {
+        "title": "Misal nutrient basis",
+        "source": "USDA FoodData Central",
+        "url": "https://fdc.nal.usda.gov/food-search?query=moong%20sprouts",
+        "kind": "nutrition"
+      }
+    ],
+    "mealTypes": [
+      "breakfast",
+      "lunch"
+    ],
+    "region": "Maharashtrian",
     "source": "default"
   }
 ]

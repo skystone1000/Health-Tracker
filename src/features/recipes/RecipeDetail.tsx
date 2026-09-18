@@ -4,6 +4,7 @@ import {
   Button,
   Modal,
   Select,
+  SourceLink,
 } from "@/components/ui";
 import { DEFAULT_MEAL_NAMES } from "@/core/planner";
 import { recipeNutritionPerServing } from "@/core/recipes";
@@ -96,6 +97,32 @@ export function RecipeDetail({
           <p className="rounded-lg bg-secondary/60 p-3 text-sm text-muted-foreground">
             💡 {recipe.notes}
           </p>
+        )}
+
+        {/* References — where the method and any nutrition claim come from */}
+        {recipe.references.length > 0 && (
+          <div>
+            <h4 className="mb-2 text-sm font-semibold">References</h4>
+            {(["recipe", "nutrition"] as const).map((kind) => {
+              const refs = recipe.references.filter((r) => r.kind === kind);
+              if (refs.length === 0) return null;
+              return (
+                <div key={kind} className="mb-2">
+                  <div className="text-xs uppercase tracking-wide text-muted-foreground">
+                    {kind === "recipe" ? "Method" : "Nutrition"}
+                  </div>
+                  <ul className="mt-1 space-y-1 text-sm">
+                    {refs.map((r, i) => (
+                      <li key={i}>
+                        <SourceLink url={r.url}>{r.title}</SourceLink>
+                        <span className="text-muted-foreground"> · {r.source}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
         )}
 
         {/* Nutrition per serving vs daily targets */}

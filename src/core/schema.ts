@@ -134,6 +134,78 @@ export const DIET_TYPES = ["veg", "nonveg", "vegan"] as const;
 export const DietTypeSchema = z.enum(DIET_TYPES);
 export type DietType = z.infer<typeof DietTypeSchema>;
 
+export const FOOD_CATEGORIES = [
+  "Grains & Cereals",
+  "Legumes & Pulses",
+  "Vegetables",
+  "Fruits",
+  "Dairy",
+  "Eggs",
+  "Meat & Seafood",
+  "Nuts, Seeds & Dry Fruits",
+  "Fats & Oils",
+  "Spices & Condiments",
+  "Sweets & Desserts",
+  "Beverages",
+] as const;
+export const FoodCategorySchema = z.enum(FOOD_CATEGORIES);
+export type FoodCategory = z.infer<typeof FoodCategorySchema>;
+
+export const MEAL_TYPES = [
+  "breakfast",
+  "lunch",
+  "dinner",
+  "snack",
+  "dessert",
+  "side",
+] as const;
+export const MealTypeSchema = z.enum(MEAL_TYPES);
+export type MealType = z.infer<typeof MealTypeSchema>;
+
+export const FOOD_REGIONS = [
+  "Maharashtrian",
+  "South Indian",
+  "North Indian",
+  "Gujarati",
+  "Bengali",
+  "Punjabi",
+  "Pan-Indian",
+  "Global",
+] as const;
+export const FoodRegionSchema = z.enum(FOOD_REGIONS);
+export type FoodRegion = z.infer<typeof FoodRegionSchema>;
+
+export const PREP_STYLES = [
+  "raw",
+  "boiled",
+  "steamed",
+  "sauteed",
+  "fried",
+  "deepFried",
+  "fermented",
+  "roasted",
+  "baked",
+  "dried",
+] as const;
+export const PrepStyleSchema = z.enum(PREP_STYLES);
+export type PrepStyle = z.infer<typeof PrepStyleSchema>;
+
+export const ITEM_TYPES = ["ingredient", "dish"] as const;
+export const ItemTypeSchema = z.enum(ITEM_TYPES);
+export type ItemType = z.infer<typeof ItemTypeSchema>;
+
+/**
+ * A citation for a recipe's method or for a nutrition claim. Distinct from
+ * `Evidence` (which records a nutrient value actually seen in a source).
+ */
+export const ReferenceSchema = z.object({
+  title: z.string(),
+  source: z.string(),
+  url: z.string(),
+  kind: z.enum(["recipe", "nutrition"]).default("recipe"),
+});
+export type Reference = z.infer<typeof ReferenceSchema>;
+
 export const EvidenceSchema = z.object({
   source: z.string(),
   ref: z.string().optional(),
@@ -152,6 +224,10 @@ export const FoodItemSchema = z.object({
   id: z.string(),
   name: z.string(),
   aliases: z.array(z.string()).default([]),
+  // Kept permissive on purpose: a user's persisted custom food may carry a
+  // free-form category. The strict FOOD_CATEGORIES enum is enforced on the
+  // default seed data by core/data.test.ts, so defaults stay disciplined
+  // without ever breaking someone's localStorage.
   category: z.string(),
   dietTypes: z.array(DietTypeSchema).min(1),
   allergens: z.array(z.string()).default([]),
@@ -165,6 +241,11 @@ export const FoodItemSchema = z.object({
   }),
   source: z.enum(["default", "user"]).default("default"),
   editable: z.boolean().default(true),
+  // Facets — optional so every previously persisted food still parses.
+  mealTypes: z.array(MealTypeSchema).default([]),
+  region: FoodRegionSchema.optional(),
+  prep: PrepStyleSchema.optional(),
+  itemType: ItemTypeSchema.default("ingredient"),
 });
 export type FoodItem = z.infer<typeof FoodItemSchema>;
 
@@ -239,6 +320,16 @@ export const RecipeSchema = z.object({
   ingredients: z.array(RecipeIngredientSchema).min(1),
   steps: z.array(z.string()).default([]),
   notes: z.string().optional(),
+  /**
+   * Cooked weight of the whole recipe, in grams. Optional, but required to
+   * compare a dish's own nutrient panel against what its recipe computes to:
+   * dishes that absorb water (khichdi, upma) weigh far more cooked than the
+   * sum of their raw ingredients, so ingredient mass alone is not a yield.
+   */
+  yieldGrams: z.number().positive().optional(),
+  references: z.array(ReferenceSchema).default([]),
+  mealTypes: z.array(MealTypeSchema).default([]),
+  region: FoodRegionSchema.optional(),
   source: z.enum(["default", "user"]).default("default"),
 });
 export type Recipe = z.infer<typeof RecipeSchema>;
