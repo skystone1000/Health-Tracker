@@ -1,4 +1,6 @@
+import { todayISO } from "./date";
 import { applyFilters } from "./filters";
+import { quantityForKcal } from "./food-groups";
 import { computeTargets, type MacroSplit } from "./nutrition-engine";
 import {
   type FoodItem,
@@ -32,13 +34,9 @@ export { computeTargets };
 
 // Layer 2 -------------------------------------------------------------------
 
-function today(): string {
-  return new Date().toISOString().slice(0, 10);
-}
-
 /** Create an empty plan with the default meal structure. */
 export function createEmptyPlan(
-  date: string = today(),
+  date: string = todayISO(),
   mealNames: string[] = DEFAULT_MEAL_NAMES,
 ): Plan {
   return {
@@ -50,17 +48,10 @@ export function createEmptyPlan(
 
 // Layer 3 -------------------------------------------------------------------
 
-const kcalPerRef = (f: FoodItem) => f.nutrients.energy_kcal || 1;
 const proteinPer100kcal = (f: FoodItem) => {
   const v = toVector(f.nutrients);
   return (v.protein_g / (v.energy_kcal || 1)) * 100;
 };
-
-/** Grams of a food needed to contribute `kcal` calories, rounded to 5 g. */
-function quantityForKcal(food: FoodItem, kcal: number): number {
-  const grams = (kcal / kcalPerRef(food)) * food.referenceQuantity;
-  return Math.max(5, Math.round(grams / 5) * 5);
-}
 
 function pick<T>(arr: T[], index: number): T | undefined {
   return arr.length ? arr[index % arr.length] : undefined;
@@ -90,7 +81,7 @@ export function autoGeneratePlan(
   options: { mealNames?: string[]; date?: string } = {},
 ): Plan {
   const mealNames = options.mealNames ?? DEFAULT_MEAL_NAMES;
-  const plan = createEmptyPlan(options.date ?? today(), mealNames);
+  const plan = createEmptyPlan(options.date ?? todayISO(), mealNames);
 
   const available = applyFilters(foods, {
     dietType: profile.dietType,

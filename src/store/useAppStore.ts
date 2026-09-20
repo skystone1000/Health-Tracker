@@ -75,6 +75,7 @@ interface AppState {
   deleteRecipe: (id: string) => void;
   addRecipeToPlan: (recipe: Recipe, mealName: string, date?: string) => void;
   savePlan: (plan: Plan) => void;
+  savePlans: (plans: Plan[]) => void;
   deletePlan: (id: string) => void;
   // movement actions
   setFitness: (fitness: FitnessProfile) => void;
@@ -265,6 +266,19 @@ export const useAppStore = create<AppState>()(
               ? state.plans.map((p) => (p.id === plan.id ? plan : p))
               : [...state.plans, plan],
           };
+        }),
+
+      /**
+       * Upsert many plans in a single update — the weekly planner writes seven
+       * days at once, and seven sequential `savePlan` calls would mean seven
+       * store notifications and seven localStorage writes.
+       */
+      savePlans: (incoming) =>
+        set((state) => {
+          if (incoming.length === 0) return {};
+          const byId = new Map(state.plans.map((p) => [p.id, p]));
+          for (const plan of incoming) byId.set(plan.id, plan);
+          return { plans: [...byId.values()] };
         }),
 
       deletePlan: (id) =>

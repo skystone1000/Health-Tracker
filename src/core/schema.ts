@@ -263,7 +263,12 @@ export const WORK_TYPES = ["desk", "onFeet", "physicalLabor", "athlete"] as cons
 export const WorkTypeSchema = z.enum(WORK_TYPES);
 export type WorkType = z.infer<typeof WorkTypeSchema>;
 
-export const PLANNER_MODES = ["targetsOnly", "mealBuilder", "autoGenerate"] as const;
+export const PLANNER_MODES = [
+  "targetsOnly",
+  "mealBuilder",
+  "autoGenerate",
+  "weekly",
+] as const;
 export const PlannerModeSchema = z.enum(PLANNER_MODES);
 export type PlannerMode = z.infer<typeof PlannerModeSchema>;
 

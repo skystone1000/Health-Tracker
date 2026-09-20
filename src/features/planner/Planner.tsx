@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Badge,
   Button,
@@ -9,6 +9,7 @@ import {
   Input,
   Tabs,
 } from "@/components/ui";
+import { addDays, dayLabel, todayISO } from "@/core/date";
 import { autoGeneratePlan, createEmptyPlan } from "@/core/planner";
 import {
   PLANNER_MODES,
@@ -27,13 +28,13 @@ import {
   useAppStore,
 } from "@/store/useAppStore";
 import { FoodPicker } from "./FoodPicker";
-
-const today = () => new Date().toISOString().slice(0, 10);
+import { WeekPlanner } from "./WeekPlanner";
 
 const MODE_TABS: { value: PlannerMode; label: string }[] = [
   { value: "targetsOnly", label: "Targets only" },
   { value: "mealBuilder", label: "Meal builder" },
   { value: "autoGenerate", label: "Auto-generate" },
+  { value: "weekly", label: "Week" },
 ];
 
 export function Planner() {
@@ -45,10 +46,16 @@ export function Planner() {
   const foodsById = useAppStore(selectFoodsById);
   const breakdown = useTargets();
 
-  const planId = `plan-${today()}`;
+  const [date, setDate] = useState<string>(todayISO());
+  const planId = `plan-${date}`;
   const stored = plans.find((p) => p.id === planId);
-  const [plan, setPlan] = useState<Plan>(stored ?? createEmptyPlan(today()));
+  const [plan, setPlan] = useState<Plan>(stored ?? createEmptyPlan(date));
   const [picker, setPicker] = useState<number | null>(null);
+
+  // Follow the selected date and any week regeneration that rewrites it.
+  useEffect(() => {
+    setPlan(plans.find((p) => p.id === `plan-${date}`) ?? createEmptyPlan(date));
+  }, [date, plans]);
 
   const mode = profile.plannerMode;
   const setMode = (m: PlannerMode) =>
@@ -87,10 +94,10 @@ export function Planner() {
 
   const autoGenerate = () => {
     if (!breakdown) return;
-    persist(autoGeneratePlan(profile, breakdown.calories, allFoods, { date: today() }));
+    persist(autoGeneratePlan(profile, breakdown.calories, allFoods, { date }));
   };
 
-  const clearPlan = () => persist(createEmptyPlan(today()));
+  const clearPlan = () => persist(createEmptyPlan(date));
 
   if (!breakdown) return null;
   const { targets } = breakdown;
@@ -112,11 +119,16 @@ export function Planner() {
         />
       </header>
 
-      {/* Live summary (all modes) */}
+      {/* Live summary — day modes only. Weekly mode renders its own week
+          summary (score + per-day badges) inside <WeekPlanner/>; showing a
+          single day's rings under a week heading would misreport the week. */}
+      {mode !== "weekly" && (
       <Card>
         <CardHeader>
           <CardTitle>
-            {mode === "targetsOnly" ? "Your daily targets" : "Today vs target"}
+            {mode === "targetsOnly"
+              ? "Your daily targets"
+              : `${date === todayISO() ? "Today" : dayLabel(date)} vs target`}
           </CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -126,6 +138,16 @@ export function Planner() {
           <Ring value={totals.fat_g} target={targets.fat_g} label="Fat" unit="g" color="hsl(280 65% 60%)" />
         </CardContent>
       </Card>
+      )}
+
+      {mode === "weekly" && (
+        <WeekPlanner
+          onOpenDay={(d) => {
+            setDate(d);
+            setMode("mealBuilder");
+          }}
+        />
+      )}
 
       {mode === "targetsOnly" && (
         <Card>
@@ -140,6 +162,23 @@ export function Planner() {
 
       {(mode === "mealBuilder" || mode === "autoGenerate") && (
         <>
+          <div className="flex flex-wrap items-center gap-2">
+            <Button variant="outline" size="sm" onClick={() => setDate(addDays(date, -1))}>
+              ◀
+            </Button>
+            <span className="min-w-[8rem] text-center text-sm font-medium">
+              {date === todayISO() ? `Today · ${dayLabel(date)}` : dayLabel(date)}
+            </span>
+            <Button variant="outline" size="sm" onClick={() => setDate(addDays(date, 1))}>
+              ▶
+            </Button>
+            {date !== todayISO() && (
+              <Button variant="ghost" size="sm" onClick={() => setDate(todayISO())}>
+                Jump to today
+              </Button>
+            )}
+          </div>
+
           <div className="flex flex-wrap gap-2">
             {mode === "autoGenerate" && (
               <Button onClick={autoGenerate}>⚡ Auto-generate full day</Button>

@@ -54,8 +54,6 @@ nutrition inside a component, add a function to `core/` instead.
 - **One totals engine** — meals, plans and recipe-per-serving nutrition all go
   through `core/totals.ts` (`nutrientsForQuantity` + `sumVectors`). No duplicated
   summation math.
-- **Layered planner** — `targetsOnly` → `mealBuilder` → `autoGenerate` are one
-  engine; each mode reuses the layer below (see [FEATURES.md](FEATURES.md)).
 - **Zod everywhere at the boundary** — schemas validate seed JSON on load, food/
   recipe edits before save, and imported backups. The TS types are inferred from
   the same schemas (`z.infer`), so there is one definition per concept.
@@ -105,6 +103,29 @@ nutrition inside a component, add a function to `core/` instead.
   record or an item-specific search, never a bare homepage; the evidence
   threshold is tied to the claim (`verified` ≥3, `needsReview` ≥2) so weakly
   sourced items ship badged rather than with invented citations.
+- **The planner is four layers, not three.** `targetsOnly` → `mealBuilder` →
+  `autoGenerate` (one day) → `weekly` (seven days). Layer 4 reuses Layer 3.5
+  (`day-planner.ts`) once per day, threading a shared usage history; nothing is
+  duplicated.
+- **A week is seven dated `Plan`s, not a new entity.** No new persisted slice, so
+  the five-place wiring rule is untouched, and each generated day appears on the
+  dashboard under its own date automatically.
+- **Randomness is seeded and lives in `core/random.ts`.** `core/` must stay
+  deterministic and testable, so the seed is an argument: same seed ⇒ same week;
+  the UI passes a fresh seed per click, which is what makes "regenerate" dynamic.
+  Three candidates are generated per press and `scoreWeek` keeps the best, so
+  variation never costs quality.
+- **Food-group balance comes from ICMR-NIN "My Plate for the Day" (2024)**,
+  scaled linearly to the user's calorie target (`core/food-groups.ts`). The app
+  already uses ICMR-NIN RDAs, so the nutrient targets and the plate advice come
+  from one authority. Vegan/omnivore adaptations are ours and are labelled as
+  such in the code.
+- **Repeat caps are per plate group, not global.** Staples (cereals, dairy) may
+  recur daily because that is what a dietician expects; vegetables, dals and
+  sweets rotate. A global "no repeats" rule would be nutritionally wrong.
+- **Dates are local, never UTC.** `core/date.ts` builds `YYYY-MM-DD` from local
+  calendar parts: `toISOString()` files anything before 05:30 IST under the
+  previous day, which would put a plan on the wrong date.
 - **Medicine is a fourth bounded domain** (`core/medicine/`) — a reference
   library (allopathy/homeopathy/biochemic) plus a personal stock/expiry layer.
   It imports no other domain and is deliberately informational: no dosing/
@@ -121,6 +142,10 @@ nutrition inside a component, add a function to `core/` instead.
   internally) → `Plan` → `planTotals` vs targets → UI.
 - **Add recipe to plan:** `addRecipeToPlan(recipe, meal)` scales ingredients to
   one serving and appends to today's `Plan` in the store.
+- **Generate a week:** `computeTargets` → `{calories, protein}` →
+  `generateWeekPlan(profile, targets, foods, {seed, startDate, lockedDates})` →
+  best of 3 candidates by `scoreWeek` → 7 `Plan`s → `savePlans` → `plans[]` →
+  each day renders on the dashboard for its own date.
 - **Generate a workout:** `FitnessProfile` → `generateRoutine(fitness, exercises)`
   (filters by equipment/difficulty/limitations internally) → `WorkoutRoutine` →
   `saveRoutine`. Logging a day → `dayEstimatedKcal` (via `metCalories`) →

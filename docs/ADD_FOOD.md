@@ -68,6 +68,11 @@ Defined in `src/core/schema.ts`. Seed data must use these exact values
 - **`FOOD_CATEGORIES`** — Grains & Cereals · Legumes & Pulses · Vegetables ·
   Fruits · Dairy · Eggs · Meat & Seafood · Nuts, Seeds & Dry Fruits ·
   Fats & Oils · Spices & Condiments · Sweets & Desserts · Beverages
+
+> **New category?** Add it to `FOOD_CATEGORIES` in `src/core/schema.ts` **and**
+> map it in `CATEGORY_TO_PLATE_GROUP` in `src/core/food-groups.ts`. Without the
+> mapping the food lands in the `other` plate group and the weekly planner will
+> almost never choose it.
 - **`MEAL_TYPES`** — breakfast · lunch · dinner · snack · dessert · side
 - **`FOOD_REGIONS`** — Maharashtrian · South Indian · North Indian · Gujarati ·
   Bengali · Punjabi · Pan-Indian · Global

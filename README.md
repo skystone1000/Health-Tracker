@@ -12,8 +12,12 @@ your browser, with no backend.
 
 - **Personalized targets** — Mifflin-St Jeor BMR × activity, configurable macro
   split, ICMR-NIN 2020 RDA (USDA-DRI fallbacks) for every vitamin & mineral.
-- **Layered planner** — _Targets only_ → _Meal builder_ → _Auto-generate full
-  day_, one engine, you pick the mode.
+- **Layered planner** — _Targets only_ → _Meal builder_ (any date) →
+  _Auto-generate full day_ → _Week_, one engine, you pick the mode.
+- **7-day meal planner** — generates a whole week balanced against ICMR-NIN
+  "My Plate for the Day" food-group quotas, respecting your diet type and
+  exclusions. Every **Regenerate** gives a different week (seeded, best-of-3);
+  lock 🔒 a day to keep it or shuffle 🔄 one on its own.
 - **Food database** — Indian-first, curated, each food with a full nutrient panel
   and **≥3 source evidences** behind a "Verified ✓" badge. Fully editable; add
   your own foods.
@@ -94,6 +98,7 @@ docs + tests in sync with code).
 ```
 public/data/    foods · recipes · rda · exercises · asanas (default JSON)
 src/core/       pure, tested engine: schema · nutrition-engine · planner · filters · totals · recipes
+                · date · random · food-groups · day-planner · week-planner
                 · fitness · backup · activity/ · exercise/ · yoga/
 src/store/      Zustand store + localStorage persistence + export/import
 src/features/   onboarding · dashboard · planner · foods · recipes · exercise · yoga · data

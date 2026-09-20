@@ -32,20 +32,62 @@ Code: `features/dashboard/Dashboard.tsx`, `shared/Ring.tsx`,
 `shared/NutrientCoverage.tsx`, `shared/useTargets.ts`,
 `shared/ActivitySummary.tsx`, `shared/useActivity.ts`.
 
-## 3. Layered planner (3 modes)
+## 3. Layered planner (4 modes)
 
-One engine, three modes (user picks; stored on `profile.plannerMode`):
+One engine, four modes (user picks; stored on `profile.plannerMode`):
 
 1. **Targets only** — `computeTargets()` → rings + full `NutrientTable`.
-2. **Meal builder** — add foods to Breakfast/Lunch/Dinner/Snacks; quantities
-   editable; live totals vs target recompute via `planTotals`.
-3. **Auto-generate** — `autoGeneratePlan()` deterministically fills meals
-   (protein/carb/produce buckets, per-meal calorie shares, respecting diet +
-   exclusions), producing a normal editable plan.
+2. **Meal builder** — add foods to Breakfast/Lunch/Dinner/Snacks for **any
+   date** (◀ ▶ day nav); quantities editable; live totals via `planTotals`.
+3. **Auto-generate** — `autoGeneratePlan()` deterministically fills one day.
+4. **Week** — `generateWeekPlan()` fills **seven dated days at once**.
 
 Each layer reuses the one below; nothing is duplicated.
 Code: `features/planner/Planner.tsx`, `planner/FoodPicker.tsx`, `core/planner.ts`,
 `core/totals.ts`.
+
+### Weekly planner
+
+- **Balanced against ICMR-NIN "My Plate for the Day"** — cereals, pulses/flesh,
+  dairy, vegetables, fruits and nuts each get a daily gram quota scaled from the
+  published 2000 kcal plate to the user's own calorie target
+  (`core/food-groups.ts`). Vegan drops the dairy quota and grows pulses/nuts by
+  1.3×; an omnivore splits the 85 g protein allowance 55/45 pulses/flesh.
+- **Every day lands in band** — a repair pass (`balanceDay`) pulls each day to
+  92–108 % of its calorie target and pushes protein as high as the plate allows,
+  by adjusting quantities only (never overriding the food choices) and never
+  outside a food's sane portion range. Its protein step *trades* grams from the
+  least protein-dense items to the most, so protein rises at constant energy.
+- **Dynamic** — regeneration is a *weighted random draw*, seeded by
+  `core/random.ts`. The same seed reproduces a week exactly (so it is testable);
+  the UI passes a fresh seed each click, so **every press gives a new week**.
+  Three candidate weeks are built per press and the best-scoring one is kept.
+- **Variety is group-aware** — staples may recur daily (cereals, dairy) while
+  vegetables cap at 2 days/week, dals and flesh at 3, sweets at 2; a food is
+  never repeated within one day, and yesterday's foods are heavily down-weighted.
+- **Meal fit** — slots are matched against the food's `mealTypes` facet, so
+  breakfast gets breakfast foods. Unfacetted foods stay eligible at lower weight.
+- **Lock & shuffle** — 🔒 keeps a day through regeneration (it still feeds the
+  variety memory); 🔄 reshuffles one day against the rest of the week. Locks are
+  a `localStorage` UI preference, deliberately outside the store and the backup.
+- **Balance score** — `scoreWeek()` grades the week 0–100 on calorie deviation,
+  protein adequacy, food groups per day and consecutive repeats; the same score
+  picks the best candidate and is shown as a badge, with per-day badges for
+  kcal deviation, protein % and food groups touched.
+- A week is **seven ordinary dated `Plan`s**, so each day shows up on the
+  dashboard for its own date and stays editable in the meal builder
+  ("Open day" jumps straight there).
+
+> **Protein reality check.** `nutrition-engine.ts`'s default split asks for 25 %
+> of energy from protein (≈2.25 g/kg). The median food in this database carries
+> 3.1 g protein per 100 kcal, so a plate that also honours the ICMR cereal/
+> vegetable/fruit quotas delivers 12.7–21 % of energy as protein. The planner
+> maximises protein within the plate; the residual gap is a property of the
+> target split, not of the planner, and the per-day badge reports it honestly.
+
+Code: `features/planner/Planner.tsx`, `WeekPlanner.tsx`, `DayCard.tsx`,
+`usePlannerLocks.ts`, `core/week-planner.ts`, `core/day-planner.ts`,
+`core/food-groups.ts`, `core/random.ts`, `core/date.ts`.
 
 ## 4. Food database
 

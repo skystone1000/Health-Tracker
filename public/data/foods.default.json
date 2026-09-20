@@ -9929,5 +9929,751 @@
     "region": "Maharashtrian",
     "prep": "sauteed",
     "itemType": "dish"
+  },
+  {
+    "id": "watermelon",
+    "name": "Watermelon",
+    "aliases": [
+      "Tarbooj",
+      "Tarbuj",
+      "Kalingad",
+      "Kallangadi"
+    ],
+    "category": "Fruits",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 30.0,
+      "macros": {
+        "protein_g": 0.61,
+        "carbs_g": 7.55,
+        "fiber_g": 0.4,
+        "fat_g": 0.15,
+        "sugar_g": 6.2
+      },
+      "vitamins": {
+        "vit_a_ug": 28.0,
+        "vit_c_mg": 8.1,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.033,
+        "riboflavin_b2_mg": 0.021,
+        "niacin_b3_mg": 0.178,
+        "folate_b9_ug": 3.0,
+        "vit_b12_ug": 0.0,
+        "vit_e_mg": 0.05,
+        "vit_k_ug": 0.1
+      },
+      "minerals": {
+        "calcium_mg": 7.0,
+        "iron_mg": 0.24,
+        "magnesium_mg": 10.0,
+        "potassium_mg": 112,
+        "sodium_mg": 1.0,
+        "zinc_mg": 0.1,
+        "phosphorus_mg": 11.0,
+        "selenium_ug": 0.4
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #167765 - Watermelon, raw",
+        "value_seen": "30.0 kcal, 0.61 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/167765/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Fruits - watermelon",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Watermelon, raw",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=watermelon%2C%20raw"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "snack",
+      "dessert"
+    ],
+    "region": "Pan-Indian",
+    "prep": "raw",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "pear",
+    "name": "Pear",
+    "aliases": [
+      "Nashpati",
+      "Babbugosha"
+    ],
+    "category": "Fruits",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 57.0,
+      "macros": {
+        "protein_g": 0.36,
+        "carbs_g": 15.2,
+        "fiber_g": 3.1,
+        "fat_g": 0.14,
+        "sugar_g": 9.75
+      },
+      "vitamins": {
+        "vit_a_ug": 1.0,
+        "vit_c_mg": 4.3,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.012,
+        "riboflavin_b2_mg": 0.026,
+        "niacin_b3_mg": 0.161,
+        "folate_b9_ug": 7.0,
+        "vit_b12_ug": 0.0,
+        "vit_e_mg": 0.12,
+        "vit_k_ug": 4.4
+      },
+      "minerals": {
+        "calcium_mg": 9.0,
+        "iron_mg": 0.18,
+        "magnesium_mg": 7.0,
+        "potassium_mg": 116,
+        "sodium_mg": 1.0,
+        "zinc_mg": 0.1,
+        "phosphorus_mg": 12.0,
+        "selenium_ug": 0.1
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #169118 - Pears, raw",
+        "value_seen": "57.0 kcal, 0.36 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/169118/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Fruits - pear",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Pears, raw",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=pears%2C%20raw"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "breakfast",
+      "snack"
+    ],
+    "region": "Pan-Indian",
+    "prep": "raw",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "buttermilk-chaas",
+    "name": "Buttermilk (chaas, low fat)",
+    "aliases": [
+      "Chaas",
+      "Chhaas",
+      "Mattha",
+      "Taak",
+      "Neer mor",
+      "Majjige"
+    ],
+    "category": "Dairy",
+    "dietTypes": [
+      "veg"
+    ],
+    "allergens": [
+      "milk",
+      "lactose"
+    ],
+    "servingUnit": "ml",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 40.0,
+      "macros": {
+        "protein_g": 3.31,
+        "carbs_g": 4.79,
+        "fiber_g": 0.0,
+        "fat_g": 1.07,
+        "sugar_g": 5.36
+      },
+      "vitamins": {
+        "vit_a_ug": 14.0,
+        "vit_c_mg": 1.0,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.034,
+        "riboflavin_b2_mg": 0.154,
+        "niacin_b3_mg": 0.058,
+        "folate_b9_ug": 5.0,
+        "vit_b12_ug": 0.22,
+        "vit_e_mg": 0.05,
+        "vit_k_ug": 0.1
+      },
+      "minerals": {
+        "calcium_mg": 116,
+        "iron_mg": 0.05,
+        "magnesium_mg": 11.0,
+        "potassium_mg": 151,
+        "sodium_mg": 148,
+        "zinc_mg": 0.42,
+        "phosphorus_mg": 89.0,
+        "selenium_ug": 2.0
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #170874 - Milk, buttermilk, fluid, cultured, lowfat",
+        "value_seen": "40.0 kcal, 3.31 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/170874/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Milk and milk products - buttermilk",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Milk, buttermilk, fluid, cultured, lowfat",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=milk%2C%20buttermilk%2C%20fluid%2C%20cultured%2C%20lowfat"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "lunch",
+      "dinner",
+      "snack"
+    ],
+    "region": "Pan-Indian",
+    "prep": "fermented",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "curd-low-fat",
+    "name": "Curd / Yogurt (low fat)",
+    "aliases": [
+      "Dahi (low fat)",
+      "Yoghurt, low fat",
+      "Perugu"
+    ],
+    "category": "Dairy",
+    "dietTypes": [
+      "veg"
+    ],
+    "allergens": [
+      "milk",
+      "lactose"
+    ],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 63.0,
+      "macros": {
+        "protein_g": 5.25,
+        "carbs_g": 7.04,
+        "fiber_g": 0.0,
+        "fat_g": 1.55,
+        "sugar_g": 7.04
+      },
+      "vitamins": {
+        "vit_a_ug": 14.0,
+        "vit_c_mg": 0.8,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.044,
+        "riboflavin_b2_mg": 0.214,
+        "niacin_b3_mg": 0.114,
+        "folate_b9_ug": 11.0,
+        "vit_b12_ug": 0.56,
+        "vit_e_mg": 0.03,
+        "vit_k_ug": 0.2
+      },
+      "minerals": {
+        "calcium_mg": 183,
+        "iron_mg": 0.08,
+        "magnesium_mg": 17.0,
+        "potassium_mg": 234,
+        "sodium_mg": 70.0,
+        "zinc_mg": 0.89,
+        "phosphorus_mg": 144,
+        "selenium_ug": 3.3
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #170886 - Yogurt, plain, low fat",
+        "value_seen": "63.0 kcal, 5.25 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/170886/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Milk and milk products - curd, low fat",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Yogurt, plain, low fat",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=yogurt%2C%20plain%2C%20low%20fat"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "breakfast",
+      "lunch",
+      "dinner",
+      "side"
+    ],
+    "region": "Pan-Indian",
+    "prep": "fermented",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "milk-toned",
+    "name": "Milk, toned / skim (cow)",
+    "aliases": [
+      "Toned milk",
+      "Skim milk",
+      "Doodh (toned)",
+      "Fat-free milk"
+    ],
+    "category": "Dairy",
+    "dietTypes": [
+      "veg"
+    ],
+    "allergens": [
+      "milk",
+      "lactose"
+    ],
+    "servingUnit": "ml",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 34.0,
+      "macros": {
+        "protein_g": 3.37,
+        "carbs_g": 4.96,
+        "fiber_g": 0.0,
+        "fat_g": 0.08,
+        "sugar_g": 5.09
+      },
+      "vitamins": {
+        "vit_a_ug": 61.0,
+        "vit_c_mg": 0.0,
+        "vit_d_ug": 1.2,
+        "thiamin_b1_mg": 0.045,
+        "riboflavin_b2_mg": 0.182,
+        "niacin_b3_mg": 0.094,
+        "folate_b9_ug": 5.0,
+        "vit_b12_ug": 0.5,
+        "vit_e_mg": 0.01,
+        "vit_k_ug": 0.0
+      },
+      "minerals": {
+        "calcium_mg": 122,
+        "iron_mg": 0.03,
+        "magnesium_mg": 11.0,
+        "potassium_mg": 156,
+        "sodium_mg": 42.0,
+        "zinc_mg": 0.42,
+        "phosphorus_mg": 101,
+        "selenium_ug": 3.1
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #171269 - Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",
+        "value_seen": "34.0 kcal, 3.37 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/171269/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Milk and milk products - milk, toned",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=milk%2C%20nonfat%2C%20fluid%2C%20with%20added%20vitamin%20a%20and%20vitamin%20d%20%28fat%20free%20or%20skim%29"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "breakfast",
+      "snack"
+    ],
+    "region": "Pan-Indian",
+    "prep": "raw",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "egg-white",
+    "name": "Egg white",
+    "aliases": [
+      "Anda safedi",
+      "Egg albumen",
+      "Anda ka safed bhag"
+    ],
+    "category": "Eggs",
+    "dietTypes": [
+      "nonveg"
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 52.0,
+      "macros": {
+        "protein_g": 10.9,
+        "carbs_g": 0.73,
+        "fiber_g": 0.0,
+        "fat_g": 0.17,
+        "sugar_g": 0.71
+      },
+      "vitamins": {
+        "vit_a_ug": 0.0,
+        "vit_c_mg": 0.0,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.004,
+        "riboflavin_b2_mg": 0.439,
+        "niacin_b3_mg": 0.105,
+        "folate_b9_ug": 4.0,
+        "vit_b12_ug": 0.09,
+        "vit_e_mg": 0.0,
+        "vit_k_ug": 0.0
+      },
+      "minerals": {
+        "calcium_mg": 7.0,
+        "iron_mg": 0.08,
+        "magnesium_mg": 11.0,
+        "potassium_mg": 163,
+        "sodium_mg": 166,
+        "zinc_mg": 0.03,
+        "phosphorus_mg": 15.0,
+        "selenium_ug": 20.0
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #172183 - Egg, white, raw, fresh",
+        "value_seen": "52.0 kcal, 10.9 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/172183/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Egg and egg products - hen egg, white",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Egg, white, raw, fresh",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=egg%2C%20white%2C%20raw%2C%20fresh"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "breakfast",
+      "snack"
+    ],
+    "region": "Pan-Indian",
+    "prep": "raw",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "grapes",
+    "name": "Grapes",
+    "aliases": [
+      "Angoor",
+      "Draksha",
+      "Drakshi"
+    ],
+    "category": "Fruits",
+    "dietTypes": [
+      "veg",
+      "vegan"
+    ],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 69,
+      "macros": {
+        "protein_g": 0.72,
+        "carbs_g": 18.1,
+        "fiber_g": 0.9,
+        "fat_g": 0.16,
+        "sugar_g": 15.5
+      },
+      "vitamins": {
+        "vit_a_ug": 3,
+        "vit_c_mg": 3.2,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.069,
+        "riboflavin_b2_mg": 0.07,
+        "niacin_b3_mg": 0.188,
+        "folate_b9_ug": 2,
+        "vit_b12_ug": 0.0,
+        "vit_e_mg": 0.19,
+        "vit_k_ug": 14.6
+      },
+      "minerals": {
+        "calcium_mg": 10,
+        "iron_mg": 0.36,
+        "magnesium_mg": 7.0,
+        "potassium_mg": 191,
+        "sodium_mg": 2,
+        "zinc_mg": 0.07,
+        "phosphorus_mg": 20,
+        "selenium_ug": 0.1
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #174683 - Grapes, red or green (European type, such as Thompson seedless), raw",
+        "value_seen": "69 kcal, 0.72 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/174683/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Fruits - grapes",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Grapes, red or green (European type, such as Thompson seedless), raw",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=grapes%2C%20red%20or%20green%20%28european%20type%2C%20such%20as%20thompson%20seedless%29%2C%20raw"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "snack",
+      "breakfast"
+    ],
+    "region": "Pan-Indian",
+    "prep": "raw",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "prawns-cooked",
+    "name": "Prawns / Shrimp (cooked)",
+    "aliases": [
+      "Jhinga",
+      "Chingri",
+      "Kolambi",
+      "Era"
+    ],
+    "category": "Meat & Seafood",
+    "dietTypes": [
+      "nonveg"
+    ],
+    "allergens": [
+      "shellfish",
+      "crustacean"
+    ],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 119,
+      "macros": {
+        "protein_g": 22.8,
+        "carbs_g": 1.52,
+        "fiber_g": 0.0,
+        "fat_g": 1.7,
+        "sugar_g": 0.0
+      },
+      "vitamins": {
+        "vit_a_ug": 90,
+        "vit_c_mg": 0.0,
+        "vit_d_ug": 0.1,
+        "thiamin_b1_mg": 0.032,
+        "riboflavin_b2_mg": 0.024,
+        "niacin_b3_mg": 2.68,
+        "folate_b9_ug": 24,
+        "vit_b12_ug": 1.66,
+        "vit_e_mg": 2.2,
+        "vit_k_ug": 0.4
+      },
+      "minerals": {
+        "calcium_mg": 91,
+        "iron_mg": 0.32,
+        "magnesium_mg": 37.0,
+        "potassium_mg": 170,
+        "sodium_mg": 947,
+        "zinc_mg": 1.63,
+        "phosphorus_mg": 306,
+        "selenium_ug": 49.5
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #171971 - Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",
+        "value_seen": "119 kcal, 22.8 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/171971/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Fish and shellfish - prawns",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=crustaceans%2C%20shrimp%2C%20mixed%20species%2C%20cooked%2C%20moist%20heat%20%28may%20contain%20additives%20to%20retain%20moisture%29"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Pan-Indian",
+    "prep": "boiled",
+    "itemType": "ingredient"
+  },
+  {
+    "id": "mutton-goat-cooked",
+    "name": "Mutton / Goat meat (cooked)",
+    "aliases": [
+      "Mutton",
+      "Bakri ka gosht",
+      "Chevon",
+      "Gosht"
+    ],
+    "category": "Meat & Seafood",
+    "dietTypes": [
+      "nonveg"
+    ],
+    "allergens": [],
+    "servingUnit": "g",
+    "referenceQuantity": 100,
+    "nutrients": {
+      "energy_kcal": 143,
+      "macros": {
+        "protein_g": 27.1,
+        "carbs_g": 0.0,
+        "fiber_g": 0.0,
+        "fat_g": 3.03,
+        "sugar_g": 0.0
+      },
+      "vitamins": {
+        "vit_a_ug": 0,
+        "vit_c_mg": 0.0,
+        "vit_d_ug": 0.0,
+        "thiamin_b1_mg": 0.09,
+        "riboflavin_b2_mg": 0.61,
+        "niacin_b3_mg": 3.95,
+        "folate_b9_ug": 5,
+        "vit_b12_ug": 1.19,
+        "vit_e_mg": 0.34,
+        "vit_k_ug": 1.2
+      },
+      "minerals": {
+        "calcium_mg": 17,
+        "iron_mg": 3.73,
+        "magnesium_mg": 0.0,
+        "potassium_mg": 405,
+        "sodium_mg": 86,
+        "zinc_mg": 5.27,
+        "phosphorus_mg": 201,
+        "selenium_ug": 11.8
+      }
+    },
+    "evidences": [
+      {
+        "source": "USDA FoodData Central",
+        "ref": "SR Legacy #175304 - Game meat, goat, cooked, roasted",
+        "value_seen": "143 kcal, 27.1 g protein /100 g",
+        "url": "https://fdc.nal.usda.gov/food-details/175304/nutrients"
+      },
+      {
+        "source": "IFCT 2017 (ICMR-NIN)",
+        "ref": "Meat and poultry - goat meat",
+        "url": "https://www.nin.res.in/ebooks/IFCT2017.pdf"
+      },
+      {
+        "source": "Open Food Facts",
+        "ref": "Game meat, goat, cooked, roasted",
+        "url": "https://world.openfoodfacts.org/cgi/search.pl?search_terms=game%20meat%2C%20goat%2C%20cooked%2C%20roasted"
+      }
+    ],
+    "verification": {
+      "status": "needsReview",
+      "confidence": "medium",
+      "lastReviewed": "2026-09-19"
+    },
+    "source": "default",
+    "editable": true,
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "region": "Pan-Indian",
+    "prep": "roasted",
+    "itemType": "ingredient"
   }
 ]

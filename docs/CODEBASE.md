@@ -8,7 +8,7 @@ so you don't have to grep the whole tree. Pair with
 
 ```
 public/data/                 Seed JSON (validated on load)
-  foods.default.json         ~120 curated foods, full nutrient panel + evidences
+  foods.default.json         ~129 curated foods, full nutrient panel + evidences
   recipes.default.json       ~43 recipes referencing food ids (+ references, yieldGrams)
   rda.icmr-nin-2020.json     Micronutrient RDA by sex + age bracket
   exercises.default.json     Curated exercises (all regions/muscles) + ≥3 evidences
@@ -16,11 +16,16 @@ public/data/                 Seed JSON (validated on load)
   medicines.default.json     Curated allopathy/homeo/biochemic medicines + >=2 evidences
 
 src/core/                    PURE logic (no React/DOM) — every file has a test
+  date.ts                    toISODate/todayISO/addDays/startOfWeek/dayLabel (LOCAL time, never UTC)
+  random.ts                  mulberry32/hashSeed/shuffle/pickWeighted (seeded, pure)
+  food-groups.ts             PlateGroup taxonomy, ICMR daily quotas, portion bounds, quantityForKcal
+  day-planner.ts             meal templates + slot selection + balanceDay -> one balanced day
+  week-planner.ts            generateWeekPlan / regenerateDayInWeek / scoreWeek (Layer 4)
   schema.ts                  Zod schemas + inferred types; NUTRIENT_KEYS/META; MICRO_FALLBACK;
                              FOOD_CATEGORIES / MEAL_TYPES / FOOD_REGIONS / PREP_STYLES / ITEM_TYPES; Reference
   grouping.ts                groupFoods() — pure facet grouping for the food list
   nutrition-engine.ts        BMR, TDEE, calorie goal, macro & micro targets
-  planner.ts                 createEmptyPlan + autoGeneratePlan (3 layers)
+  planner.ts                 createEmptyPlan + autoGeneratePlan (Layers 1-3)
   filters.ts                 dietAllows / matchesDiet / isExcluded / applyFilters
   totals.ts                  toVector, vectorToNutrients, nutrientsForQuantity, sums, progress
   recipes.ts                 recipeNutritionPerServing, filterRecipes, recipesForFood
@@ -71,6 +76,9 @@ src/features/
   dashboard/Dashboard.tsx    Stats, macro rings, micronutrient coverage chart
   planner/Planner.tsx        Mode tabs + meal builder + live totals
   planner/FoodPicker.tsx     Modal to add a food to a meal
+  planner/WeekPlanner.tsx    7-day grid: generate/regenerate, week score, week nav
+  planner/DayCard.tsx        One day: meals, per-day badges, lock & shuffle
+  planner/usePlannerLocks.ts localStorage-backed locked dates (UI pref)
   foods/FoodDatabase.tsx     Searchable/filterable food grid
   foods/FoodEditor.tsx       Full nutrient-panel + evidences editor / add-food
   recipes/Recipes.tsx        Recipe grid + ?food= filter
@@ -128,7 +136,15 @@ src/main.tsx                 React root + BrowserRouter
 | Change counter-pose suggestion logic | `src/core/yoga/counterpose.ts` `OPPOSING_FAMILIES` / `suggestCounters` |
 | Change yoga sequencing | `src/core/yoga/sequence-engine.ts` `generateSequence` (style bias, counter insertion) |
 | Change diet/exclusion rules | `src/core/filters.ts` (single source of truth) |
-| Change auto-generate logic | `src/core/planner.ts` `autoGeneratePlan` |
+| Change auto-generate logic (one day) | `src/core/planner.ts` `autoGeneratePlan` |
+| Change weekly generation / variety caps | `src/core/week-planner.ts`, `src/core/day-planner.ts` (`WEEKLY_REPEAT_CAP`) |
+| Change what a meal is made of | `src/core/day-planner.ts` `DEFAULT_MEAL_TEMPLATES` |
+| Change food-group quotas (ICMR plate) | `src/core/food-groups.ts` `PLATE_QUOTA_2000` / `dailyQuotas` |
+| Change sane portion sizes | `src/core/food-groups.ts` `PORTION_BOUNDS` / `DISH_BOUNDS` |
+| Change the calorie/protein bands | `src/core/day-planner.ts` `KCAL_BAND` / `PROTEIN_FLOOR` |
+| Change how a week is scored | `src/core/week-planner.ts` `scoreWeek` |
+| Map a new food category to a plate group | `src/core/food-groups.ts` `CATEGORY_TO_PLATE_GROUP` |
+| Work with dates (plan ids, week starts) | `src/core/date.ts` — never `toISOString()`, it is UTC |
 | Change routine generation | `src/core/exercise/routine-engine.ts` `generateRoutine` |
 | Change yoga sequencing | `src/core/yoga/sequence-engine.ts` `generateSequence` |
 | Change calories-burned math | `src/core/activity/calories.ts` `metCalories` (single source) |
